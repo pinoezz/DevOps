@@ -29,3 +29,14 @@ git init
 ![image](https://user-images.githubusercontent.com/106061407/170830880-594d11b7-d097-4f1b-8957-eedb820ff2a9.png)
 
 Setelah membuat 3 repository selanjutnya 
+
+# Membuat 3 buah branch pada masing-masing aplikasi tersebut yaitu development, staging dan production
+
+Untuk membuat branch kalian bisa menggunakan beberapa perintah berikut
+
+# git branch​
+
+```
+git branch (name branch)
+```
+
