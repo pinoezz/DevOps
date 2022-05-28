@@ -246,6 +246,6 @@ sudo systemctl restart systemd-resolved.service
 
 ![Img 1](assets/51.png)
 
- Kemudian test kembali ping goole.com
+ Kemudian test kembali ping google.com
  
  Gambar diatas menunjukan ping google.com telah berhasil
