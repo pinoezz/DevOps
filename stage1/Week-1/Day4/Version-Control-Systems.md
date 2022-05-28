@@ -7,9 +7,6 @@ Git menurut saya yaitu sebuah perangkat lunak atau software yang digunakan untuk
 
 # Instalasi Git
 
-
-Tahap pertama kita perlu menginstall GIT pada laptop/komputer.
-
 Jika kamu menggunakan operating system Linux-Ubuntu/Mac-OS kamu bisa skip installasi ini karena Git sudah ada secara default.
 
 
@@ -22,3 +19,13 @@ Bagi yang menggunakan operating system Windows kalian dapat mendowload dan mengi
 
 # Membuat 3 buah repository untuk masing-masing aplikasi (NodeJS, Python dan Go)
 
+Untuk cara pertama membuat repository sendiri kita bisa menggunakan perintah berikut :
+git init (nama-repository-yang-kalian-inginkan)
+
+```
+git init
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170830880-594d11b7-d097-4f1b-8957-eedb820ff2a9.png)
+
+Setelah membuat 3 repository selanjutnya 
