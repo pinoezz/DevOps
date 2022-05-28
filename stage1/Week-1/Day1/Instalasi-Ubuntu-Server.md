@@ -13,9 +13,9 @@ Kali ini saya akan memberikan tutorial menginstall Ubuntu Server versi 22.04 LTS
 
 Untuk bahan- bahan yang kalian butuhkan akan saya cantumkan link di bawah ini :
 
-Virtual Box : https://www.virtualbox.org/wiki/Downloads (90MB–100MB)
+[Virtual Box](https://www.virtualbox.org/wiki/Downloads) (90MB–100MB)
 
-Ubuntu Server 20.04 LTS : https://ubuntu.com/download/server (1.2GB)
+[Ubuntu Server 20.04 LTS](https://ubuntu.com/download/server) (1.2GB)
 
 Apabila file sudah di download, kalian install virtual box dan pilih lokasi untuk menyimpan file Virtual Boxnya
 
@@ -158,7 +158,7 @@ Pada step ini bisa langsung di skip saja pilih “Done”
 
 ![Img 1](assets/35.png)
 
-# Baca juga [Pengertian SSH] : https://bit.ly/3wUAylc
+# Baca juga [Pengertian SSH](https://bit.ly/3wUAylc)
 
 ![Img 1](assets/36.png)
 
@@ -204,3 +204,46 @@ Selanjutnya saya tes koneksi dengan ping 8.8.8.8.com (dns google)
 Apabila hasilnya seperti gambar diatas artinya kalian sudah mendapatkan koneksi internet
 
 ![Img 1](assets/46.png)
+
+Pada step ini saya tes ping google.com
+
+Setelah saya ping google.com , muncul pesan “temporary failure in name resolution” yang merupakan kesalahan resolusi nama dan menunjukkan bahwa server DNS Anda tidak dapat menyelesaikan nama domain ke alamat IP masing-masing. Ini dapat menghadirkan tantangan besar karena Anda tidak akan dapat memperbarui, meningkatkan, atau bahkan menginstal paket perangkat lunak apa pun di sistem Linux Anda.
+
+# File resolv.conf yang Hilang atau Salah Dikonfigurasi
+
+
+File /etc/resolv.conf adalah file konfigurasi resolver dalam sistem Linux. Ini berisi entri DNS yang membantu sistem Linux Anda untuk menyelesaikan nama domain ke alamat IP
+
+Cara memperbaiki kegagalan ketika ping google.com ikuti langkah langkah berikut :
+
+Note : sudo (/ˈsuːduː/ atau /ˈsuːdoʊ/) adalah suatu program untuk sistem operasi komputer sejenis Unix yang memungkinkan para pengguna untuk menjalankan program-program hak keamanan pengguna lain, secara default merupakan “superuser”
+
+
+![Img 1](assets/47.png)
+
+kalian ketikan sudo su lalu “enter’ dan masukan password kemudian “enter”
+
+![Img 1](assets/48.png)
+
+Kemudian tekan "Enter"
+
+nano /etc/resolv.conf
+
+![Img 1](assets/49.png)
+
+Kalian akan masuk kedalam nano(text editor) /etc/resolv.conf
+
+![Img 1](assets/50.png)
+
+Ubah dan tambahkan nameserver
+
+Ketika sudah di ubah kalian perlu menekan ctrl + o (Write Out) , lalu enter , Kemudian ctrl + x untuk exit
+
+Kemudan kalian save dan restart systemd-resolved nya menggunakan command berikut:
+
+$ sudo systemctl restart systemd-resolved.service
+
+![Img 1](assets/51.png)
+
+Kemudian test kembali ping goole.com
+Gambar diatas menunjukan ping google.com telah berhasil
