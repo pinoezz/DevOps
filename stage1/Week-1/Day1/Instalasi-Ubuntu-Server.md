@@ -196,7 +196,7 @@ Setelah Server memasuki tampilan ini kalian perlu memasukan username dan passwor
 
 Apabila sudah login tampilan kalian akan seperti ini
 
-# Baca juga [Basic Command CLI Ubuntu](https://bit.ly/3lF16S)
+# Baca juga [Basic Command CLI Ubuntu](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
 
 ![Img 1](assets/45.png)
 
