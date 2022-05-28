@@ -55,12 +55,6 @@ Copy yang sudah disediakan Github, jangan lupa untuk memilih bagian SSH karena k
 git remote add origin git@github.com:pinoezz/NodeJs.git
 ```
 
-Untuk melihat remote yang kita gunakan kita bisa menggunakan perintah berikut :
-
-```
-git remote -v
-```
-
 ![image](https://user-images.githubusercontent.com/106061407/170836066-e98e718a-c8a4-4e67-81e0-34459443b67b.png)
 
 Apabila sebelumnya anda pernah remote lalu terjadi kesalahan seperti di atas kalian perlu menghapus remote yang sebelumnya terlebih dahulu
@@ -110,4 +104,5 @@ git status
 ![image](https://user-images.githubusercontent.com/106061407/170835532-03a325c5-98cd-4f5a-b24a-2e5ad0cd7321.png)
 
 Keterangan : gambar di atas menunjukan bahwa sekarang saya sedang berada pada branch master
+
 
