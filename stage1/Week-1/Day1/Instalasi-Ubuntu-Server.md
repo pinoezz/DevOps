@@ -162,7 +162,8 @@ Pada step SSH Setup kalian pilih “Install OpenSSH Server” lalu pilih done
 
 ![Img 1](assets/37.png)
 
- Pada step ini kalian diminta untuk menginstal beberapa fitur . Apabila tidak ada yang ingin di install bisa langsung pilih “Done”
+Pada step ini kalian diminta untuk menginstal beberapa fitur . Apabila tidak ada yang ingin di install bisa langsung pilih “Done”
+
 Sebagai tambahan saya akan mengintall docker pada step diatas
 
 ![Img 1](assets/38.png)
@@ -178,6 +179,7 @@ Lalu pilih “Done"
 Proses instalasi biasanya memakan beberapa menit , apabila sudah selesai kalian bisa pilih “Reboot Now”
 
 ![Img 1](assets/42.png)
+
 ![Img 1](assets/43.png)
 
 Setelah pilih “Reboot Now” kalian tekan “Enter”
@@ -185,3 +187,41 @@ Setelah pilih “Reboot Now” kalian tekan “Enter”
 ![Img 1](assets/44.png)
 
 Setelah Server memasuki tampilan ini kalian perlu memasukan username dan password
+
+![Img 1](assets/45.png)
+
+Apabila sudah login tampilan kalian akan seperti ini
+
+Baca juga [Basic Command CLI Ubuntu](https://bit.ly/3lF16S3](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
+
+![Img 1](assets/46.png)
+
+Selanjutnya saya tes koneksi dengan ping 8.8.8.8.com (dns google)
+
+Apabila hasilnya seperti gambar diatas artinya kalian sudah mendapatkan koneksi internet
+
+![Img 1](assets/47.png)
+
+Pada step ini saya tes ping google.com
+
+Setelah saya ping google.com , muncul pesan “temporary failure in name resolution” yang merupakan kesalahan resolusi nama dan menunjukkan bahwa server DNS Anda tidak dapat menyelesaikan nama domain ke alamat IP masing-masing. Ini dapat menghadirkan tantangan besar karena Anda tidak akan dapat memperbarui, meningkatkan, atau bahkan menginstal paket perangkat lunak apa pun di sistem Linux Anda.
+
+# File resolv.conf yang Hilang atau Salah Dikonfigurasi
+
+File /etc/resolv.conf adalah file konfigurasi resolver dalam sistem Linux. Ini berisi entri DNS yang membantu sistem Linux Anda untuk menyelesaikan nama domain ke alamat IP
+
+Cara memperbaiki kegagalan ketika ping google.com ikuti langkah langkah berikut :
+
+Note : sudo (/ˈsuːduː/ atau /ˈsuːdoʊ/) adalah suatu program untuk sistem operasi komputer sejenis Unix yang memungkinkan para pengguna untuk menjalankan program-program hak keamanan pengguna lain, secara default merupakan “superuser”
+
+![Img 1](assets/48.png)
+
+Kalian ketikan sudo su lalu “enter’ dan masukan password kemudian “enter”
+
+![Img 1](assets/49.png)
+
+kemudian tekan “enter”
+
+```
+nano /etc/resolv.conf
+```
