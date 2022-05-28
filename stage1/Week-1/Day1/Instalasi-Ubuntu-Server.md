@@ -130,31 +130,31 @@ Swap space dapat berbentuk partisi swap khusus atau file swap. Dalam kebanyakan 
 
 ![Img 1](assets/30.png)
 
-Pilih “Create”
-
 ![Img 1](assets/31.png)
 
-Lalu kalian pilih “free space” > “Add GPT Partition”
+
+Pilih “Create”
 
 ![Img 1](assets/32.png)
 
-Untuk Size saya berikan Max / atau semua space yang tersisa “8.997GB” , Format pilih “ext4”, Mount “/’ , Lalu pilih “Create”
+Lalu kalian pilih “free space” > “Add GPT Partition”
 
 ![Img 1](assets/33.png)
 
-Kemudian pilih “Done”
+Untuk Size saya berikan Max / atau semua space yang tersisa “8.997GB” , Format pilih “ext4”, Mount “/’ , Lalu pilih “Create”
+
 
 ![Img 1](assets/34.png)
 
-Pilih "Cotinue"
+Kemudian pilih “Done”
 
 ![Img 1](assets/35.png)
 
-Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
+Pilih "Cotinue"
 
 ![Img 1](assets/36.png)
 
-Pada step ini bisa langsung di skip saja pilih “Done”
+Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
 
 ![Img 1](assets/37.png)
 
