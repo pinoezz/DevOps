@@ -42,7 +42,6 @@ git config --list
 # Membuat Repository​
 
 Repository adalah suatu penyimpanan file project. dimana kamu bisa menyimpan apapun yang berkaitan dengan project kalian, seperti code, gambar, ataupun 
-
 audio. repo sendiri bertempat di penyimpanan atau storage github atau repository local di komputer anda.
 
 ![3](https://user-images.githubusercontent.com/106061407/170835864-ab2f2834-6cee-4ce1-b059-2166acc6036b.png)
@@ -51,6 +50,33 @@ audio. repo sendiri bertempat di penyimpanan atau storage github atau repository
 Copy yang sudah disediakan Github, jangan lupa untuk memilih bagian SSH karena kita menggunakan SSH untuk mengkoneksikan local kita dengan Github.
 
 ![image](https://user-images.githubusercontent.com/106061407/170835790-02eed5a2-0705-4341-913c-163711fa61ba.png)
+
+```
+git remote add origin git@github.com:pinoezz/NodeJs.git
+```
+
+Untuk melihat remote yang kita gunakan kita bisa menggunakan perintah berikut :
+
+```
+git remote -v
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170836066-e98e718a-c8a4-4e67-81e0-34459443b67b.png)
+
+Apabila sebelumnya anda pernah remote lalu terjadi kesalahan seperti di atas kalian perlu menghapus remote yang sebelumnya terlebih dahulu
+
+```
+git remote remove origin
+```
+
+# Check remote​
+
+Untuk melihat remote yang kita gunakan kita bisa menggunakan perintah berikut :
+
+```
+git remote -v
+```
+![image](https://user-images.githubusercontent.com/106061407/170836161-af1bc8e4-fa14-4d60-bc48-a11e2d32938f.png)
 
 
 # Task
