@@ -112,9 +112,9 @@ Pilih "Done"
 
 ![Img 1](assets/26.png)
 
-Untuk Storage configuration kalian pilih “Costum storage layout” lalu “Done”
-
 ![Img 1](assets/27.png)
+
+Untuk Storage configuration kalian pilih “Costum storage layout” lalu “Done”
 
 ![Img 1](assets/28.png)
 
