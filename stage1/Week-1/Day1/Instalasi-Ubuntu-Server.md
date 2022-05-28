@@ -192,7 +192,7 @@ Setelah Server memasuki tampilan ini kalian perlu memasukan username dan passwor
 
 Apabila sudah login tampilan kalian akan seperti ini
 
-Baca juga [Basic Command CLI Ubuntu](https://bit.ly/3lF16S3](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
+Baca juga [Basic Command CLI Ubuntu](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
 
 ![Img 1](assets/46.png)
 
@@ -225,3 +225,25 @@ kemudian tekan “enter”
 ```
 nano /etc/resolv.conf
 ```
+
+![Img 1](assets/50.png)
+
+Kalian akan masuk kedalam nano(text editor) /etc/resolv.conf
+
+![Img 1](assets/51.png)
+
+Ubah dan tambahkan nameserver
+
+Ketika sudah di ubah kalian perlu menekan ctrl + o (Write Out) , lalu enter , Kemudian ctrl + x untuk exit
+
+Kemudan kalian save dan restart systemd-resolved nya menggunakan command berikut:
+
+```
+sudo systemctl restart systemd-resolved.service
+```
+
+![Img 1](assets/51.png)
+
+ Kemudian test kembali ping goole.com
+ 
+ Gambar diatas menunjukan ping google.com telah berhasil
