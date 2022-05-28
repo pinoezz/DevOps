@@ -1,5 +1,6 @@
-![Img 1](assets/1.png)
 # Tutorial Install Ubuntu Server 20.04 LTS Menggunakan VirtualBox
+
+![Img 1](assets/1.png)
 
 Sebelum di mulai ini merupakan postingan pertama saya di medium.com perkenalkan saya Alfino Dwi Nugroho , salah satu peserta Bootcamp DevOps Dumbways. Ini merupakan Tugas pertama saya , DevOps menurut pandangan saya yaitu gabungan antara Development dan Operation yang berarti menggabungkan proses development/pengembangan dari sebuah sistem/aplikasi dengan operation/operasional yang bertujuan untuk mempercepat pembuatan aplikasi dan meminimalisir adanya kesalahan pada saat deploying aplikasi.
 
