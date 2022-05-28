@@ -165,3 +165,42 @@ Pada step ini bisa langsung di skip saja pilih “Done”
 Pada step SSH Setup kalian pilih “Install OpenSSH Server” lalu pilih done
 
 ![Img 1](assets/37.png)
+
+Pada step ini kalian diminta untuk menginstal beberapa fitur . Apabila tidak ada yang ingin di install bisa langsung pilih “Done”
+
+Sebagai tambahan saya akan mengintall docker pada step diatas
+
+![Img 1](assets/38.png)
+![Img 1](assets/39.png)
+
+Pilih “stable” dan “close”
+
+![Img 1](assets/40.png)
+
+Lalu pilih "Done"
+
+![Img 1](assets/40.png)
+
+Proses instalasi biasanya memakan beberapa menit , apabila sudah selesai kalian bisa pilih “Reboot Now”
+
+![Img 1](assets/41.png)
+![Img 1](assets/42.png)
+
+Setelah pilih “Reboot Now” kalian tekan “Enter”
+
+![Img 1](assets/43.png)
+
+Setelah Server memasuki tampilan ini kalian perlu memasukan username dan password
+
+![Img 1](assets/44.png)
+
+Apabila sudah login tampilan kalian akan seperti ini
+
+# Baca juga [Basic Command CLI Ubuntu](https://bit.ly/3lF16S)
+
+![Img 1](assets/45.png)
+
+Selanjutnya saya tes koneksi dengan ping 8.8.8.8.com (dns google)
+Apabila hasilnya seperti gambar diatas artinya kalian sudah mendapatkan koneksi internet
+
+![Img 1](assets/46.png)
