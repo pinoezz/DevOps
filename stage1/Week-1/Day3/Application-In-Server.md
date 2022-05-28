@@ -264,10 +264,13 @@ python3 index.py
 
 Sekarang coba akses web browser kalian setelah itu kalian coba akses dengan localhost:5000
 
-Konfigurasi dengan PM2 dandapat di akses melalui web browser
+# Konfigurasi dengan PM2 dandapat di akses melalui web browser
 
-Menginstal PM2 melalui NPM
+# Menginstal PM2 melalui NPM
 
 Menginstal PM2 sangat sederhana, dan dapat dilakukan dalam satu baris kode.
 
+```
 npm install -g pm2
+```
+
