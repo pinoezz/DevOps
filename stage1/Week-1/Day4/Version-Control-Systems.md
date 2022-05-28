@@ -20,4 +20,16 @@ Bagi yang menggunakan operating system Windows kalian dapat mendowload dan mengi
 
 -------------
 
+# Git Config
+
+Hal pertama yang harus kalian lakukan adalah menetapkan nama pengguna dan alamat email, untuk perintahnya kalian dapat menggunakan perintah dibawah ini.
+
+```
+git config --global user.name "your.github-user.name"
+```
+```
+git config --global user.email "your.github-user.email"
+```
+
+
 
