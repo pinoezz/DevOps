@@ -120,130 +120,32 @@ Untuk Storage configuration kalian pilih “Costum storage layout” lalu “Don
 
 Pilih “free space” lalu pilih “Add GPT Partition”
 
-![Img 1](assets/29.png)
-
 untuk step selanjutkan saya memberikan 1GB untuk format “swap”
 
 Swap adalah ruang pada disk yang digunakan ketika jumlah memori RAM fisik penuh. Ketika sistem Linux kehabisan RAM, halaman yang tidak aktif akan dipindahkan dari RAM ke ruang swap.
 
 Swap space dapat berbentuk partisi swap khusus atau file swap. Dalam kebanyakan kasus, ketika menjalankan Linux pada mesin virtual, partisi swap tidak ada sehingga satu-satunya pilihan kita adalah membuat file swap.
 
-![Img 1](assets/30.png)
-
-![Img 1](assets/31.png)
-
+![Img 1](assets/29.png)
 
 Pilih “Create”
 
-![Img 1](assets/32.png)
+![Img 1](assets/30.png)
 
 Lalu kalian pilih “free space” > “Add GPT Partition”
 
-![Img 1](assets/33.png)
+![Img 1](assets/31.png)
 
 Untuk Size saya berikan Max / atau semua space yang tersisa “8.997GB” , Format pilih “ext4”, Mount “/’ , Lalu pilih “Create”
 
-
-![Img 1](assets/34.png)
+![Img 1](assets/32.png)
 
 Kemudian pilih “Done”
 
-![Img 1](assets/35.png)
+![Img 1](assets/33.png)
 
-Pilih "Cotinue"
+Pilih “Continue”
 
-![Img 1](assets/36.png)
+![Img 1](assets/34.png)
 
 Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
-
-![Img 1](assets/37.png)
-
-# Baca juga [Pengertian SSH](https://bit.ly/3wUAylc)
-
-![Img 1](assets/38.png)
-
-Pada step SSH Setup kalian pilih “Install OpenSSH Server” lalu pilih done
-
-![Img 1](assets/39.png)
-
-Pada step ini kalian diminta untuk menginstal beberapa fitur . Apabila tidak ada yang ingin di install bisa langsung pilih “Done”
-
-Sebagai tambahan saya akan mengintall docker pada step diatas
-
-![Img 1](assets/40.png)
-![Img 1](assets/41.png)
-
-Pilih “stable” dan “close”
-
-![Img 1](assets/42.png)
-
-Lalu pilih "Done"
-
-![Img 1](assets/43.png)
-
-Proses instalasi biasanya memakan beberapa menit , apabila sudah selesai kalian bisa pilih “Reboot Now”
-
-![Img 1](assets/44.png)
-![Img 1](assets/45.png)
-
-Setelah pilih “Reboot Now” kalian tekan “Enter”
-
-![Img 1](assets/46.png)
-
-Setelah Server memasuki tampilan ini kalian perlu memasukan username dan password
-
-![Img 1](assets/47.png)
-
-Apabila sudah login tampilan kalian akan seperti ini
-
-# Baca juga [Basic Command CLI Ubuntu](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
-
-![Img 1](assets/48.png)
-
-Selanjutnya saya tes koneksi dengan ping 8.8.8.8.com (dns google)
-Apabila hasilnya seperti gambar diatas artinya kalian sudah mendapatkan koneksi internet
-
-![Img 1](assets/49.png)
-
-Pada step ini saya tes ping google.com
-
-Setelah saya ping google.com , muncul pesan “temporary failure in name resolution” yang merupakan kesalahan resolusi nama dan menunjukkan bahwa server DNS Anda tidak dapat menyelesaikan nama domain ke alamat IP masing-masing. Ini dapat menghadirkan tantangan besar karena Anda tidak akan dapat memperbarui, meningkatkan, atau bahkan menginstal paket perangkat lunak apa pun di sistem Linux Anda.
-
-# File resolv.conf yang Hilang atau Salah Dikonfigurasi
-
-
-File /etc/resolv.conf adalah file konfigurasi resolver dalam sistem Linux. Ini berisi entri DNS yang membantu sistem Linux Anda untuk menyelesaikan nama domain ke alamat IP
-
-Cara memperbaiki kegagalan ketika ping google.com ikuti langkah langkah berikut :
-
-Note : sudo (/ˈsuːduː/ atau /ˈsuːdoʊ/) adalah suatu program untuk sistem operasi komputer sejenis Unix yang memungkinkan para pengguna untuk menjalankan program-program hak keamanan pengguna lain, secara default merupakan “superuser”
-
-
-![Img 1](assets/50.png)
-
-kalian ketikan sudo su lalu “enter’ dan masukan password kemudian “enter”
-
-![Img 1](assets/51.png)
-
-Kemudian tekan "Enter"
-
-nano /etc/resolv.conf
-
-![Img 1](assets/52.png)
-
-Kalian akan masuk kedalam nano(text editor) /etc/resolv.conf
-
-![Img 1](assets/53.png)
-
-Ubah dan tambahkan nameserver
-
-Ketika sudah di ubah kalian perlu menekan ctrl + o (Write Out) , lalu enter , Kemudian ctrl + x untuk exit
-
-Kemudan kalian save dan restart systemd-resolved nya menggunakan command berikut:
-
-$ sudo systemctl restart systemd-resolved.service
-
-![Img 1](assets/54.png)
-
-Kemudian test kembali ping goole.com
-Gambar diatas menunjukan ping google.com telah berhasil
