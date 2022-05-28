@@ -154,7 +154,8 @@ Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
 
 Pada step ini bisa langsung di skip saja pilih “Done”
 
-Baca juga [Pengertian SSH](https://bit.ly/3wUAylc](https://www.exabytes.co.id/blog/pengertian-ssh/#:~:text=Secure%20shell%20atau%20SSH%20adalah,jarak%20jauh%20melalui%20koneksi%20internet)
+Baca juga
+[Pengertian SSH](https://bit.ly/3wUAylc](https://www.exabytes.co.id/blog/pengertian-ssh/#:~:text=Secure%20shell%20atau%20SSH%20adalah,jarak%20jauh%20melalui%20koneksi%20internet)
 
 ![Img 1](assets/36.png)
 
@@ -192,7 +193,8 @@ Setelah Server memasuki tampilan ini kalian perlu memasukan username dan passwor
 
 Apabila sudah login tampilan kalian akan seperti ini
 
-Baca juga [Basic Command CLI Ubuntu](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
+Baca juga 
+[Basic Command CLI Ubuntu](https://techlog360.com/basic-ubuntu-commands-terminal-shortcuts-linux-beginner/)
 
 ![Img 1](assets/46.png)
 
