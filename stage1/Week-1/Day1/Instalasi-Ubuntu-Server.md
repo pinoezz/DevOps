@@ -149,3 +149,39 @@ Pilih “Continue”
 ![Img 1](assets/34.png)
 
 Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
+
+![Img 1](assets/35.png)
+
+Pada step ini bisa langsung di skip saja pilih “Done”
+
+Baca juga [Pengertian SSH](https://bit.ly/3wUAylc](https://www.exabytes.co.id/blog/pengertian-ssh/#:~:text=Secure%20shell%20atau%20SSH%20adalah,jarak%20jauh%20melalui%20koneksi%20internet)
+
+![Img 1](assets/36.png)
+
+Pada step SSH Setup kalian pilih “Install OpenSSH Server” lalu pilih done
+
+![Img 1](assets/37.png)
+
+ Pada step ini kalian diminta untuk menginstal beberapa fitur . Apabila tidak ada yang ingin di install bisa langsung pilih “Done”
+Sebagai tambahan saya akan mengintall docker pada step diatas
+
+![Img 1](assets/38.png)
+![Img 1](assets/39.png)
+
+Pilih “stable” dan “close”
+
+![Img 1](assets/40.png)
+Lalu pilih “Done"
+
+![Img 1](assets/41.png)
+
+Proses instalasi biasanya memakan beberapa menit , apabila sudah selesai kalian bisa pilih “Reboot Now”
+
+![Img 1](assets/42.png)
+![Img 1](assets/43.png)
+
+Setelah pilih “Reboot Now” kalian tekan “Enter”
+
+![Img 1](assets/44.png)
+
+Setelah Server memasuki tampilan ini kalian perlu memasukan username dan password
