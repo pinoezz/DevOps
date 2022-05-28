@@ -26,7 +26,7 @@ Server Name : (your-name)
 
 OpenSSH : True
 
-Project Management​
+# Project Management​
 Tambahkan deskripsi berikut ke dalam kanban pada project management Anda
 
 Konfigurasi environment dan instalasi linux server, dimana server tersebut dapat terkoneksi ke internet dan juga dapat di akses melalui SSH / Browser.
@@ -39,4 +39,4 @@ Konfigurasi environment dan instalasi linux server, dimana server tersebut dapat
 - [ ] Docker terinstal secara otomatis setelah proses instalasi linux ubuntu server
 - [ ] Local server dapat terkoneksi dengan internet
 
-Untuk hasil finalnya pastikan dapat ping google.com
+# Untuk hasil finalnya pastikan dapat ping google.com
