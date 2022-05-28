@@ -105,4 +105,38 @@ git status
 
 Keterangan : gambar di atas menunjukan bahwa sekarang saya sedang berada pada branch master
 
+![image](https://user-images.githubusercontent.com/106061407/170836586-09c233bb-e0cb-4700-acb0-8f5f417a4744.png)
 
+Selanjutya saya akan melakukan stage pada index.js meggunakan perintah
+
+```
+git add index.js 
+```
+
+Apabila ingin melakukan stage pada semua file kalian gunakan 
+
+```
+git add .
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170836636-006ad838-ae09-440a-8787-2d863988aecc.png)
+
+Untuk membuat commit kalian harus menjalankan perintah git commit
+
+![image](https://user-images.githubusercontent.com/106061407/170836729-38d76a8c-0d45-4af6-8045-b26053b3aae1.png)
+
+Selanjutnya saya akan pindah dan membuat branch development menggunakan perintah 
+
+```
+git checkout -b development
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170836951-809d5209-7ba2-4d6f-933f-d2a42ec9bd91.png)
+
+
+Untuk melihat list branch yang dimiliki gunakan
+
+```
+git branch -a
+```
+![image](https://user-images.githubusercontent.com/106061407/170837020-e4e4aba5-9760-45ce-adfa-31f29e2a348a.png)
