@@ -127,3 +127,41 @@ untuk step selanjutkan saya memberikan 1GB untuk format “swap”
 Swap adalah ruang pada disk yang digunakan ketika jumlah memori RAM fisik penuh. Ketika sistem Linux kehabisan RAM, halaman yang tidak aktif akan dipindahkan dari RAM ke ruang swap.
 
 Swap space dapat berbentuk partisi swap khusus atau file swap. Dalam kebanyakan kasus, ketika menjalankan Linux pada mesin virtual, partisi swap tidak ada sehingga satu-satunya pilihan kita adalah membuat file swap.
+
+![Img 1](assets/29.png)
+
+Pilih “Create”
+
+![Img 1](assets/30.png)
+
+Lalu kalian pilih “free space” > “Add GPT Partition”
+
+![Img 1](assets/31.png)
+
+Untuk Size saya berikan Max / atau semua space yang tersisa “8.997GB” , Format pilih “ext4”, Mount “/’ , Lalu pilih “Create”
+
+![Img 1](assets/32.png)
+
+Kemudian pilih “Done”
+
+![Img 1](assets/33.png)
+
+Pilih "Cotinue"
+
+![Img 1](assets/33.png)
+
+Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
+
+![Img 1](assets/34.png)
+
+Pada step ini bisa langsung di skip saja pilih “Done”
+
+![Img 1](assets/35.png)
+
+# Baca juga [Pengertian SSH] : https://bit.ly/3wUAylc
+
+![Img 1](assets/36.png)
+
+Pada step SSH Setup kalian pilih “Install OpenSSH Server” lalu pilih done
+
+![Img 1](assets/37.png)
