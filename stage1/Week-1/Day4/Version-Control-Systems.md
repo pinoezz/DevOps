@@ -140,3 +140,13 @@ Untuk melihat list branch yang dimiliki gunakan
 git branch -a
 ```
 ![image](https://user-images.githubusercontent.com/106061407/170837020-e4e4aba5-9760-45ce-adfa-31f29e2a348a.png)
+
+Selanjutnya saya akan melakukan git push (Git push merupakan proses upload data yang ada di database git local ke database git di server. Untuk melakukan hal tersebut kita harus melakukan perintah di bawah ini) 
+
+![image](https://user-images.githubusercontent.com/106061407/170837189-c5537fcc-3d9d-435c-a1cf-11a6ad8fa209.png)
+
+Keterangan : dikarenakan pindah branch diharuskan melakukan commit ulang pada branch development sebelum melakukan push
+
+
+
+git push origin development
