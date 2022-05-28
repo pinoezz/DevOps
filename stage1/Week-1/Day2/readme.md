@@ -15,7 +15,10 @@ Konfigurasi IP server dari IP lama ke IP baru, kemudian melakukan instalasi web 
 # Ketentuan​
 
 Ganti IP lama dengan IP baru
+
 Install Web Server Apache2 secara manual
+
 Apache2 dapat diakses melalui browser menggunakan IP
+
 Konfigurasi Apache2 agar dapat di akses publik dengan localtunnel
 
