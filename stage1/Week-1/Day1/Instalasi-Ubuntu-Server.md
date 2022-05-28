@@ -32,3 +32,98 @@ Pilih New
 ![Img 1](assets/5.png)
 
 Masukan nama dan pilih lokasi folder lalu “Next”
+
+![Img 1](assets/6.png)
+
+Sesuai Task untuk RAM nya 2GB (2048MB) lalu pilih “Next”
+
+![Img 1](assets/7.png)
+
+ Pilih Create a virtual hard disk now lalu “Create”
+ 
+![Img 1](assets/8.png)
+ 
+ Pilih VDI (Virtual Box Disk Image) lalu “Next”
+ 
+![Img 1](assets/9.png)
+ 
+ Pilih Dynamically allocated lalu “Next”
+ 
+ ![Img 1](assets/10.png)
+ 
+ Atur kapasitas storage menjadi 10GB lalu “Create”
+ 
+![Img 1](assets/11.png)
+
+Apabila berhasil akan muncul mesin yang sudah di buat
+
+![Img 1](assets/12.png)
+![Img 1](assets/13.png)
+
+Kemudian pilih “Start”
+
+![Img 1](assets/14.png)
+
+Pilih file Ubuntu Server 20.04LTS yang sudah di downlad lalu “Start”
+
+![Img 1](assets/15.png)
+
+Tunggu hingga proses selesai
+
+![Img 1](assets/16.png)
+
+Pada step ini kita diminta memilih bahasa , untuk bahasa yang saya pilih saya pakai bahasa inggris lalu “Enter”
+
+![Img 1](assets/17.png)
+
+Pilih Continue without updating lalu “Enter”
+
+![Img 1](assets/18.png)
+
+Pilih “Done” lalu “Enter”
+
+![Img 1](assets/19.png)
+
+Pada step ini karena intruksinya menggunakan static kalian “Enter” enp0s3
+
+![Img 1](assets/20.png)
+
+Pilih “Edit IPv4”
+
+![Img 1](assets/21.png)
+
+Pilih “Manual”
+
+![Img 1](assets/22.png)
+
+Setelah memih metode manual IPv4 / static kalian perlu mengisi Subnet,Address,Gateway, dan Name Server lalu pilih “Save”
+
+![Img 1](assets/23.png)
+
+Setelah itu DHCPv4 akan berubah menjadi Static lalu pilih “Done”
+
+![Img 1](assets/24.png)
+
+Pada step configure proxy langsung saja pilih “Done”
+
+![Img 1](assets/25.png)
+
+Pilih "Done"
+
+![Img 1](assets/25.png)
+
+Untuk Storage configuration kalian pilih “Costum storage layout” lalu “Done”
+
+![Img 1](assets/26.png)
+
+![Img 1](assets/27.png)
+
+Pilih “free space” lalu pilih “Add GPT Partition”
+
+![Img 1](assets/28.png)
+
+untuk step selanjutkan saya memberikan 1GB untuk format “swap”
+
+Swap adalah ruang pada disk yang digunakan ketika jumlah memori RAM fisik penuh. Ketika sistem Linux kehabisan RAM, halaman yang tidak aktif akan dipindahkan dari RAM ke ruang swap.
+
+Swap space dapat berbentuk partisi swap khusus atau file swap. Dalam kebanyakan kasus, ketika menjalankan Linux pada mesin virtual, partisi swap tidak ada sehingga satu-satunya pilihan kita adalah membuat file swap.
