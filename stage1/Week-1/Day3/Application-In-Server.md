@@ -274,3 +274,68 @@ Menginstal PM2 sangat sederhana, dan dapat dilakukan dalam satu baris kode.
 npm install -g pm2
 ```
 
+![image](https://user-images.githubusercontent.com/106061407/170827483-3647c869-75c1-4c7e-8f47-e6d283a264da.png)
+
+Untuk melihat apakah PM2 sudah terinstall atau melihat list PM2
+
+```
+pm2 list
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170827565-98c57d02-05df-4453-b8e3-b08ed00527a3.png)
+
+Selanjutnya saya akan menjalankan aplikasi node.js menggunakan PM2
+
+Pada pm2 kita dibutuhkan membuat ecosystem.config.js dan pakai perintah berikut.
+
+```
+pm2 ecosystem
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170827598-fd67dec1-c652-4705-a5e2-a1d6a8167ad9.png)
+
+Selanjutnya saya buat file node js , python dan golang
+
+![image](https://user-images.githubusercontent.com/106061407/170827792-b779e29d-6b85-4448-8ae9-274eb067ed40.png)
+
+Setelah semua file di buat saya akan menjalankannya
+
+lalu untuk memulaikan PM2 kalian ketikan
+
+```
+pm2 start node.js
+```
+![image](https://user-images.githubusercontent.com/106061407/170828092-03a3bf3f-db60-452f-a997-07b80b748954.png)
+
+python 
+```
+pm2 start python.py --interpreter python3
+```
+![image](https://user-images.githubusercontent.com/106061407/170828112-f0a53b87-fc13-4c5d-bc74-71a569dd4751.png)
+
+
+Golang
+
+```
+pm2 start golang.go
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170828140-df4ae510-bc73-4132-b4a7-e5ba9ec3d70f.png)
+
+
+Untuk melihat list kalian ketikan
+
+```
+pm2 list
+```
+![image](https://user-images.githubusercontent.com/106061407/170828166-58b4d846-c9af-4f51-b79a-a93844f26715.png)
+
+Selanjutnya saya akan tes menggunakan web browser
+
+![image](https://user-images.githubusercontent.com/106061407/170828275-54b4314a-82f8-41c1-8eb8-32c352efdcbc.png)
+
+![image](https://user-images.githubusercontent.com/106061407/170828297-e27b1adb-44b4-4ffc-a064-203dfe26e068.png)
+
+![image](https://user-images.githubusercontent.com/106061407/170828341-ff9689d6-28f3-47f4-be8d-c434ef16717e.png)
+
+Dikarenakan file golang tidak dapat digunakan pada PM2 jadi untuk foto di atas dapat dibuktikan file js dan python sudah dapat di akses di publik
