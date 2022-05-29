@@ -88,7 +88,9 @@ git init
 
 Setelah membuat 3 repository selanjutnya saya akan membuat aplikasi di dalam repository
 
-![image](https://user-images.githubusercontent.com/106061407/170835335-0d8227e8-dc69-4029-93ba-6c3b9ca1b048.png)
+![image](https://user-images.githubusercontent.com/106061407/170869792-5f7c3633-9dbb-4766-bf60-0e080901280a.png)
+
+Setelah melakukan git init akan muncul file .git pada repository kalian
 
 
 # Membuat 3 buah branch pada masing-masing aplikasi tersebut yaitu development, staging dan production
