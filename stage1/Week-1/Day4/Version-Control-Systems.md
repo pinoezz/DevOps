@@ -121,32 +121,7 @@ git add .
 
 ![image](https://user-images.githubusercontent.com/106061407/170836636-006ad838-ae09-440a-8787-2d863988aecc.png)
 
-Untuk membuat commit kalian harus menjalankan perintah git commit
+Untuk membuat commit kalian harus menjalankan perintah git commit -m "first commit"
 
 ![image](https://user-images.githubusercontent.com/106061407/170836729-38d76a8c-0d45-4af6-8045-b26053b3aae1.png)
 
-Selanjutnya saya akan pindah dan membuat branch development menggunakan perintah 
-
-```
-git checkout -b development
-```
-
-![image](https://user-images.githubusercontent.com/106061407/170836951-809d5209-7ba2-4d6f-933f-d2a42ec9bd91.png)
-
-
-Untuk melihat list branch yang dimiliki gunakan
-
-```
-git branch -a
-```
-![image](https://user-images.githubusercontent.com/106061407/170837020-e4e4aba5-9760-45ce-adfa-31f29e2a348a.png)
-
-Selanjutnya saya akan melakukan git push (Git push merupakan proses upload data yang ada di database git local ke database git di server. Untuk melakukan hal tersebut kita harus melakukan perintah di bawah ini) 
-
-![image](https://user-images.githubusercontent.com/106061407/170837189-c5537fcc-3d9d-435c-a1cf-11a6ad8fa209.png)
-
-Keterangan : dikarenakan pindah branch diharuskan melakukan commit ulang pada branch development sebelum melakukan push
-
-
-
-git push origin development
