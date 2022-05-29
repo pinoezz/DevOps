@@ -189,3 +189,9 @@ Selanjutnya akan saya lakukan push pada branch production
 ![image](https://user-images.githubusercontent.com/106061407/170870881-c232197b-3673-40d9-93b0-625a99c91bc7.png)
 
 ![image](https://user-images.githubusercontent.com/106061407/170870905-27f4faa0-9503-49bd-9105-01c0651a11b5.png)
+
+Untuk Repository NodeJs kita sudah berhasil membuat 3 branch dan masing masing berisi aplikasi index.js
+
+![image](https://user-images.githubusercontent.com/106061407/170871193-b6296275-217f-40c3-bb25-4d4a8b420f52.png)
+
+Selanjutnya lakukan hal yang sama pada Repository Python dan Golang
