@@ -213,5 +213,8 @@ git remote remove origin
 
 ---------------
 
+![image](https://user-images.githubusercontent.com/106061407/170878291-65895725-04e0-4628-8444-ed2b1cf73be9.png)
 
+Berikut adalah hasil task kali ini 
 
+https://github.com/pinoezz?tab=repositories
