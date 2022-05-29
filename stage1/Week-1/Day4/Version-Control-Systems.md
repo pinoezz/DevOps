@@ -128,11 +128,44 @@ Untuk membuat commit kalian harus menjalankan perintah git commit -m "first comm
 
 Selanjutnya saya akan melalukan git push (Git push merupakan proses upload data yang ada di database git local ke database git di server. Untuk melakukan hal tersebut kita harus melakukan perintah di bawah ini.)
 
+```
 git push origin master
+```
+
 
 ![image](https://user-images.githubusercontent.com/106061407/170866429-32d202f1-ea13-4fc5-a713-98de5649d3f5.png)
 
 Setelah melakukan push pada repository kalian refresh reporitory github kalian , akan ada file yang baru kita push
+
+Selanjutnya saya akan membuat 3 branch baru bernama (development, staging dan production) menggunakan perintah git branch 
+
+```
+git branch development
+```
+
+```
+git branch staging
+```
+
+```
+git branch production
+```
+
+Kemudia untuk cek branch yang tersedia gunakan perintah 
+
+```
+git branch -a
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170866923-da6177cd-3e75-43dc-84fd-52f8907b1ea0.png)
+
+Selanjutnya saya akan berpindah ke branch lain (contoh branch development) menggunakan perintah
+
+```
+git checkout development
+```
+
+![image](https://user-images.githubusercontent.com/106061407/170866998-9a063ee3-bce9-4a29-a0ab-6a66b3cd1970.png)
 
 
 
