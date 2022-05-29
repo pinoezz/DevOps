@@ -126,3 +126,13 @@ Untuk membuat commit kalian harus menjalankan perintah git commit -m "first comm
 
 ![image](https://user-images.githubusercontent.com/106061407/170836729-38d76a8c-0d45-4af6-8045-b26053b3aae1.png)
 
+Selanjutnya saya akan melalukan git push (Git push merupakan proses upload data yang ada di database git local ke database git di server. Untuk melakukan hal tersebut kita harus melakukan perintah di bawah ini.)
+
+git push origin master
+
+![image](https://user-images.githubusercontent.com/106061407/170866429-32d202f1-ea13-4fc5-a713-98de5649d3f5.png)
+
+Setelah melakukan push pada repository kalian refresh reporitory github kalian , akan ada file yang baru kita push
+
+
+
