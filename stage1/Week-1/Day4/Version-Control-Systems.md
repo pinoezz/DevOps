@@ -169,5 +169,23 @@ git checkout development
 
 ![image](https://user-images.githubusercontent.com/106061407/170866998-9a063ee3-bce9-4a29-a0ab-6a66b3cd1970.png)
 
+![image](https://user-images.githubusercontent.com/106061407/170870268-2dd5fe23-954e-4421-8d41-e89a11e9d00d.png)
+
+Setelah masuk branch development kita akan melakukan push di branch development
+
+![image](https://user-images.githubusercontent.com/106061407/170870579-1b8173d1-2050-43e3-ab36-fe8434525792.png)
+
+![image](https://user-images.githubusercontent.com/106061407/170870659-3d5bf55a-477c-40d9-a77a-5369df88631f.png)
+
+Selanjutnya akan saya lakukan push pada branch staging
+
+![image](https://user-images.githubusercontent.com/106061407/170870757-7488da0f-0e49-4417-979b-64edac0ae659.png)
+
+![image](https://user-images.githubusercontent.com/106061407/170870830-af2a9eaa-9c98-4731-8db4-cd154e5db6e4.png)
 
 
+Selanjutnya akan saya lakukan push pada branch production
+
+![image](https://user-images.githubusercontent.com/106061407/170870881-c232197b-3673-40d9-93b0-625a99c91bc7.png)
+
+![image](https://user-images.githubusercontent.com/106061407/170870905-27f4faa0-9503-49bd-9105-01c0651a11b5.png)
