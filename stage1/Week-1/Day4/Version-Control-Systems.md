@@ -195,3 +195,16 @@ Untuk Repository NodeJs kita sudah berhasil membuat 3 branch dan masing masing b
 ![image](https://user-images.githubusercontent.com/106061407/170871193-b6296275-217f-40c3-bb25-4d4a8b420f52.png)
 
 Selanjutnya lakukan hal yang sama pada Repository Python dan Golang
+
+Apabila saat kalian ingin meremote ssh dari repository lain terjadi kesalahan "error: remote origin already exists"
+
+Kalian perlu menghapus remote sebelumnya menggunakan perintah
+
+```
+git remote remove origin
+```
+![image](https://user-images.githubusercontent.com/106061407/170871489-2792322a-ffde-44f0-a605-2449a6ae5d95.png)
+
+![image](https://user-images.githubusercontent.com/106061407/170871630-9776e84a-c551-4f67-a065-23748ba116cd.png)
+
+
