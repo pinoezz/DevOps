@@ -119,7 +119,8 @@ Apabila ingin melakukan stage pada semua file kalian gunakan
 git add .
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/170836636-006ad838-ae09-440a-8787-2d863988aecc.png)
+![image](https://user-images.githubusercontent.com/106061407/170866108-67e2235b-7443-427c-a8de-ee76c6e9f980.png)
+
 
 Untuk membuat commit kalian harus menjalankan perintah git commit -m "first commit"
 
