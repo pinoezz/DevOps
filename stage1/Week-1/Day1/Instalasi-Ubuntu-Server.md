@@ -156,7 +156,7 @@ Kalian perlu mengisi beberapa kolom profile . Jika sudah pilih “Done”
 Pada step ini bisa langsung di skip saja pilih “Done”
 
 Baca juga
-[Pengertian SSH](https://bit.ly/3wUAylc](https://www.exabytes.co.id/blog/pengertian-ssh/#:~:text=Secure%20shell%20atau%20SSH%20adalah,jarak%20jauh%20melalui%20koneksi%20internet)
+[Pengertian SSH](https://www.exabytes.co.id/blog/pengertian-ssh/#:~:text=Secure%20shell%20atau%20SSH%20adalah,jarak%20jauh%20melalui%20koneksi%20internet)
 
 ![Img 1](assets/36.png)
 
@@ -245,7 +245,7 @@ Kemudan kalian save dan restart systemd-resolved nya menggunakan command berikut
 sudo systemctl restart systemd-resolved.service
 ```
 
-![Img 1](assets/51.png)
+![Img 1](assets/52.png)
 
  Kemudian test kembali ping google.com
  
