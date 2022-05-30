@@ -61,7 +61,20 @@ Apabila berhasil akan muncul mesin yang sudah di buat
 ![Img 1](assets/12.png)
 ![Img 1](assets/13.png)
 
+# Perbedaan NAT dan Bridge
+
 Kali ini saya menggunakan network adapter NAT ( NAT merupakan singkatan dari Network Address Translation adalah cara paling sederhana untuk mengakses jaringan eksternal dari virtual machine. Biasanya, itu tidak memerlukan konfigurasi pada jaringan host dan sistem guest. Ini adalah mode jaringan default di VirtualBox atau VMware.)
+
+Ketika virtual machine mengaktifkan NAT, ini akan bertindak seperti komputer nyata yang terhubung ke Internet melalui router. “Router”, dalam hal ini, adalah network machine VirtualBox atau VMware, yang memetakan lalu lintas ke virtual machine secara transparan. Di VirtualBox router ini ditempatkan antara setiap virtual machine dan host. Pemisahan ini memaksimalkan keamanan karena secara default virtual machine tidak dapat saling berbicara.
+
+Kerugian dari mode NAT adalah, seperti jaringan private di belakang router, virtual machine tidak terlihat dan tidak terjangkau dari internet luar. Kalian tidak dapat menjalankan server dengan cara ini kecuali jika kalian mengatur port forwarding.
+
+Bridge
+Bridged merupakan jenis jaringan yang menggunakan driver perangkat pada sistem host kalian yang menyaring data dari physical network adapter kalian. Oleh karena itu driver ini disebut driver “net filter”. Ini memungkinkan VirtualBox atau VMware untuk mencegat data dari jaringan fisik dan menyuntikkan data ke dalamnya, secara efektif membuat interface jaringan baru dalam software. 
+
+Ketika seorang guest menggunakan interface bridge, itu terlihat ke sistem host seolah-olah guest secara fisik terhubung ke interface menggunakan kabel jaringan. Host dapat mengirim data ke guest melalui interface itu dan menerima data dari itu. Ini berarti bahwa kalian dapat mengatur routing atau bridging antara guest dan seluruh jaringan kalian. Agar ini berfungsi, VirtualBox atau VMware membutuhkan driver perangkat di sistem host kalian. 
+
+
 
 Kemudian pilih “Start”
 
