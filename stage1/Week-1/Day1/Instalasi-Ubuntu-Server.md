@@ -61,6 +61,8 @@ Apabila berhasil akan muncul mesin yang sudah di buat
 ![Img 1](assets/12.png)
 ![Img 1](assets/13.png)
 
+Kali ini saya menggunakan network adapter NAT ( NAT merupakan singkatan dari Network Address Translation adalah cara paling sederhana untuk mengakses jaringan eksternal dari virtual machine. Biasanya, itu tidak memerlukan konfigurasi pada jaringan host dan sistem guest. Ini adalah mode jaringan default di VirtualBox atau VMware.)
+
 Kemudian pilih “Start”
 
 ![Img 1](assets/14.png)
