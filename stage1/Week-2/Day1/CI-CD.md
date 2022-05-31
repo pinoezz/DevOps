@@ -87,4 +87,15 @@ Lalu pilih edit file
 
 Kemudian commit change
 
+Kembali lagi ke website cloudflares
+
+![image](https://user-images.githubusercontent.com/106061407/171110895-e765379c-366e-4b32-aecf-ead2c0dcf30d.png)
+
+Akan otomatis mendeteksi adanya perubahan pada aplikasi sebelumnya karena saya sudah mengganti title 
+
+![image](https://user-images.githubusercontent.com/106061407/171111026-74b34721-759a-4d1c-8ba1-3ef9209607cb.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171111367-6fce4995-32f4-4bed-a8ad-cb9fc3d2a338.png)
+
+Untuk hasil akhir akan jadi seperti ini
 
