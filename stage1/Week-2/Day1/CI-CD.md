@@ -51,3 +51,18 @@ Kemudia pilih repository nya
 
 ![image](https://user-images.githubusercontent.com/106061407/171108043-c7d774e1-cfc3-48db-8f14-fca57f4aaaac.png)
 
+![image](https://user-images.githubusercontent.com/106061407/171108351-6ac9c879-a3a4-4878-b9e3-be1e43a32023.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171109652-1875e9e4-7361-410c-997b-2b99bfea983c.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/171108379-c03aa1d5-d751-416f-85c5-06193ef544e2.png)
+
+Berikut adalah proses deploy aplikasi kita harus menunggu hingga proses selesai
+
+![image](https://user-images.githubusercontent.com/106061407/171108588-27171872-6796-4647-96a7-28e05287c945.png)
+
+Pilih continue to project
+
+![image](https://user-images.githubusercontent.com/106061407/171108665-dcfa0f38-0cd8-41e2-9b6b-e0842bb171c1.png)
+
