@@ -47,6 +47,8 @@ Setelah itu sesuai task saya akan melakukan perubahan pada file /public/index.ht
 Kemudian kalian save dengan menekan ctrl + o enter kemudian ctrl + x untuk exit
 
 
+![image](https://user-images.githubusercontent.com/106061407/171107428-f7657963-3bc9-42c2-9103-af178612a149.png)
 
+![image](https://user-images.githubusercontent.com/106061407/171107576-62c7f0ab-2c6a-4d9d-8ad1-c4a46a4422e2.png)
 
 
