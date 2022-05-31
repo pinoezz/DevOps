@@ -34,21 +34,20 @@ Selanjutnya git init
 
 ![image](https://user-images.githubusercontent.com/106061407/171105760-630437ae-ffcb-4cbe-9b34-fff744a448a6.png)
 
-Selan
+Selanjutnya
 
-
-
-Setelah itu sesuai task saya akan melakukan perubahan pada file /public/index.html bagian <title>WaysHub</title> menjadi <title>WaysHub - Nama Anda</title>
-
-![image](https://user-images.githubusercontent.com/106061407/171106032-9635f79b-7ac8-43e0-a0e8-ae1bb536571a.png)
-
-![image](https://user-images.githubusercontent.com/106061407/171106089-e8098400-94e0-4d63-9539-6f48afd1f596.png)
-
-Kemudian kalian save dengan menekan ctrl + o enter kemudian ctrl + x untuk exit
 
 
 ![image](https://user-images.githubusercontent.com/106061407/171107428-f7657963-3bc9-42c2-9103-af178612a149.png)
 
 ![image](https://user-images.githubusercontent.com/106061407/171107576-62c7f0ab-2c6a-4d9d-8ad1-c4a46a4422e2.png)
 
+
+Selanjutnya kita buka https://dash.cloudflare.com/ lalu pilih pages dan create project
+
+![image](https://user-images.githubusercontent.com/106061407/171107874-2d72c9ff-8088-4656-b6ad-833f3d715d34.png)
+
+Kemudia pilih repository nya
+
+![image](https://user-images.githubusercontent.com/106061407/171108043-c7d774e1-cfc3-48db-8f14-fca57f4aaaac.png)
 
