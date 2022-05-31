@@ -95,7 +95,15 @@ Akan otomatis mendeteksi adanya perubahan pada aplikasi sebelumnya karena saya s
 
 ![image](https://user-images.githubusercontent.com/106061407/171111026-74b34721-759a-4d1c-8ba1-3ef9209607cb.png)
 
-![image](https://user-images.githubusercontent.com/106061407/171111367-6fce4995-32f4-4bed-a8ad-cb9fc3d2a338.png)
 
 Untuk hasil akhir akan jadi seperti ini
+
+# SEBELUM
+
+![image](https://user-images.githubusercontent.com/106061407/171111532-c4acdd71-3af1-43d7-bb6a-11d455bf6276.png)
+
+# SESUDAH
+
+![image](https://user-images.githubusercontent.com/106061407/171111367-6fce4995-32f4-4bed-a8ad-cb9fc3d2a338.png)
+
 
