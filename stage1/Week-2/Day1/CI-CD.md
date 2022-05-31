@@ -66,3 +66,25 @@ Pilih continue to project
 
 ![image](https://user-images.githubusercontent.com/106061407/171108665-dcfa0f38-0cd8-41e2-9b6b-e0842bb171c1.png)
 
+![image](https://user-images.githubusercontent.com/106061407/171110041-7bea0a92-546e-4d46-982e-b56e7669e29e.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/171110104-e3be8386-c229-45c2-b188-78725476ed73.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171110142-fba454db-d0d8-4d64-a50a-27c28e4e4a71.png)
+
+Kemudian saya akan melakukan perubahan pada file /public/index.html bagian <title>WaysHub</title> menjadi <title>WaysHub - Nama Anda</title>
+
+![image](https://user-images.githubusercontent.com/106061407/171110279-d4875b3b-c8cd-4f46-9b26-8adbdef03a12.png)
+
+Buka repo CI-CD lalu pilih index.html
+
+![image](https://user-images.githubusercontent.com/106061407/171110437-bbf2f772-ded4-4458-b5f4-91dad24806d5.png)
+
+Lalu pilih edit file
+
+![image](https://user-images.githubusercontent.com/106061407/171110672-8a81d30e-2f1e-4767-a105-10791e0f983d.png)
+
+Kemudian commit change
+
+
