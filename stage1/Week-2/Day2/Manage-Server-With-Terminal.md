@@ -18,3 +18,8 @@ Oleh karena itu penting nya mengusai terminal supaya kita dapat mengoprasikan OS
 Pada task kali ini saya menggunakan Ubuntu Server 20.04 
 
 Baca juga [Cara Install Ubuntu Server 20.04 Menggunakan VM](https://github.com/pinoezz/DevOps/blob/main/stage1/Week-1/Day1/Instalasi-Ubuntu-Server.md)
+
+![image](https://user-images.githubusercontent.com/106061407/171608954-5956fde3-b11d-4092-ac14-055e79a6dd10.png)
+
+Setelah meremote server ksaya akan membuat direktori baru
+
