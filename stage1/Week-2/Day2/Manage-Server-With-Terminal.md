@@ -59,6 +59,19 @@ sudo apt install ufw -y
 
 ![image](https://user-images.githubusercontent.com/106061407/171671866-8be45c22-bc53-4767-912a-73b48f9ab224.png)
 
+```
+echo "file 22"
+
+sudo ufw allow 22
+
+echo "file 80"
+
+sudo ufw allow 80
+
+echo "file 443"
+
+sudo ufw allow 443
+```
 
 ![image](https://user-images.githubusercontent.com/106061407/171672197-2f7c7a60-aa41-4205-a447-97f9092629cd.png)
 
