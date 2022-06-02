@@ -75,3 +75,14 @@ sudo ufw allow 443
 
 ![image](https://user-images.githubusercontent.com/106061407/171672197-2f7c7a60-aa41-4205-a447-97f9092629cd.png)
 
+Untuk mengeceknya kita bisa menggunakan
+
+```
+sudo ufw enable
+```
+
+```
+sudo ufw status
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171675203-c1e358ec-fbe4-4cb2-8948-f5195bd8babe.png)
