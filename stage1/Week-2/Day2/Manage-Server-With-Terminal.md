@@ -21,5 +21,13 @@ Baca juga [Cara Install Ubuntu Server 20.04 Menggunakan VM](https://github.com/p
 
 ![image](https://user-images.githubusercontent.com/106061407/171608954-5956fde3-b11d-4092-ac14-055e79a6dd10.png)
 
-Setelah meremote server ksaya akan membuat direktori baru
+Setelah meremote server saya akan membuat direktori baru
 
+![image](https://user-images.githubusercontent.com/106061407/171649912-e6b81bc5-3b4d-4d86-969e-17e3a4911d54.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/171650478-f0e8396a-c079-4fe0-9384-29459d2e21ae.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171651049-fb04d4c2-775f-4619-8340-9fd9a9b012fc.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171651147-e2b95642-9352-48cc-badb-c80aac67923c.png)
