@@ -1,1 +1,1 @@
-
+Minggu ke-2
