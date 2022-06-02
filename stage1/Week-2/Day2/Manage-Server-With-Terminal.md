@@ -36,4 +36,9 @@ Membuat sebuah file bash sederhana yang bertugas untuk mencari file bernama `sys
 
 ![image](https://user-images.githubusercontent.com/106061407/171665298-2605985f-77ea-41fb-bda5-43c3ac2b7110.png)
 
-![image](https://user-images.githubusercontent.com/106061407/171663604-20dfbf92-9a82-4dfc-8206-fd76d3401f1c.png)
+![image](https://user-images.githubusercontent.com/106061407/171666631-db26a5b8-cddc-4bf7-9c10-61de80f8dd4d.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171666685-92fee15e-b772-4433-9aa0-ab99b8b838e9.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171666722-d1ff0e0d-1e28-44c4-86bc-49d43a18bf8c.png)
+
