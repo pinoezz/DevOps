@@ -31,3 +31,9 @@ Setelah meremote server saya akan membuat direktori baru
 ![image](https://user-images.githubusercontent.com/106061407/171651049-fb04d4c2-775f-4619-8340-9fd9a9b012fc.png)
 
 ![image](https://user-images.githubusercontent.com/106061407/171651147-e2b95642-9352-48cc-badb-c80aac67923c.png)
+
+Membuat sebuah file bash sederhana yang bertugas untuk mencari file bernama `sysctl.conf`
+
+![image](https://user-images.githubusercontent.com/106061407/171665298-2605985f-77ea-41fb-bda5-43c3ac2b7110.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171663604-20dfbf92-9a82-4dfc-8206-fd76d3401f1c.png)
