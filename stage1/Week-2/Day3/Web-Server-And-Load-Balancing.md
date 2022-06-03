@@ -52,3 +52,33 @@ sudo apt install gtk3-nocsd
 
 Kemudian kalian bisa langsung lanjut membuat servernya
 
+Saya akan membuat 2 server lagi bernama server gateway dan server 2
+
+![image](https://user-images.githubusercontent.com/106061407/171847658-2be513b3-dc27-4af7-b0a4-fba75fd5552f.png)
+
+# Instal web server nginx pada server gateway
+
+![image](https://user-images.githubusercontent.com/106061407/171848443-03cfb348-1102-4fb0-89aa-e59d6f8e988c.png)
+
+
+Pada step ini saya akan menginstall nginx terlebih dahulu
+
+```
+sudo apt update; sudo apt upgrade
+```
+
+```
+sudo apt install nginx
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171848086-2dc59448-260f-47ec-9ec7-092584c98bb5.png)
+
+Untuk cek status nginx gunakan perintah 
+
+```
+sudo systemctl status nginx
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171848259-57b9e835-cc04-4f5c-b6e1-3c677b382efb.png)
+
+
