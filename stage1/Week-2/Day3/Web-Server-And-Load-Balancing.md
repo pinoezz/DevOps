@@ -155,3 +155,24 @@ Setelah itu saya membuat direktori baru lalu masuk ke direktori baru
 sudo nano my.reverse-proxy.conf
 ```
 
+```
+server { 
+    server_name mydomain.xyz; 
+  
+    location / { 
+             proxy_pass http://127.0.0.1:3000;
+    }
+}
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171875444-1a62849e-3b8e-4e0e-8092-ad443b78ac91.png)
+
+Selanjutnya pergi ke-bagian include, setelah itu masukan lokasi dari directory yang bersi konfigutasi yang sudah kalian buat tadi
+
+![image](https://user-images.githubusercontent.com/106061407/171875955-00ef6164-fbd1-44e9-b599-b2903dba9a7e.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171876239-421a2f92-1dfa-4561-ada8-6bc48ec2cf2c.png)
+
+Beberapa proses tadi adalah cara untuk membuat reverse proxy untuk aplikasi kita, kemudian pastikan untuk melakukan pengecekan konfigurasi dengan menjalankan perintah :
+
+
