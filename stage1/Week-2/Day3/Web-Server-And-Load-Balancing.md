@@ -60,6 +60,15 @@ Saya akan membuat 2 server lagi bernama server gateway dan server 2
 
 ![image](https://user-images.githubusercontent.com/106061407/171848779-b0d5a45e-6513-4e30-bfdf-37a482c6d8d7.png)
 
+Langkah awal saya akan masuk pada server gateway dengan menggunakan perintah
+
+```
+multipass shell server-gateway
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171851068-3572c711-3b80-4799-b2ec-1f98e467ab05.png)
+
+
 Pada step ini saya akan menginstall nginx terlebih dahulu
 
 ```
@@ -70,14 +79,28 @@ sudo apt update; sudo apt upgrade
 sudo apt install nginx
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/171848086-2dc59448-260f-47ec-9ec7-092584c98bb5.png)
+![image](https://user-images.githubusercontent.com/106061407/171851391-6806db27-d52f-45a2-8547-5d84c18518c9.png)
 
 Untuk cek status nginx gunakan perintah 
 
 ```
 sudo systemctl status nginx
 ```
+![image](https://user-images.githubusercontent.com/106061407/171852069-60ca1c1c-f8f7-4a2a-8d1d-1130aff3b5ad.png)
 
-![image](https://user-images.githubusercontent.com/106061407/171848259-57b9e835-cc04-4f5c-b6e1-3c677b382efb.png)
 
+Mengecek versi nginx menggunakan
 
+```
+nginx -v
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171851480-de861b1e-88a7-4193-9900-214fa4d0600e.png)
+
+kemudian saya akan cek pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/171852288-184d9142-4f6a-41ef-ad21-204982bb6495.png)
+
+Keterangan  : Apabila muncul seperti gambar diatas artinya web server nginx sudah berhasil diinstall dan sudah berjalan
+
+# Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
