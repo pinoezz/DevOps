@@ -23,4 +23,3 @@ sudo snap install multipass
 
 ![image](https://user-images.githubusercontent.com/106061407/171831951-bf677b21-fb13-4b25-8e97-132afa4c2a5a.png)
 
-
