@@ -58,8 +58,7 @@ Saya akan membuat 2 server lagi bernama server gateway dan server 2
 
 # Instal web server nginx pada server gateway
 
-![image](https://user-images.githubusercontent.com/106061407/171848443-03cfb348-1102-4fb0-89aa-e59d6f8e988c.png)
-
+![image](https://user-images.githubusercontent.com/106061407/171848779-b0d5a45e-6513-4e30-bfdf-37a482c6d8d7.png)
 
 Pada step ini saya akan menginstall nginx terlebih dahulu
 
