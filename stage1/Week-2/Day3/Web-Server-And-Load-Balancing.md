@@ -133,3 +133,25 @@ Untuk menjalankan aplikasi gunakan
 ```
 npm start
 ```
+
+lakukan di kedua server aplikasi
+
+# Membuat Konfigurasi Revese Proxy
+
+Apa itu Reverse Proxy?​
+Reverse proxy adalah konfigurasi standar yang digunakan untuk mengubah jalur traffic, misalkan aplikasi menggunakan port 3000 tetapi agar dapat di akses melalui port 80 maka harus menggunakan reverse proxy.
+
+Pertama-tama masuk ke folder nginx setelah itu buat suatu directory baru telebih dahulu.
+
+```
+cd /etc/nginx
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171870369-829fa723-fa42-4e46-b83b-049d961dbc64.png)
+
+Setelah itu saya membuat direktori baru lalu masuk ke direktori baru
+
+```
+sudo nano my.reverse-proxy.conf
+```
+
