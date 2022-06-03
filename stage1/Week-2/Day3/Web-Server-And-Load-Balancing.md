@@ -54,7 +54,10 @@ Kemudian kalian bisa langsung lanjut membuat servernya
 
 Saya akan membuat 2 server lagi bernama server gateway dan server 2
 
-![image](https://user-images.githubusercontent.com/106061407/171847658-2be513b3-dc27-4af7-b0a4-fba75fd5552f.png)
+![image](https://user-images.githubusercontent.com/106061407/171866764-855db866-1180-4073-9c29-de9fbbdd9eda.png)
+
+![image](https://user-images.githubusercontent.com/106061407/171866828-60672328-f64a-41f1-95aa-054ff93c4802.png)
+
 
 # Instal web server nginx pada server gateway
 
@@ -104,3 +107,29 @@ kemudian saya akan cek pada web browser
 Keterangan  : Apabila muncul seperti gambar diatas artinya web server nginx sudah berhasil diinstall dan sudah berjalan
 
 # Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
+
+Tutorial install node js [application in server](https://github.com/pinoezz/DevOps/blob/main/stage1/Week-1/Day3/Application-In-Server.md)
+
+![image](https://user-images.githubusercontent.com/106061S407/171860328-5a30f940-4375-415e-9828-a5a0a7e40571.png)
+
+Selanjutnya saya akan clone aplikasi 
+
+```
+git clone https://github.com/dumbwaysdev/wayshub-frontend
+```
+
+![image](https://user-images.githubusercontent.com/106061407/171862346-c96d5346-11da-4869-bbfb-2872e66a1671.png)
+
+
+Selanjutnya menginstall module dari aplikasi.js
+
+```
+npm install
+```
+![image](https://user-images.githubusercontent.com/106061407/171862998-c170b69a-8c04-4e0e-873c-1ee90a88ccee.png)
+
+Untuk menjalankan aplikasi gunakan
+
+```
+npm start
+```
