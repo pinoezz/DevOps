@@ -1,3 +1,7 @@
+Setelah mempelajari terkait web server, reverse proxy dan load balancing maka buatlah konfigurasi dengan ketentuan sebagai berikut:
+
+![image](https://user-images.githubusercontent.com/106061407/171826913-7119827e-e4b5-49b8-8494-9824ea5e012a.png)
+
 # Project Management​
 Tambahkan deskripsi berikut ke dalam kanban pada project management Anda
 
