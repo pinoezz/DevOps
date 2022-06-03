@@ -28,7 +28,7 @@ keterangan : disini kita menggunakan nvm
 nvm merupakan singkatan dari Node Version Manager. nvm adalah sebuah program yang akan membantu kita untuk menggunakan lebih dari satu versi Nodejs di dalam satu komputer.
 
 ```
-#exec bash
+exec bash
 ```
 
 keterangan : Jika nvm belum terdeteksi gunakan perintah di atas ini
