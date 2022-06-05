@@ -120,7 +120,13 @@ cd /etc/nginx
 Setelah itu saya membuat direktori baru lalu masuk ke direktori baru
 
 ```
-sudo nano my.reverse-proxy.conf
+mkdir dumbways
+```
+![image](https://user-images.githubusercontent.com/106061407/172043798-55e02abd-3e45-47de-9727-f4e9516030de.png)
+
+
+```
+sudo nano proxy.conf
 ```
 
 ```
@@ -132,6 +138,10 @@ server {
     }
 }
 ```
+
+![image](https://user-images.githubusercontent.com/106061407/172043952-95e9147a-c8d6-4a61-b6ae-f9c0dab7fe18.png)
+
+Selanjutnya keluar dari directory dumbways, setelah itu masuk ke dalam file nginx.conf.
 
 ![image](https://user-images.githubusercontent.com/106061407/171875444-1a62849e-3b8e-4e0e-8092-ad443b78ac91.png)
 
