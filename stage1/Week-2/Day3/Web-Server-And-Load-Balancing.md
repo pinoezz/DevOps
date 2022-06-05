@@ -316,3 +316,8 @@ Sekarang kita coba akses web browser kita lagi setelah itu akses nama domain kal
 
 
 ![image](https://user-images.githubusercontent.com/106061407/172049296-d5edbeb4-f5b4-46b2-a978-054f7dc93bb8.png)
+
+Keterangan :
+
+Jika aplikasi kalian masih bisa di akses berarti konfigurasi Load Balance kalian berhasil dan tidak ada error `
+
