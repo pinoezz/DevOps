@@ -208,6 +208,94 @@ dumbways.xyz
 ![image](https://user-images.githubusercontent.com/106061407/172043483-a625926d-283b-4d8f-ab5c-39dbab2c9b64.png)
 
 
-# konfigurasi load balancing pada server gateway yang mengarah ke server aplikasi2 
+# Konfigurasi load balancing pada server gateway yang mengarah ke server aplikasi2 
 
 
+# Pengertian Load Balancing
+
+
+Load balancing adalah proses pendistribusian traffic jaringan ke beberapa server. Ini untuk memastikan salah satu server tidak menanggung terlalu banyak beban permintaan. 
+Server website yang kelebihan beban membuat proses muat halaman menjadi lambat, atau bahkan tidak terhubung sama sekali.
+
+Secara sederhana, berikut prinsip kerja load balancing:
+
+Mendistribusikan permintaan klien atau beban jaringan secara efisien di beberapa server. Dengan pemerataan distribusi, website atau aplikasi menjadi lebih tanggap dan stabil ketika diakses oleh pengguna.
+
+Memastikan ketersediaan dengan mengirimkan permintaan hanya ke server yang sedang online
+
+Memberikan fleksibilitas untuk menambah atau mengurangi server sesuai permintaan
+
+# Cara Kerja Load Balancing
+
+Apapun bentuknya, perangkat load balancing mendistribusikan traffic ke beberapa server untuk memastikan tidak ada satu server pun yang menanggung beban berlebih. Secara efektif, load balancing meminimalkan waktu respon server. 
+
+# Konfigurasi Load Balancing
+
+Saat ini saya sudah mempunyai 3 server (gateway , aplikasi 1 dan aplikasi2)
+
+![image](https://user-images.githubusercontent.com/106061407/172044546-34b4bd2d-c4d8-42f9-9c95-ff7eb14951e9.png)
+
+Kemudian install dan jalankan npm pada aplikasi2 / server 2
+
+```
+sudo apt update
+sudo apt install nodejs npm
+```
+```
+npm i
+```
+```
+npm start
+```
+![image](https://user-images.githubusercontent.com/106061407/172044650-23e7fe92-1a08-4320-9b7a-543123ab3318.png)
+
+Kemudian masuk ke dalam konfigurasi reverse proxy yang sudah kita buat sebelumnya di server gateaway
+
+![image](https://user-images.githubusercontent.com/106061407/172044676-621b8f85-75dc-45b0-926d-3bb9a21f38cf.png)
+
+```
+cd /etc/nginx/dumbways
+```
+
+```
+sudo nano proxy.conf
+```
+
+Selanjutnya kita akan tambahkan konfigurasi ke dalam file proxy.conf. Sekarang kita akan coba tambahkan beberapa konfigurasi, kalian dapat menggunakan konfigurasi di bawah ini.
+
+upstream wayshub {
+    server 10.68.49.174:3000;
+    server 10.68.49.101:3000;
+}
+server {
+    server_name loadbalance.dumbways.xyz;
+
+    location / {
+             proxy_pass http://wayshub;
+    }
+} 
+    
+keterangan :
+
+Pada bagian upstream kalian dapat mengganti nama domain dengan nama yang kalian inginkan.
+
+Pada bagian server masukan IP dari server kalian, setelah itu diikuti dengan port aplikasi.
+
+Selanjutnya pada bagian proxy_pass ubah dari yang sebelumnya adalah alamat IP dari aplikasi kalian, sekarang kalian samakan dengan nama upstream yang ada di konfigurasi kalian.
+
+Jika sudah sekarang kita coba cek apakah konfigurasi yang sudah kita buat tadi itu error atau tidak.sudo
+
+```
+sudo nginx -t
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172044878-935c5f13-df65-43fc-b56e-6c3b1fe5892a.png)
+
+Jika tidak ada error jalankan perintah restart nginx untuk merestart nginx kita, karena kita sudah menambahkan 
+suatu konfigurasi baru di dalam file reverse proxy kita.
+ 
+ ```
+sudo systemctl restart nginx
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172044901-8d2c666e-27b7-4200-b4e0-acf8fc08c633.png)
