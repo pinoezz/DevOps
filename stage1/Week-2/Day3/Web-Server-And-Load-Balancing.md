@@ -169,7 +169,7 @@ sudo nano /etc/hosts
 ![image](https://user-images.githubusercontent.com/106061407/172044267-62a35f46-8cc6-4cb7-96c1-812372ab3efe.png)
 
 
-# Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
+# Instal aplikasi nodejs pada server aplikasi1
 
 
 ```
@@ -207,5 +207,7 @@ dumbways.xyz
 
 ![image](https://user-images.githubusercontent.com/106061407/172043483-a625926d-283b-4d8f-ab5c-39dbab2c9b64.png)
 
+
+# konfigurasi load balancing pada server gateway yang mengarah ke server aplikasi2 
 
 
