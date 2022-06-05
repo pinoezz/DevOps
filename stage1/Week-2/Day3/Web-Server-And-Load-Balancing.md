@@ -207,4 +207,29 @@ sudo nano /etc/hosts
 
 
 
+Jika kita lihat disini adalah kita mendapatkan 502 Bad Gateway kenapa? karena kita belum menjalankan aplikasi kita. Sekarang kita coba untuk menjalankan aplikasi dumbflix yang sudah pernah kita pakai sebelumnya. Untuk menjalankan aplikasi dumbflix kalian dapat mengikuti langkah-langkah berikut ini.
 
+```
+git clone https://github.com/dumbwaysdev/dumbflix-frontend.git
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172042248-ea651142-78eb-42dd-9e3e-d57c93f35685.png)
+
+```
+cd dumbflix-frontend
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172042289-3f80e5dd-babd-4df7-9c30-f49c64ea4bef.png)
+
+```
+sudo apt update
+sudo apt install nodejs npm
+```
+```
+npm i
+```
+
+
+```
+nodejs --version
+```
