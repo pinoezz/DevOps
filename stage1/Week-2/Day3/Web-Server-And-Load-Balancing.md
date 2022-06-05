@@ -141,6 +141,8 @@ server {
 
 ![image](https://user-images.githubusercontent.com/106061407/172043952-95e9147a-c8d6-4a61-b6ae-f9c0dab7fe18.png)
 
+Keterangan : ip pada proxypass kalian isi dengan ip aplikasi1 dan port nodejs
+
 Selanjutnya keluar dari directory dumbways, setelah itu masuk ke dalam file nginx.conf.
 
 
@@ -150,37 +152,22 @@ Selanjutnya pergi ke-bagian include, setelah itu masukan lokasi dari directory y
 
 ![image](https://user-images.githubusercontent.com/106061407/172044126-735ff194-3307-498e-a563-701c8b5aa117.png)
 
-Beberapa proses tadi adalah cara untuk membuat reverse proxy untuk aplikasi kita, kemudian pastikan untuk melakukan pengecekan konfigurasi dengan menjalankan perintah :
-
-# Setting Aplikasi 1
-
-![image](https://user-images.githubusercontent.com/106061407/172016087-3d413a22-9766-46c3-9be2-ec50bdb6c3d0.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172016776-7dd88366-64ab-4d61-b65b-9fc4976e87c8.png)
-
-
-![image](https://user-images.githubusercontent.com/106061407/172016072-d260b5ae-e392-4d01-aa0f-7a9476aa7f2f.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172016176-821e3ef0-0f1a-47f5-b590-d276384d877d.png)
-
-Selanjutnya pergi ke-bagian include, setelah itu masukan lokasi dari directory yang bersi konfigutasi yang sudah kalian buat tadi
-
-![image](https://user-images.githubusercontent.com/106061407/172016248-8167f58f-497a-4337-b2f3-253c4bf1857e.png)
-
-
-Beberapa proses tadi adalah cara untuk membuat reverse proxy untuk aplikasi kita, kemudian pastikan untuk melakukan pengecekan konfigurasi dengan menjalankan perintah :
+Jika sudah sekarang kita tinggal melakukan restart/reload Nginx kita.
 
 ```
-sudo nginx -t
+sudo systemctl restart nginx
 ```
+![image](https://user-images.githubusercontent.com/106061407/172044257-df3de8cc-a633-4588-9f20-1309151841e9.png)
 
-![image](https://user-images.githubusercontent.com/106061407/172016325-61856edd-1570-42b5-935f-4a5e4bc8f09e.png)
 
 Sekarang kita akan membuat sebuah virtual host. Untuk membuat virtual host kita harus masuk ke local server kita setelah itu masuk ke dalam file /etc/hosts.
 
 ```
 sudo nano /etc/hosts
 ```
+
+![image](https://user-images.githubusercontent.com/106061407/172044267-62a35f46-8cc6-4cb7-96c1-812372ab3efe.png)
+
 
 # Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
 
