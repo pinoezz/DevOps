@@ -49,6 +49,13 @@ Setelah meremote server saya akan membuat direktori baru
 
 ![image](https://user-images.githubusercontent.com/106061407/172058473-82d9a0fa-c9af-4a58-ab3d-ba61a0bac59e.png)
 
+![image](https://user-images.githubusercontent.com/106061407/172058829-d1bbe9e7-b2b5-4773-87e0-b0523e810436.png)
+
+
+
+![image](https://user-images.githubusercontent.com/106061407/172058818-bfe8424c-8c91-4ce8-bda7-7bc18b9118bb.png)
+
+
 ```
 find -type f -name sysctl.conf
 ```
