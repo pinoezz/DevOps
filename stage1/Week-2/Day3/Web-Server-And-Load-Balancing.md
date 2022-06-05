@@ -110,7 +110,7 @@ Keterangan  : Apabila muncul seperti gambar diatas artinya web server nginx suda
 
 Tutorial install node js [application in server](https://github.com/pinoezz/DevOps/blob/main/stage1/Week-1/Day3/Application-In-Server.md)
 
-![image](https://user-images.githubusercontent.com/106061S407/171860328-5a30f940-4375-415e-9828-a5a0a7e40571.png)
+(https://user-images.githubusercontent.com/106061S407/171860328-5a30f940-4375-415e-9828-a5a0a7e40571.png)
 
 Selanjutnya saya akan clone aplikasi 
 
