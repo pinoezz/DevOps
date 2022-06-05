@@ -263,6 +263,7 @@ sudo nano proxy.conf
 
 Selanjutnya kita akan tambahkan konfigurasi ke dalam file proxy.conf. Sekarang kita akan coba tambahkan beberapa konfigurasi, kalian dapat menggunakan konfigurasi di bawah ini.
 
+```
 upstream wayshub {
     server 10.68.49.174:3000;
     server 10.68.49.101:3000;
@@ -271,10 +272,13 @@ server {
     server_name loadbalance.dumbways.xyz;
 
     location / {
-             proxy_pass http://wayshub;
+             proxy_pass http://dumbways.xyz;
     }
 } 
-    
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172045263-05f5c5ad-a536-4058-97ea-2660c7007a60.png)
+
 keterangan :
 
 Pada bagian upstream kalian dapat mengganti nama domain dengan nama yang kalian inginkan.
@@ -299,3 +303,16 @@ sudo systemctl restart nginx
 ```
 
 ![image](https://user-images.githubusercontent.com/106061407/172044901-8d2c666e-27b7-4200-b4e0-acf8fc08c633.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172047053-12b2797a-aee5-4803-bce1-45b336b07f69.png)
+
+Untuk make sure apakah load balancing yang sudah kita buat tadi berjalan dengan baik atau tidak, kita coba untuk mematikan satu aplikasi kita.
+
+Kita masuk ke dalam salah satu server aplikasi kita, setelah itu kalian hentikan aplikasi kalian CTRL + C.
+
+![image](https://user-images.githubusercontent.com/106061407/172047948-70acee47-3f9b-41f9-8e7d-2b188ad4be50.png)
+
+Sekarang kita coba akses web browser kita lagi setelah itu akses nama domain kalian.
+
+
+![image](https://user-images.githubusercontent.com/106061407/172049296-d5edbeb4-f5b4-46b2-a978-054f7dc93bb8.png)
