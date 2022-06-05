@@ -61,8 +61,6 @@ Saya akan membuat 2 server lagi bernama server gateway dan server 2
 
 # Instal web server nginx pada server gateway
 
-(https://user-images.githubusercontent.com/106061407/171848779-b0d5a45e-6513-4e30-bfdf-37a482c6d8d7.png)
-
 Langkah awal saya akan masuk pada server gateway dengan menggunakan perintah
 
 ```
@@ -108,33 +106,43 @@ Keterangan  : Apabila muncul seperti gambar diatas artinya web server nginx suda
 
 # Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
 
-Tutorial install node js [application in server](https://github.com/pinoezz/DevOps/blob/main/stage1/Week-1/Day3/Application-In-Server.md)
-
-(https://user-images.githubusercontent.com/106061S407/171860328-5a30f940-4375-415e-9828-a5a0a7e40571.png)
-
-Selanjutnya saya akan clone aplikasi 
 
 ```
-git clone https://github.com/dumbwaysdev/wayshub-frontend
+git clone https://github.com/dumbwaysdev/dumbflix-frontend.git
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/171862346-c96d5346-11da-4869-bbfb-2872e66a1671.png)
-
-
-Selanjutnya menginstall module dari aplikasi.js
+![image](https://user-images.githubusercontent.com/106061407/172042248-ea651142-78eb-42dd-9e3e-d57c93f35685.png)
 
 ```
-npm install
+cd dumbflix-frontend
 ```
-![image](https://user-images.githubusercontent.com/106061407/171862998-c170b69a-8c04-4e0e-873c-1ee90a88ccee.png)
 
-Untuk menjalankan aplikasi gunakan
+![image](https://user-images.githubusercontent.com/106061407/172042289-3f80e5dd-babd-4df7-9c30-f49c64ea4bef.png)
 
+```
+sudo apt update
+sudo apt install nodejs npm
+```
+```
+npm i
+```
 ```
 npm start
 ```
 
-lakukan di kedua server aplikasi
+![image](https://user-images.githubusercontent.com/106061407/172043361-a27ec07e-5234-4ec0-b6e8-83fdfc71863c.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172043435-87fd14a8-4c09-4578-aefd-2495ea835641.png)
+
+Kemudian cek di web browser 
+
+```
+dumbways.xyz
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172043483-a625926d-283b-4d8f-ab5c-39dbab2c9b64.png)
+
+
 
 # Membuat Konfigurasi Revese Proxy
 
@@ -207,29 +215,3 @@ sudo nano /etc/hosts
 
 
 
-Jika kita lihat disini adalah kita mendapatkan 502 Bad Gateway kenapa? karena kita belum menjalankan aplikasi kita. Sekarang kita coba untuk menjalankan aplikasi dumbflix yang sudah pernah kita pakai sebelumnya. Untuk menjalankan aplikasi dumbflix kalian dapat mengikuti langkah-langkah berikut ini.
-
-```
-git clone https://github.com/dumbwaysdev/dumbflix-frontend.git
-```
-
-![image](https://user-images.githubusercontent.com/106061407/172042248-ea651142-78eb-42dd-9e3e-d57c93f35685.png)
-
-```
-cd dumbflix-frontend
-```
-
-![image](https://user-images.githubusercontent.com/106061407/172042289-3f80e5dd-babd-4df7-9c30-f49c64ea4bef.png)
-
-```
-sudo apt update
-sudo apt install nodejs npm
-```
-```
-npm i
-```
-
-
-```
-nodejs --version
-```
