@@ -104,46 +104,6 @@ kemudian saya akan cek pada web browser
 
 Keterangan  : Apabila muncul seperti gambar diatas artinya web server nginx sudah berhasil diinstall dan sudah berjalan
 
-# Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
-
-
-```
-git clone https://github.com/dumbwaysdev/dumbflix-frontend.git
-```
-
-![image](https://user-images.githubusercontent.com/106061407/172042248-ea651142-78eb-42dd-9e3e-d57c93f35685.png)
-
-```
-cd dumbflix-frontend
-```
-
-![image](https://user-images.githubusercontent.com/106061407/172042289-3f80e5dd-babd-4df7-9c30-f49c64ea4bef.png)
-
-```
-sudo apt update
-sudo apt install nodejs npm
-```
-```
-npm i
-```
-```
-npm start
-```
-
-![image](https://user-images.githubusercontent.com/106061407/172043361-a27ec07e-5234-4ec0-b6e8-83fdfc71863c.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172043435-87fd14a8-4c09-4578-aefd-2495ea835641.png)
-
-Kemudian cek di web browser 
-
-```
-dumbways.xyz
-```
-
-![image](https://user-images.githubusercontent.com/106061407/172043483-a625926d-283b-4d8f-ab5c-39dbab2c9b64.png)
-
-
-
 # Membuat Konfigurasi Revese Proxy
 
 Apa itu Reverse Proxy?​
@@ -212,6 +172,44 @@ Sekarang kita akan membuat sebuah virtual host. Untuk membuat virtual host kita 
 ```
 sudo nano /etc/hosts
 ```
+
+# Instal aplikasi nodejs pada server aplikasi1 dan server aplikasi2
+
+
+```
+git clone https://github.com/dumbwaysdev/dumbflix-frontend.git
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172042248-ea651142-78eb-42dd-9e3e-d57c93f35685.png)
+
+```
+cd dumbflix-frontend
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172042289-3f80e5dd-babd-4df7-9c30-f49c64ea4bef.png)
+
+```
+sudo apt update
+sudo apt install nodejs npm
+```
+```
+npm i
+```
+```
+npm start
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172043361-a27ec07e-5234-4ec0-b6e8-83fdfc71863c.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172043435-87fd14a8-4c09-4578-aefd-2495ea835641.png)
+
+Kemudian cek di web browser 
+
+```
+dumbways.xyz
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172043483-a625926d-283b-4d8f-ab5c-39dbab2c9b64.png)
 
 
 
