@@ -31,7 +31,7 @@ Setelah meremote server saya akan membuat direktori baru
 
 ![image](https://user-images.githubusercontent.com/106061407/171651147-e2b95642-9352-48cc-badb-c80aac67923c.png)
 
-# Membuat sebuah file bash sederhana yang bertugas untuk mencari file bernama `sysctl.conf`
+# Membuat sebuah file bash sederhana yang bertugas untuk mencari file bernama `sysctl.conf`(file system etc)
 
 ![image](https://user-images.githubusercontent.com/106061407/171665298-2605985f-77ea-41fb-bda5-43c3ac2b7110.png)
 
@@ -40,6 +40,21 @@ Setelah meremote server saya akan membuat direktori baru
 ![image](https://user-images.githubusercontent.com/106061407/171666685-92fee15e-b772-4433-9aa0-ab99b8b838e9.png)
 
 ![image](https://user-images.githubusercontent.com/106061407/171666722-d1ff0e0d-1e28-44c4-86bc-49d43a18bf8c.png)
+
+
+# Membuat sebuah file bash sederhana yang bertugas untuk mencari file bernama `sysctl.conf`(create file)
+
+![image](https://user-images.githubusercontent.com/106061407/172058672-a44dc9cc-534d-4185-8c83-af0b9aedde8e.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/172058473-82d9a0fa-c9af-4a58-ab3d-ba61a0bac59e.png)
+
+```
+find -type f -name sysctl.conf
+```
+![image](https://user-images.githubusercontent.com/106061407/172058554-31efb6a4-1771-4a53-a9ed-2f2ade761c8f.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172058729-4db98e8f-d981-4084-9c06-c2ba8fdc4a1c.png)
 
 
 # Membuat sebuah file bash serderhana yang bertugas untuk membuat firewall port 22, 80 dan 443 
