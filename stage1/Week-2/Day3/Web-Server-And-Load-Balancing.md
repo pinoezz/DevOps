@@ -143,13 +143,12 @@ server {
 
 Selanjutnya keluar dari directory dumbways, setelah itu masuk ke dalam file nginx.conf.
 
-![image](https://user-images.githubusercontent.com/106061407/171875444-1a62849e-3b8e-4e0e-8092-ad443b78ac91.png)
 
-Selanjutnya pergi ke-bagian include, setelah itu masukan lokasi dari directory yang bersi konfigutasi yang sudah kalian buat tadi
+![image](https://user-images.githubusercontent.com/106061407/172044113-41d21b60-b9e3-4087-af23-5ea6586eb3a3.png)
 
-![image](https://user-images.githubusercontent.com/106061407/171875955-00ef6164-fbd1-44e9-b599-b2903dba9a7e.png)
+Selanjutnya pergi ke-bagian include, setelah itu masukan lokasi dari directory yang bersi konfigutasi yang sudah kalian buat tadi.
 
-![image](https://user-images.githubusercontent.com/106061407/171876239-421a2f92-1dfa-4561-ada8-6bc48ec2cf2c.png)
+![image](https://user-images.githubusercontent.com/106061407/172044126-735ff194-3307-498e-a563-701c8b5aa117.png)
 
 Beberapa proses tadi adalah cara untuk membuat reverse proxy untuk aplikasi kita, kemudian pastikan untuk melakukan pengecekan konfigurasi dengan menjalankan perintah :
 
