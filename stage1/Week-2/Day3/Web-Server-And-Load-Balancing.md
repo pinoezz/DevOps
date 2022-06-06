@@ -10,6 +10,8 @@ Pengertian Web Server menurut pemahaman saya yaitu sebuah peragkat lunak yang me
  
  Untuk task kali ini saya akan menggunakan multipass yang berfungsi untuk server nantinya
  
+Multipass  dirancang untuk pengembang yang menginginkan lingkungan Ubuntu baru dengan satu perintah. Pada dasarnya alat ini dirancang untuk menyederhanakan penginstalan berbagai versi Ubuntu pada mesin virtual yang berjalan di sistem virtualisasi Linux, Windows, dan macOS.
+ 
  Link Download [Multipass](https://multipass.run/)
  
  Perintah Linux
