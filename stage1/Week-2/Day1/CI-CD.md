@@ -1,3 +1,18 @@
+# CI/CD
+
+# Apa itu CI/CD?​
+
+CI/CD atau Continuous Integration dan Continuous Deployment merupakan metode untuk mengirimkan perubahan code secara terus menerus hingga aplikasi dapat release ke publik dengan otomatis.
+
+Continuous integration merupakan proses otomatis untuk memastikan semua code sudah berjalan dengan baik, jika terjadi error maka proses tersebut akan diulangi dari awal hingga code tersebut sudah tidak ada error.
+
+Continuous deployment merupakan proses otomatis agar aplikasi yang telah siap di kirim ke server hingga aplikasi dapat diakses secara public.
+
+# Cloudflare
+
+![image](https://user-images.githubusercontent.com/106061407/172094086-c971acc4-af5a-4ae5-9db9-adeef74a1a28.png)
+
+
 Cloudflare adalah salah satu layanan Content Delivery Network (CDN) yang mempunyai fitur yang lebih baik dari standar CDN dan merupakan sebuah layanan web security. Layanan ini didapatkan dengan mudah dan memiliki tarif yang gratis
 
 registrasi Clouflare
