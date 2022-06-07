@@ -76,11 +76,7 @@ Apabila berhasil masuk ke server tampilan akan menjadi seperti ini
 
 Saya akan login terlebih dahulu pada server gateway
 
-![image](https://user-images.githubusercontent.com/106061407/172410491-85ed1818-8f32-4a56-a53e-8b124f98ad6b.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172410537-1a127949-84a4-476d-9ddb-ad33b2b3a470.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172411064-ece83486-a3b1-4986-9bb6-949430881eb3.png)
+![image](https://user-images.githubusercontent.com/106061407/172411736-a114dcff-9807-44f1-b9d7-d91c94200727.png)
 
 Pertama tama saya akan melakukan update dan upgrade pada server Gateway menggunakan perintah
 
