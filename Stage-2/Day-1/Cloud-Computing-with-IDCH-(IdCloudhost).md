@@ -83,5 +83,87 @@ Pertama tama saya akan melakukan update dan upgrade pada server Gateway mengguna
 ```
 sudo apt update ; sudo apt upgrade
 ```
+![image](https://user-images.githubusercontent.com/106061407/172413097-e9f3b975-30c7-464a-bf7d-f76caceb3281.png)
+
+Kemudian check versi nginx dengan menggunakan perintah 
+
+```
+nginx -v
+```
+
+Seharusnya pada server Gateway ini otomatis terinstall nginx
+
+![image](https://user-images.githubusercontent.com/106061407/172416655-068e16f5-8a80-4295-a8a3-dd0a3c1e190b.png)
+
+Selanjutnya buat direktori baru pada /etc/nginx , saya akan membuat direktori baru bernama dumbways dengan perintah
+
+```
+sudo mkdir dumbways
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172417114-c0c9b398-3bdb-4c1b-b668-bfb8f5756cb3.png)
+
+Selanjutnya saya akan membuat file untuk menyimpan konfigurasi dari reverse proxy 
+
+```
+sudo nano proxy.conf
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172419867-47339153-f52d-4acf-baa8-cdf344bb48b9.png)
+
+```
+server {
+        server_name wayshub.xyz;
+
+        location / {
+                proxy_pass http://10.71.15.131:3000;
+        }
+}
+```
+
+Keterangan : server_name adalah nama server , proxy_pass isi dengan ip dari aplikasi 
+
+Kemudian save 
+
+![image](https://user-images.githubusercontent.com/106061407/172418453-7a74ef01-49f2-4b68-8c1d-1a9dffc91e59.png)
+
+Kemudian masuk ke file nginx.conf untuk menambahkan konfigurasi proxypass
+
+![image](https://user-images.githubusercontent.com/106061407/172418936-2ad280ca-3f74-40cf-9e84-7320b19b8bde.png)
+
+Setelah menambahkan konfigurasi reverse proxy pada nginx.conf kalian bisa save lalu exit
+
+![image](https://user-images.githubusercontent.com/106061407/172420887-cbed699f-3779-446b-ad1f-d5b68326738d.png)
+
+
+Untuk mengecek konfigurasi file reverse proxy kalian bisa menggunakan perintah 
+
+```
+sudo nginx -t
+```
+
+# Menginstall Aplikasi Frontend 
+
+Pertama tama switch atau login terlebih dahulu pada server aplikasi atau server frontend terlebih dahulu
+
+![image](https://user-images.githubusercontent.com/106061407/172421715-c551ff7d-15f9-475b-8398-564024451c29.png)
+
+Disini saya sudah login pada server aplikasi 
+
+![image](https://user-images.githubusercontent.com/106061407/172421978-79f003cd-0493-4f88-a6a2-515cfe17957e.png)
+
+Selanjutnya cloning fork https://github.com/dumbwaysdev/wayshub-frontend menggunakan perintah
+
+```
+git clone https://github.com/dumbwaysdev/wayshub-frontend
+```
+Karena disini saya akan mendeploy aplikasi frontend dengan konfigurasi node js jadi terlebih dahulu saya akan menginstall NPM (Node Package Manager)
+dan NVM  (Node Version Manager) terlebih dahulu 
+
+![image](https://user-images.githubusercontent.com/106061407/172423325-f0527f60-4672-48d5-abaf-72beeee70e37.png)
+
+```
+sudo apt install npm
+```
 
 
