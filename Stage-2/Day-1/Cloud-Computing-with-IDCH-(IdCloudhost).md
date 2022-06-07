@@ -62,11 +62,11 @@ Selanjutnya saya akan login pada kedua server yang sudah saya buat
 
 Untuk ip kalian bisa cek dengan mengklik resource 
 
-![image](https://user-images.githubusercontent.com/106061407/172408986-845d539b-410a-4d06-acd5-5491c2657d0f.png)
+![image](https://user-images.githubusercontent.com/106061407/172426475-b302a180-bd07-4cbb-a11c-f62556015b8d.png)
 
 Kalian copy ip public lalu ketikan ssh "username"@"ip" lalu masukan password
 
-![image](https://user-images.githubusercontent.com/106061407/172409319-2037cc3a-d8ab-4963-9e36-f77c1ca53491.png)
+![image](https://user-images.githubusercontent.com/106061407/172426363-907dc855-dbff-46fc-86d9-7b9cce7ed836.png)
 
 Apabila berhasil masuk ke server tampilan akan menjadi seperti ini
 
