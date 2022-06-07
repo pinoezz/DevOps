@@ -70,7 +70,7 @@ Kalian copy ip public lalu ketikan ssh "username"@"ip" lalu masukan password
 
 Apabila berhasil masuk ke server tampilan akan menjadi seperti ini
 
-![image](https://user-images.githubusercontent.com/106061407/172409542-c97a5886-e1c9-4032-b039-f830e6e71d62.png)
+![image](https://user-images.githubusercontent.com/106061407/172427488-e422b7f9-1a12-418c-bf83-85b0bf9efc5f.png)
 
 # Melakukan konfigurasi reverse proxy pada Server Gateway
 
@@ -146,9 +146,29 @@ sudo nginx -t
 
 Pertama tama switch atau login terlebih dahulu pada server aplikasi atau server frontend terlebih dahulu
 
+![image](https://user-images.githubusercontent.com/106061407/172430835-8783286a-0a18-466d-bb37-b264eaf9dad5.png)
+
+saya juga akan membuat user baru terlebih dahulu 
+
+![image](https://user-images.githubusercontent.com/106061407/172431548-a72adb98-c3a4-4ef1-80d2-411c32b758f6.png)
+
+Setelah itu buat juga password untuk user aplikasi
+
 ![image](https://user-images.githubusercontent.com/106061407/172421715-c551ff7d-15f9-475b-8398-564024451c29.png)
 
-Disini saya sudah login pada server aplikasi 
+Untuk menghapus user kalian bisa gunakan perintah userdel
+
+![image](https://user-images.githubusercontent.com/106061407/172432690-df6049f4-9edb-47c7-aaf3-b68159d1a186.png)
+
+Kemudian saya akan membuat user dengan direktori 
+
+![image](https://user-images.githubusercontent.com/106061407/172433364-85a2c8a1-510a-4bd0-b509-d7d9764695e0.png)
+
+Menggunakan perintah useradd -m untuk membuat user baru sekaligus beserta direktori
+
+Berikut tadi adalah cara menggunakan useradd saya akan melanjutkan lagi pada instalasi npm , nvm dan cloning fork
+
+Disini saya sudah login pada server frontend/aplikasi
 
 ![image](https://user-images.githubusercontent.com/106061407/172421978-79f003cd-0493-4f88-a6a2-515cfe17957e.png)
 
@@ -166,4 +186,39 @@ dan NVM  (Node Version Manager) terlebih dahulu
 sudo apt install npm
 ```
 
+![image](https://user-images.githubusercontent.com/106061407/172436747-27c08234-f845-4ed1-99ae-31a9f343c2fb.png)
+
+
+Selanjutnya saya akan Install NVM (Node Version Manager) menggunakan link di bawah ini
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+![image](https://user-images.githubusercontent.com/106061407/172436878-72c2c2c0-5cfa-44dc-a28c-b0c39712f2b4.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172437204-c25fbcc8-97c5-451e-ae5b-d14128099522.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172437471-6f67210e-09e5-4a74-bd44-73d4eab51675.png)
+
+Setelah semua sudah saya akan menginstall PM2 yang tujuannya yaitu supaya aplikasi dapat berjalan pada background
+
+```
+npm install pm2 -g
+```
+![image](https://user-images.githubusercontent.com/106061407/172438334-150c24ff-4f02-4d0b-980b-b34f9c075c51.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172438395-8691fc8b-9ae7-4645-ae2d-e296a37ad434.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172438414-55f97f9b-dce8-4b30-b4cd-cb25435ec08d.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172438524-cf4fb8fa-e587-421b-bbe6-9f4ada1243aa.png)
+
+Dikarenakan pada direktori diatas tidak ada file index.js untuk menjalankannya kita harus terlebih dahulu membuat file ecosystem untuk menjalankan aplikasinya
+
+![image](https://user-images.githubusercontent.com/106061407/172439023-d186e13c-3381-4744-9f3a-6df50b38bf3b.png)
+
+```
+pm2 ecosystem
+```
+![image](https://user-images.githubusercontent.com/106061407/172439727-a99aca65-2635-48ce-8841-8bf0bec9c342.png)
 
