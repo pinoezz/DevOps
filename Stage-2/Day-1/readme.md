@@ -3,9 +3,9 @@
 
 Membuat Server Gateway dan Aplikasi menggunakan [IdCloudhost](https://console.idcloudhost.com/) 
 
-Menggunakan fork https://github.com/dumbwaysdev/wayshub-frontend pada Server Aplikasi
-
 Melakukan konfigurasi reverse proxy pada Server Gateway
+
+Menggunakan fork https://github.com/dumbwaysdev/wayshub-frontend pada Server Aplikasi
 
 Melakukan Konfigurasi PM2
 
