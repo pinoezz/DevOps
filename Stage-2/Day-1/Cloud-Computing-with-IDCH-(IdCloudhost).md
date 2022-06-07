@@ -15,6 +15,7 @@ Teknologi Cloud Computing ini menjadikan internet sebagai pusat server dalam men
 
 PT Cloud Hosting Indonesia (IDCloudHost) Merupakan Salah Satu Web Hosting Provider yang Ada di Indonesia dengan Menawarkan Layanan Seperti Pendaftaran Domain, Cloud Hosting, Server (VPS & Dedicated Server), Reseller Domain & Hosting, dan Beberapa Layanan Lainnya.
 
+
 Langkah pertama dalam pembuatan server kalian terlebih dahulu harus membuat akun IdCloudhost menggunakan link di bawah ini
 
 [IdCloudhost](https://idcloudhost.com/)
@@ -43,6 +44,48 @@ Kemudian kalian isi username dan password , untuk ssh ini opsional kemudian pili
 
 Tunggu proses building server aplikasi hingga selesai
 
+Apabila proses sudah selesai selanjutnya saya akan membuat Server Gateway
 
+![image](https://user-images.githubusercontent.com/106061407/172406372-6947691d-644f-4764-9fda-4a88d6c7eb29.png)
+
+Untuk type pilih app catalog dan Os nya Nginx
+
+![image](https://user-images.githubusercontent.com/106061407/172407417-a2fc6cdc-429f-4118-8791-bdc4a750fa53.png)
+
+Kemudian isi username password dan resource name , untuk ssh ini opsional kemudian pilih create
+
+![image](https://user-images.githubusercontent.com/106061407/172407693-37dba27e-86a0-4fe3-9f15-0f78a8a2089d.png)
+
+Tunggu hingga proses building Gateway selesai
+
+Selanjutnya saya akan login pada kedua server yang sudah saya buat 
+
+Untuk ip kalian bisa cek dengan mengklik resource 
+
+![image](https://user-images.githubusercontent.com/106061407/172408986-845d539b-410a-4d06-acd5-5491c2657d0f.png)
+
+Kalian copy ip public lalu ketikan ssh "username"@"ip" lalu masukan password
+
+![image](https://user-images.githubusercontent.com/106061407/172409319-2037cc3a-d8ab-4963-9e36-f77c1ca53491.png)
+
+Apabila berhasil masuk ke server tampilan akan menjadi seperti ini
+
+![image](https://user-images.githubusercontent.com/106061407/172409542-c97a5886-e1c9-4032-b039-f830e6e71d62.png)
+
+# Melakukan konfigurasi reverse proxy pada Server Gateway
+
+Saya akan login terlebih dahulu pada server gateway
+
+![image](https://user-images.githubusercontent.com/106061407/172410491-85ed1818-8f32-4a56-a53e-8b124f98ad6b.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172410537-1a127949-84a4-476d-9ddb-ad33b2b3a470.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172411064-ece83486-a3b1-4986-9bb6-949430881eb3.png)
+
+Pertama tama saya akan melakukan update dan upgrade pada server Gateway menggunakan perintah
+
+```
+sudo apt update ; sudo apt upgrade
+```
 
 
