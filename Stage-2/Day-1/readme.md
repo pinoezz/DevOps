@@ -9,4 +9,6 @@ Menggunakan fork https://github.com/dumbwaysdev/wayshub-frontend pada Server Apl
 
 Melakukan Konfigurasi PM2
 
+Membuat user baru
+
 Mendeploy aplikasi menggunakan [CloudFlare](https://dash.cloudflare.com/)
