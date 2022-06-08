@@ -157,8 +157,25 @@ sudo usermod -aG sudo mysql
 
 # Menginstall mysql pada server Database
 
+![image](https://user-images.githubusercontent.com/106061407/172667573-ecc517d8-1d6f-4dec-8c75-23acdd29f15a.png)
 
 ```
 sudo apt update ; sudo apt upgrade
+```
+![image](https://user-images.githubusercontent.com/106061407/172667664-7fc2956d-32ea-4079-93cf-9bf70c15c25e.png)
+
+```
+sudo apt install mysql-server
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172668800-e738057d-cdae-4acb-bb6d-cdf427de0198.png)
+
+
+Untuk instalasi baru MySQL, Anda akan menjalankan skrip keamanan DBMS yang disertakan. Skrip ini mengubah beberapa opsi asali yang kurang aman untuk hal-hal seperti log masuk root jarak jauh dan pengguna sampel.
+
+Jalankan skrip keamanan dengan sudo:
+
+```
+sudo mysql_secure_installation
 ```
 
