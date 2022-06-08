@@ -8,7 +8,7 @@ Generate SSH Key dan transfer ke semua server
 
 Semua server harus saling terhubung tanpa menggunakan username dan password
 
-# Set Uo Database
+# Set Up Database
 
 Menginstall mysql pada server Database
 
