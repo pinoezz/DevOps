@@ -70,6 +70,55 @@ Pertama tama gunakan ssh-keygen untuk membuat ssh key
 ssh-keygen
 ```
 
+![image](https://user-images.githubusercontent.com/106061407/172611219-3419308f-b99d-46c0-8c76-00c0ced47ac1.png)
+
+Kemudian masuk ke direktori .ssh lalu gunakan perintahcat untuk melihat id_rsa.pub
+
+```
+cat id_rsa.pub
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172611763-dda5db7a-9ffa-401c-be15-df3862a7bba7.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/172611607-39629c75-117a-48ef-9b85-a810ba4d58ac.png)
+
+Kemudian buat file authorized_keys dan masukan id_rsa.pub kalian disini lalu save dan exit
+
+![image](https://user-images.githubusercontent.com/106061407/172622706-a23bbc06-50b0-4704-bec5-0daf339d4fd0.png)
+
+Sebelumnya buat terlebih dahulu direktori .ssh pada server frontend
+
+![image](https://user-images.githubusercontent.com/106061407/172622028-ee959230-51a4-4c68-accb-28d2c2fc6214.png)
+
+
+Kemudian saya akan memigrasikan file ssh id_rsa.pub ke server aplikasi frontend menggunakan perintah scp id_rsa.pub "username"@ip:./
+
+
+Pada server gateway masukan perintah
+
+```
+scp id_rsa.pub aplikasi@103.31.38.84:/home/aplikasi/.ssh/
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172622771-524245fc-2bd1-4cc8-aa7a-ddc24bc0c9c3.png)
+
+id_rsa.pub berhasil di migrasi kemudian buat authorized_keys
+
+![image](https://user-images.githubusercontent.com/106061407/172623251-c461e2ea-b5cf-4b4e-a621-3e217f67daff.png)
+
+Masukan id_rsa.pub
+
+Kemudian kita coba login server frontend tanpa password pada server gateway 
+
+![image](https://user-images.githubusercontent.com/106061407/172623656-c89d4722-929d-4649-a8bf-4ebb0efc7acd.png)
+
+Berhasil ya
+
+![image](https://user-images.githubusercontent.com/106061407/172629244-f742a8d3-ac11-49c7-a2ee-7363d321a365.png)
+
+
+# Test login server gateway melalui server frontend
 
 
 # MySQL 
