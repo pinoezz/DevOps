@@ -115,10 +115,10 @@ Kemudian kita coba login server frontend tanpa password pada server gateway
 
 Berhasil ya
 
-![image](https://user-images.githubusercontent.com/106061407/172629244-f742a8d3-ac11-49c7-a2ee-7363d321a365.png)
+Kemudian lakukan hal serupa pada ke 3 server lainnya
 
+![image](https://user-images.githubusercontent.com/106061407/172664502-f9244bdc-d796-422e-a174-f02dded8dbd5.png)
 
-# Test login server gateway melalui server frontend
 
 
 # MySQL 
@@ -130,4 +130,35 @@ MySQL adalah sebuah database management system (manajemen basis data) menggunaka
 
 # Membuat server Database menggunakan [IdCloudhost](https://console.idcloudhost.com/) 
 
+![image](https://user-images.githubusercontent.com/106061407/172664926-210ad0ee-2c98-4c76-8ef5-97245ce275b0.png)
+
+# Membuat user baru untuk database
+
+![image](https://user-images.githubusercontent.com/106061407/172666900-6d040ad9-b4d3-4960-8640-a65204130622.png)
+
+
+Menggunakan perintah adduser untuk menambahkan user
+
+```
+sudo adduser mysql
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172667228-fbf23b88-0bc5-4ea9-91e2-744933278cb4.png)
+
+
+Untuk memberikan izin sudo pada user baru gunakan perintah
+
+```
+sudo usermod -aG sudo mysql
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172667452-8fa3cd7a-ae7b-44e4-bf92-938995e45609.png)
+
+
+# Menginstall mysql pada server Database
+
+
+```
+sudo apt update ; sudo apt upgrade
+```
 
