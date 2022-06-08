@@ -153,8 +153,18 @@ Menggunakan perintah adduser untuk menambahkan user
 ```
 sudo adduser aplikasi
 ```
+![image](https://user-images.githubusercontent.com/106061407/172525608-f0a8578e-d83c-48a2-9523-50760d1844c8.png)
+
+Untuk memberikan izin sudo pada user baru gunakan perintah 
+
+```
+sudo usermod -aG sudo aplikasi
+```
 
 Untuk membuat user aplikasi bisa gunakan perintah diatas
+
+![image](https://user-images.githubusercontent.com/106061407/172525912-1323658f-03a8-4a54-b8c6-7fcad6643221.png)
+
 
 Kemudian untuk login / pindah user bisa menggunakan perintah
 
@@ -170,27 +180,25 @@ Untuk login ssh bisa menggunakan cara seperti ini
 ssh aplikasi@ip
 ```
 
+![image](https://user-images.githubusercontent.com/106061407/172525963-2eb93783-a47a-46a5-924d-b786bf4ca841.png)
+
+Kemudian saya update dan upgrade terlebih dahulu
+
+
 Berikut tadi adalah cara menggunakan useradd saya akan melanjutkan lagi pada instalasi npm , nvm dan cloning fork
 
 Disini saya sudah login pada user aplikasi
 
-![image](https://user-images.githubusercontent.com/106061407/172511926-9a944c35-d778-4075-8b17-521c32eb7732.png)
-
-Selanjutnya cloning fork https://github.com/dumbwaysdev/wayshub-frontend menggunakan perintah
-
-```
-git clone https://github.com/dumbwaysdev/wayshub-frontend
-```
 Karena disini saya akan mendeploy aplikasi frontend dengan konfigurasi node js jadi terlebih dahulu saya akan menginstall NPM (Node Package Manager)
 dan NVM  (Node Version Manager) terlebih dahulu 
 
-![image](https://user-images.githubusercontent.com/106061407/172423325-f0527f60-4672-48d5-abaf-72beeee70e37.png)
+![image](https://user-images.githubusercontent.com/106061407/172526646-ad9e0f77-49c2-47a4-96fe-11be9406baa3.png)
 
 ```
 sudo apt install npm
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/172436747-27c08234-f845-4ed1-99ae-31a9f343c2fb.png)
+![image](https://user-images.githubusercontent.com/106061407/172526685-c8fbec26-4a22-4e64-bf4d-5beb584fc568.png)
 
 
 Selanjutnya saya akan Install NVM (Node Version Manager) menggunakan link di bawah ini
@@ -198,13 +206,24 @@ Selanjutnya saya akan Install NVM (Node Version Manager) menggunakan link di baw
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
-![image](https://user-images.githubusercontent.com/106061407/172436878-72c2c2c0-5cfa-44dc-a28c-b0c39712f2b4.png)
 
-![image](https://user-images.githubusercontent.com/106061407/172437204-c25fbcc8-97c5-451e-ae5b-d14128099522.png)
+![image](https://user-images.githubusercontent.com/106061407/172527023-a33c0631-054e-4d63-8232-11d8436fce6e.png)
 
-![image](https://user-images.githubusercontent.com/106061407/172437471-6f67210e-09e5-4a74-bd44-73d4eab51675.png)
+Kemudian saya install nvm nya terlebih dahulu
 
-Setelah semua sudah saya akan menginstall PM2 yang tujuannya yaitu supaya aplikasi dapat berjalan pada background
+![image](https://user-images.githubusercontent.com/106061407/172528741-a7f6c250-6405-4206-953b-04dff12c46ac.png)
+
+
+Selanjutnya cloning fork https://github.com/dumbwaysdev/wayshub-frontend menggunakan perintah
+
+```
+git clone https://github.com/dumbwaysdev/wayshub-frontend
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172528775-be395b43-d001-4dcd-a94d-1227c041eb91.png)
+
+
+Setelah sudah saya akan menginstall PM2 yang tujuannya yaitu supaya aplikasi dapat berjalan pada background
 
 ```
 npm install pm2 -g
