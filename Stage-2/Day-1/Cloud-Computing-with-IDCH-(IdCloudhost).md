@@ -274,9 +274,7 @@ Kemudian cek di web browser
 
 ![image](https://user-images.githubusercontent.com/106061407/172509584-f57a2b19-9cb2-484e-95de-359684d33659.png)
 
-Apabila berhasil akan muncul 
-
-![image](https://user-images.githubusercontent.com/106061407/172537565-f9ec8fc2-fb54-4f6a-925e-f58eec616cae.png)
+Apabila berhasil akan muncul aplikasi frontend pada web browser
 
 
 # Membuat DNS (Domain Name Server)
