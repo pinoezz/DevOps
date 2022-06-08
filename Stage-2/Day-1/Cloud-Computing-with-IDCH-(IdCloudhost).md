@@ -237,5 +237,9 @@ module.exports = {
 pm2 start ecosystem.config.js
 ```
 
+Kemudian cek di web browser
 
+![image](https://user-images.githubusercontent.com/106061407/172509584-f57a2b19-9cb2-484e-95de-359684d33659.png)
+
+Apabila berhasil akan muncul 
 
