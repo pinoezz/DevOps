@@ -222,29 +222,37 @@ git clone https://github.com/dumbwaysdev/wayshub-frontend
 
 ![image](https://user-images.githubusercontent.com/106061407/172528775-be395b43-d001-4dcd-a94d-1227c041eb91.png)
 
+![image](https://user-images.githubusercontent.com/106061407/172537060-40d38d75-06b9-4725-af82-2d3ea70b5815.png)
+
+Setelah itu jalankan perintah
+```
+npm i
+```
 
 Setelah sudah saya akan menginstall PM2 yang tujuannya yaitu supaya aplikasi dapat berjalan pada background
+
+![image](https://user-images.githubusercontent.com/106061407/172535692-a65dd638-476f-4934-9462-3bd36f428aed.png)
+
 
 ```
 npm install pm2 -g
 ```
-![image](https://user-images.githubusercontent.com/106061407/172438334-150c24ff-4f02-4d0b-980b-b34f9c075c51.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172438395-8691fc8b-9ae7-4645-ae2d-e296a37ad434.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172438414-55f97f9b-dce8-4b30-b4cd-cb25435ec08d.png)
-
-![image](https://user-images.githubusercontent.com/106061407/172438524-cf4fb8fa-e587-421b-bbe6-9f4ada1243aa.png)
+![image](https://user-images.githubusercontent.com/106061407/172535807-f1256e11-700b-4f31-a46b-ff505e9bd98b.png)
 
 Dikarenakan pada direktori diatas tidak ada file index.js untuk menjalankannya kita harus terlebih dahulu membuat file ecosystem untuk menjalankan aplikasinya
 
-![image](https://user-images.githubusercontent.com/106061407/172508513-476a22bc-d5cc-43fe-930b-e0f112e4d0a0.png)
+![image](https://user-images.githubusercontent.com/106061407/172536070-74cdf52b-df81-4585-9c04-f2e90a694135.png)
 
 ```
-pm2 init simple
+pm2 ecosystem simple
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/172508621-783d9bb1-ad45-42c0-8e9e-22e1f6e3b7be.png)
+![image](https://user-images.githubusercontent.com/106061407/172536115-a716f09c-6543-49d5-85fe-cb9e085282ac.png)
+
+Kemudian masuk ke file ecosystem.config.js
+
+![image](https://user-images.githubusercontent.com/106061407/172536229-5ddcbebc-e60e-4e5a-a5b2-62c3ab5d8a55.png)
+
 
 ```
 module.exports = {
@@ -254,7 +262,9 @@ module.exports = {
   }]
 }
 ```
-![image](https://user-images.githubusercontent.com/106061407/172508881-bb02cf0c-81f9-4223-8ecb-32809f1ca08e.png)
+Save dan exit
+
+![image](https://user-images.githubusercontent.com/106061407/172536288-faae329f-1f9f-4a6c-aff9-cf027a41d868.png)
 
 ```
 pm2 start ecosystem.config.js
@@ -265,4 +275,16 @@ Kemudian cek di web browser
 ![image](https://user-images.githubusercontent.com/106061407/172509584-f57a2b19-9cb2-484e-95de-359684d33659.png)
 
 Apabila berhasil akan muncul 
+
+![image](https://user-images.githubusercontent.com/106061407/172537565-f9ec8fc2-fb54-4f6a-925e-f58eec616cae.png)
+
+
+# Membuat DNS (Domain Name Server)
+
+
+Singkatnya, DNS adalah sebuah sistem yang mengubah URL website ke dalam bentuk IP Address. Tanpa DNS, Anda harus mengetikkan IP Address secara lengkap ketika ingin mengunjungi sebuah website
+
+Disini saya akan membuat DNS pada aplikasi frontend wayshub menggunakan cloudflare
+
+Daftar atau login terlebih dahulu di website [CloudFlare](https://dash.cloudflare.com/)
 
