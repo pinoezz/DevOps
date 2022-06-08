@@ -215,11 +215,27 @@ npm install pm2 -g
 
 Dikarenakan pada direktori diatas tidak ada file index.js untuk menjalankannya kita harus terlebih dahulu membuat file ecosystem untuk menjalankan aplikasinya
 
-![image](https://user-images.githubusercontent.com/106061407/172439023-d186e13c-3381-4744-9f3a-6df50b38bf3b.png)
+![image](https://user-images.githubusercontent.com/106061407/172508513-476a22bc-d5cc-43fe-930b-e0f112e4d0a0.png)
 
 ```
-pm2 ecosystem
+pm2 init simple
 ```
-![image](https://user-images.githubusercontent.com/106061407/172439727-a99aca65-2635-48ce-8841-8bf0bec9c342.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172508621-783d9bb1-ad45-42c0-8e9e-22e1f6e3b7be.png)
+
+```
+module.exports = {
+  apps : [{
+    name   : "frontend-wayshub",
+    script : "npm start"
+  }]
+}
+```
+![image](https://user-images.githubusercontent.com/106061407/172508881-bb02cf0c-81f9-4223-8ecb-32809f1ca08e.png)
+
+```
+pm2 start ecosystem.config.js
+```
+
 
 
