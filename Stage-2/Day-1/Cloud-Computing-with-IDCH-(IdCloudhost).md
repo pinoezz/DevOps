@@ -288,3 +288,81 @@ Disini saya akan membuat DNS pada aplikasi frontend wayshub menggunakan cloudfla
 
 Daftar atau login terlebih dahulu di website [CloudFlare](https://dash.cloudflare.com/)
 
+![image](https://user-images.githubusercontent.com/106061407/172538401-566cff8a-72cd-4610-8c43-ea57b5cf0cd9.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172538469-545cf22d-982e-4714-9cbb-c8e903dad6eb.png)
+
+Kemudian pilih DNS
+
+![image](https://user-images.githubusercontent.com/106061407/172538916-32532372-81b8-41a4-9e9e-2149a5c4d785.png)
+
+Isi nama dan ipv4(ip gateway) kemudian save
+
+Domain yang saya buat : alfino.studentdumbways.my.id
+
+Kemudian Masuk ke terminal lagi server gateway dan melakukan konfigurasi baru pada /etc/nginx/dumbways 
+
+![image](https://user-images.githubusercontent.com/106061407/172539602-e15eb184-3c3c-4842-ad00-daddc527a52f.png)
+
+
+```
+server { 
+        server_name alfino.studentdumbways.my.id; 
+
+        location /{
+        proxy_pass http://103.31.38.84:3000;
+        }
+}
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172539630-f74900b5-5df9-431b-bcdb-2935539d4a07.png)
+
+Kemudian saya akan cek menggunakan domain http://alfino.studentdumbways.my.id/ pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/172539753-7cfde937-633f-437c-b105-fd0ce388da07.png)
+
+Apabila berhasil akan tampil aplikasi frontend menggunakan domain http://alfino.studentdumbways.my.id/
+
+# Menggunakan SSL [CertBot](https://certbot.eff.org/) untuk memperaman website
+
+# Apa itu SSL ?
+
+SSL adalah singkatan dari Secure Socket Layer, salah satu komponen penting yang harus dimiliki website. Dengan SSL, transfer data di dalam website menjadi lebih aman dan terenkripsi. Bahkan saking pentingnya, Google Chrome melabeli website tanpa sertifikat SSL sebagai Not Secure.
+
+Apabila sistem keamanan ini ditambahkan pada website Anda, maka URL website akan berubah menjadi HTTPS. Tujuan utama pemasangan SSL adalah sebagai pengaman pertukaran data yang terjadi melalui jaringan internet.
+
+![image](https://user-images.githubusercontent.com/106061407/172540720-a93c852f-c5eb-48be-b185-c795c0a0767e.png)
+
+Langkah pertama instalasi certbot
+
+```
+sudo snap install core; sudo snap refresh core
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172540860-fbdcf3bc-1ff0-49b0-baf8-8f13f4db08fd.png)
+
+sudo snap install --classic certbot
+
+![image](https://user-images.githubusercontent.com/106061407/172541652-e5e3920a-ccfd-4879-89dc-3104212b0399.png)
+
+Jalankan certbot menggunakan perintah 
+
+```
+sudo certbot
+```
+![image](https://user-images.githubusercontent.com/106061407/172541707-2841c641-bc6b-473b-837f-3acd8917c34c.png)
+
+Apabila berhasil akan muncul kalimat seperti gambar diatas
+
+![image](https://user-images.githubusercontent.com/106061407/172541847-706ea872-5429-4c22-a782-af64c9e108d9.png)
+
+Konfigurasi SSL Certbot otomatis akan ada pada proxy alfino.studentdumbways.my.id
+
+Kemudian saya akan mengecek juga menggunakan web browser dengan menggunakan alamat https://alfino.studentdumbways.my.id/login
+
+![image](https://user-images.githubusercontent.com/106061407/172542049-f56ab5d3-5e8b-473d-890a-9c2c1f578e39.png)
+
+Dan berhasil SSL certbot sudah ada dalam website kalian
+
+
+
