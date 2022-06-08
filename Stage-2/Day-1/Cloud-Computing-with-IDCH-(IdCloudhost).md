@@ -146,31 +146,35 @@ sudo nginx -t
 
 Pertama tama switch atau login terlebih dahulu pada server aplikasi atau server frontend terlebih dahulu
 
-![image](https://user-images.githubusercontent.com/106061407/172430835-8783286a-0a18-466d-bb37-b264eaf9dad5.png)
+![image](https://user-images.githubusercontent.com/106061407/172511206-d191f2b0-f5b7-457e-bbb2-1968d114e23b.png)
 
-saya juga akan membuat user baru terlebih dahulu 
+Menggunakan perintah adduser untuk menambahkan user
 
-![image](https://user-images.githubusercontent.com/106061407/172431548-a72adb98-c3a4-4ef1-80d2-411c32b758f6.png)
+```
+sudo adduser aplikasi
+```
 
-Setelah itu buat juga password untuk user aplikasi
+Untuk membuat user aplikasi bisa gunakan perintah diatas
 
-![image](https://user-images.githubusercontent.com/106061407/172421715-c551ff7d-15f9-475b-8398-564024451c29.png)
+Kemudian untuk login / pindah user bisa menggunakan perintah
 
-Untuk menghapus user kalian bisa gunakan perintah userdel
+```
+sudo login aplikasi
+```
 
-![image](https://user-images.githubusercontent.com/106061407/172432690-df6049f4-9edb-47c7-aaf3-b68159d1a186.png)
+![image](https://user-images.githubusercontent.com/106061407/172511462-cb78e6bb-90d7-4149-b944-fdff8e3f3b30.png)
 
-Kemudian saya akan membuat user dengan direktori 
+Untuk login ssh bisa menggunakan cara seperti ini
 
-![image](https://user-images.githubusercontent.com/106061407/172433364-85a2c8a1-510a-4bd0-b509-d7d9764695e0.png)
-
-Menggunakan perintah useradd -m untuk membuat user baru sekaligus beserta direktori
+```
+ssh aplikasi@ip
+```
 
 Berikut tadi adalah cara menggunakan useradd saya akan melanjutkan lagi pada instalasi npm , nvm dan cloning fork
 
-Disini saya sudah login pada server frontend/aplikasi
+Disini saya sudah login pada user aplikasi
 
-![image](https://user-images.githubusercontent.com/106061407/172421978-79f003cd-0493-4f88-a6a2-515cfe17957e.png)
+![image](https://user-images.githubusercontent.com/106061407/172511926-9a944c35-d778-4075-8b17-521c32eb7732.png)
 
 Selanjutnya cloning fork https://github.com/dumbwaysdev/wayshub-frontend menggunakan perintah
 
