@@ -7,7 +7,7 @@ Melakukan konfigurasi reverse proxy pada Server Gateway
 
 Membuat user baru pada server frontend
 
-Menggunakan fork https://github.com/dumbwaysdev/wayshub-frontend pada Server Aplikasi
+Menggunakan fork https://github.com/dumbwaysdev/wayshub-frontend pada Server Frontend
 
 Melakukan Konfigurasi PM2
 
