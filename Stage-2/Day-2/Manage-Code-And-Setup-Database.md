@@ -455,21 +455,29 @@ Apabila sistem keamanan ini ditambahkan pada website Anda, maka URL website akan
 
 ![image](https://user-images.githubusercontent.com/106061407/172879121-1e1b3ff6-30e7-4360-a5f7-80a826309b13.png)
 
+
 ```
 sudo snap install core; sudo snap refresh core
 ```
 
+
 ![image](https://user-images.githubusercontent.com/106061407/172879269-e3888f57-d600-40dd-9680-953cf10d9be6.png)
+
+
 
 ```
 sudo snap install --classic certbot
 ```
 
+
 Jalankan certbot menggunakan perintah
+
 
 ```
 sudo certbot
 ```
+
+
 ![image](https://user-images.githubusercontent.com/106061407/172879457-01794678-ebb6-4df7-ba67-e4b2029001a8.png)
 
 Pilih No 2
@@ -479,6 +487,7 @@ Lalu kita cek lagi file proxy nya
 ![image](https://user-images.githubusercontent.com/106061407/172879720-3cbba1b1-32c9-4a7b-a70d-73396d9ea9b2.png)
 
 Konfigurasi SSL / HTTPS pada server backend berhasil
+
 
 ---------------------------
 
