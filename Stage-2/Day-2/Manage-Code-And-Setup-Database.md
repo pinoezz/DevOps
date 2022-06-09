@@ -353,3 +353,177 @@ exec bash
 
 # Migrasi data backend ke Database
 
+![image](https://user-images.githubusercontent.com/106061407/172873243-e24b61b3-f884-48b7-8765-fd9cc6723c32.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/172873199-c09e051f-5ff7-4855-a36b-32b36116352e.png)
+
+Edit file config.json pada /backend/config
+
+![image](https://user-images.githubusercontent.com/106061407/172872658-0e9ae5b1-0ab5-4780-bad1-c1449859125e.png)
+
+```
+npm install -g sequelize-cli
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172872976-035ad8e9-1ce8-4d8a-a7f8-530b3090a126.png)
+
+```
+npx sequelize db:migrate
+```
+Setelah itu cek pada database
+
+![image](https://user-images.githubusercontent.com/106061407/172874301-b895ba76-45cf-497a-99f0-5098414c4fd7.png)
+
+Proses migrasi berhasil
+
+# Install PM2
+
+![image](https://user-images.githubusercontent.com/106061407/172875264-319dd47a-07cd-4151-9d5d-cc1143fb8e66.png)
+
+
+Untuk [Instalasi PM2](https://pm2.keymetrics.io/docs/usage/quick-start/) gunakan perintah
+
+```
+npm install pm2
+```
+
+Kemudian kita perlu membuat file ecosystem untuk menjalankan backend
+
+![image](https://user-images.githubusercontent.com/106061407/172875609-968d0023-3ff3-400d-8388-9da0d7088837.png)
+
+```
+pm2 ecosystem simple
+```
+![image](https://user-images.githubusercontent.com/106061407/172875809-1a71d0e4-17d6-4336-a6b1-a30384a5ac09.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/172875769-9938bc29-a634-414a-8afa-2019f6a6563a.png)
+
+```
+module.exports = {
+  apps : [{
+    name   : "backend-wayshub",
+    script : "npm start"
+  }]
+}
+```
+
+Lalu jalankan pm2 menggunakan perintah
+
+![image](https://user-images.githubusercontent.com/106061407/172876142-0e2f1aeb-fb93-4e4a-8444-679c5f242ab3.png)
+
+
+```
+pm2 start ecosystem
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172876247-d3288706-2e55-4829-b576-4ebedbca55bc.png)
+
+# Mengoneksikan aplikasi frontend dan backend
+
+Sebelum mengoneksikan aplikasi frontend dan backend kita perlu mengatur domain untuk backend
+
+![image](https://user-images.githubusercontent.com/106061407/172877512-c66ce321-c9e3-4894-a48f-d7989c60fc6b.png)
+
+Disini saya menggunakan domain dari [CloudFlare](cloudflare.com) , ke menu dns dan buat domain
+
+Domain yang saya buat untuk backend yaitu api.alfino.studentdumbways.my.id 
+
+Kemudian saya akan membuat reverse proxy untuk server backend menggunakan domain api.alfino.studentdumbways.my.id 
+
+![image](https://user-images.githubusercontent.com/106061407/172878244-45843397-d284-46e6-bbd6-4b0d0d01e854.png)
+
+buka direktori /etc/nginx/dumbways kemudian buat file reverse proxy baru 
+
+```
+server { 
+        server_name alfino.api.studentdumbways.my.id; 
+
+        location /{
+        proxy_pass http://103.172.204.30:5000;
+        }
+}
+
+# Menggunakan SSL CertBot untuk memperaman website
+
+#Apa itu SSL ?
+
+SSL adalah singkatan dari Secure Socket Layer, salah satu komponen penting yang harus dimiliki website. Dengan SSL, transfer data di dalam website menjadi lebih aman dan terenkripsi. Bahkan saking pentingnya, Google Chrome melabeli website tanpa sertifikat SSL sebagai Not Secure.
+
+Apabila sistem keamanan ini ditambahkan pada website Anda, maka URL website akan berubah menjadi HTTPS. Tujuan utama pemasangan SSL adalah sebagai pengaman pertukaran data yang terjadi melalui jaringan internet.
+
+![image](https://user-images.githubusercontent.com/106061407/172879121-1e1b3ff6-30e7-4360-a5f7-80a826309b13.png)
+
+```
+sudo snap install core; sudo snap refresh core
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172879269-e3888f57-d600-40dd-9680-953cf10d9be6.png)
+
+```
+sudo snap install --classic certbot
+```
+
+Jalankan certbot menggunakan perintah
+
+```
+sudo certbot
+```
+![image](https://user-images.githubusercontent.com/106061407/172879457-01794678-ebb6-4df7-ba67-e4b2029001a8.png)
+
+Pilih No 2
+
+Lalu kita cek lagi file proxy nya
+
+![image](https://user-images.githubusercontent.com/106061407/172879720-3cbba1b1-32c9-4a7b-a70d-73396d9ea9b2.png)
+
+Konfigurasi SSL / HTTPS pada server backend berhasil
+
+---------------------------
+
+![image](https://user-images.githubusercontent.com/106061407/172876741-eae2c42e-1575-47b7-9919-d2fef1b47c03.png)
+
+Masuk ke server frontend kemudian masuk pada direktori wayshub-frontend
+
+![image](https://user-images.githubusercontent.com/106061407/172876883-6d4a1a39-6125-454b-b377-a4a12ad005a7.png)
+
+Masuk pada direktori aplikasi/wayshub-frontend/src/config kemudian edit file api.js , isi gunakan domain backend
+
+```
+import axios from 'axios';
+
+const API = axios.create({
+    baseURL: "https://api.alfino.studentdumbways.my.id/api/v1"
+});
+
+const setAuthToken = (token) => {
+    if(token){
+        API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    } else {
+        delete API.defaults.headers.common['Authorization'];
+    }
+}
+
+export {
+    API,
+    setAuthToken
+}
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172880246-e0a1db1e-d60e-43e5-ac95-43d38ef30bff.png)
+
+Kemudian tes menggunakan web browser dan registrasi
+
+![image](https://user-images.githubusercontent.com/106061407/172880646-b04d3022-2f6e-45a2-b3c0-82f1eedf8ead.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172880668-26deabbd-a1a2-4c39-9ffd-3b088d0b63c2.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172880697-bfa17813-0e97-494a-97ac-bc7d6b3c7b93.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172880730-b52fff8b-5414-4d49-b2a2-c688ca7252c4.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172880819-0449670c-c858-4a68-b175-63726b0a858e.png)
+
+Semua berjalan normal apabila tidak ada error
+
