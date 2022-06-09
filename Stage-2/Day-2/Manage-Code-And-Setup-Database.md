@@ -238,6 +238,12 @@ Memberikan semua hak istimewa ke akun pengguna untuk semua database :
 GRANT ALL PRIVILEGES ON *.* TO 'user_database'@'localhost';
 ```
 
+Kemudian 
+```
+FLUSH PRIVILEGES;
+```
+
+
 ![image](https://user-images.githubusercontent.com/106061407/172773159-db2afa08-3a40-4faa-8573-6d60d531f27f.png)
 
 Kemudian saya login dengan user baru yang tadi di buat
@@ -287,23 +293,63 @@ systemctl restart mysql.service
 
 # Dapat meremote database dari client
 
-# Memberikan Akses Kepada User
-
-Misalnya kamu memiliki server website yang berjalan pada Ip Address 192.168.2.3 dengan nama database misalnya websiteku dan kamu ingin meremote database websiteku tersebut yang ada didalam mysql.
-
-Untuk meremote database websiteku tersebut, kamu harus mengijinkan akses ke database websiteku. Cara untuk memberikan ijin remote database websiteku adalah seperti berikut :
-
-Log in kedalam MySQL server
-
-Masukan password 
-
-![image](https://user-images.githubusercontent.com/106061407/172797710-8cb4100e-2c00-4d3a-a69e-b55b7d9cf9e7.png)
-
-Pilih database wayshub dengan perintah seperti berikut
+![image](https://user-images.githubusercontent.com/106061407/172869783-e0e14126-a082-45e6-9b4a-c8096088beca.png)
 
 ```
-use wayshub;
+sudo apt install mysql-client
 ```
 
+Gunakan perintah diatas untuk menginstall mysql untuk client supaya client dapat meremote database
 
+![image](https://user-images.githubusercontent.com/106061407/172870449-e920ba26-36f3-4e5d-98ad-7471373a7149.png)
+
+
+```
+mysql -u alfino -h 116.193.190.66 -p
+```
+
+# Deployment
+
+Cloning fork https://github.com/dumbwaysdev/wayshub-backend
+
+![image](https://user-images.githubusercontent.com/106061407/172870730-7565b778-4a34-45b6-8284-fac98c0af0ed.png)
+
+```
+git clone https://github.com/dumbwaysdev/wayshub-backend
+```
+
+Mengubah direktori menjadi backend dan deploy aplikasi menggunakan PM2
+
+![image](https://user-images.githubusercontent.com/106061407/172871098-a60d1394-bf1e-421e-9f2d-24ba95ea89b6.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172871171-f9e08e3a-4192-4a97-bba5-ba95f6374359.png)
+
+Karena disini saya akan mendeploy aplikasi frontend dengan konfigurasi node js jadi terlebih dahulu saya akan menginstall NPM (Node Package Manager) dan NVM (Node Version Manager) terlebih dahulu
+
+![image](https://user-images.githubusercontent.com/106061407/172871460-ed898b95-b1ed-440c-9b54-4b189a04ef87.png)
+
+
+```
+sudo apt install npm
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172871622-91fa5564-6b84-45c8-8d14-ddf312468b24.png)
+
+
+Selanjutnya saya akan Install NVM (Node Version Manager) menggunakan link di bawah ini
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+
+```
+exec bash
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172871718-dc1b754a-e36f-4794-8f0e-a27102fbf48f.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172871845-b288bfcc-4698-4e92-8e8b-5103e112b9c9.png)
+
+
+# Migrasi data backend ke Database
 
