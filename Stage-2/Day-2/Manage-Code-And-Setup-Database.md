@@ -248,6 +248,20 @@ Kemudian saya login dengan user baru yang tadi di buat
 SELECT user,host FROM mysql.user;
 ```
 
+# Membuat database wayshub pada mysql
+
+![image](https://user-images.githubusercontent.com/106061407/172792201-307934c0-174b-416d-b708-3f63de4d181d.png)
+
+```
+CREATE DATABASE wayshub;
+```
+
+Untuk melihat isi dari database gunakan perintah
+
+```
+show databases;
+```
+
 # Mengganti bind address
 
 Fungsi melakukan bind address yaitu supaya database dapat di akses oleh client
@@ -262,4 +276,34 @@ bind-address            = 0.0.0.0
 mysqlx-bind-address     = 0.0.0.0 
 ```
 
-# Migrasi database 
+![image](https://user-images.githubusercontent.com/106061407/172789706-20e88bbc-20f8-4452-b5c9-e97991e0fcda.png)
+
+
+Lalu restart mysql
+
+```
+systemctl restart mysql.service
+```
+
+# Dapat meremote database dari client
+
+# Memberikan Akses Kepada User
+
+Misalnya kamu memiliki server website yang berjalan pada Ip Address 192.168.2.3 dengan nama database misalnya websiteku dan kamu ingin meremote database websiteku tersebut yang ada didalam mysql.
+
+Untuk meremote database websiteku tersebut, kamu harus mengijinkan akses ke database websiteku. Cara untuk memberikan ijin remote database websiteku adalah seperti berikut :
+
+Log in kedalam MySQL server
+
+Masukan password 
+
+![image](https://user-images.githubusercontent.com/106061407/172797710-8cb4100e-2c00-4d3a-a69e-b55b7d9cf9e7.png)
+
+Pilih database wayshub dengan perintah seperti berikut
+
+```
+use wayshub;
+```
+
+
+
