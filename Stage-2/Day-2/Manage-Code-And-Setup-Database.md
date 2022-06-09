@@ -173,9 +173,93 @@ sudo apt install mysql-server
 
 Untuk instalasi baru MySQL, Anda akan menjalankan skrip keamanan DBMS yang disertakan. Skrip ini mengubah beberapa opsi asali yang kurang aman untuk hal-hal seperti log masuk root jarak jauh dan pengguna sampel.
 
-Jalankan skrip keamanan dengan sudo:
+![image](https://user-images.githubusercontent.com/106061407/172743210-e9c2a673-eeb7-4e21-a86c-f327a0d091b6.png)
+
+Untuk instalasi mysql gunakan perintah
+
+```
+sudo apt get install mysql-server
+```
+
+
+![image](https://user-images.githubusercontent.com/106061407/172742646-88b9cfd3-b619-4a70-be21-d398403d55b4.png)
+
+Untuk melihat versi gunakan perintah 
+
+```
+mysql --version
+```
+
+Untuk masuk ke mysql gunakan perintah
+
+```
+sudo mysql -u root
+```
+![image](https://user-images.githubusercontent.com/106061407/172743618-43ab0597-de12-4e7e-a533-ae9b2b7737b0.png)
+
+
+Jalankan skrip keamanan dengan sudo (Keluar terlebih dahulu dari mysql)
 
 ```
 sudo mysql_secure_installation
+
+```
+kemudian isi password yang akan kalian inginkan
+
+![image](https://user-images.githubusercontent.com/106061407/172769267-c796a58b-8f98-4d34-821f-8e6a7f06ec88.png)
+
+Lalu login ulang menggunakan password dengan
+
+```
+sudo mysql -u root -p
 ```
 
+# Membuat Database Baru pada user baru
+![image](https://user-images.githubusercontent.com/106061407/172772387-336b9634-6127-4ceb-9032-665fb4c81f61.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/172772128-3d3cda41-191a-4be5-ae32-9beabf10a936.png)
+
+
+Untuk membuat pengguna yang dapat terhubung dari host mana pun, gunakan wildcard ‘%‘ sebagai bagian host:
+
+```
+CREATE USER 'user_database'@'%' IDENTIFIED BY 'password_user';
+```
+
+Opsi ini biasanya digunakan oleh para webmaster yang menginginkan MySQL server ditempat terpisah dengan web server.
+
+![image](https://user-images.githubusercontent.com/106061407/172772292-70c3617c-66f1-4904-8e6e-43269620b2e8.png)
+
+
+Memberikan semua hak istimewa ke akun pengguna untuk semua database :
+
+```
+GRANT ALL PRIVILEGES ON *.* TO 'user_database'@'localhost';
+```
+
+![image](https://user-images.githubusercontent.com/106061407/172773159-db2afa08-3a40-4faa-8573-6d60d531f27f.png)
+
+Kemudian saya login dengan user baru yang tadi di buat
+
+![image](https://user-images.githubusercontent.com/106061407/172773698-6b19db6c-0f99-4536-865c-56f391a3f343.png)
+
+```
+SELECT user,host FROM mysql.user;
+```
+
+# Mengganti bind address
+
+Fungsi melakukan bind address yaitu supaya database dapat di akses oleh client
+
+![image](https://user-images.githubusercontent.com/106061407/172782841-369a03a8-76ec-4350-88d9-707f308f0485.png)
+
+![image](https://user-images.githubusercontent.com/106061407/172783781-d23177f9-3d44-43e6-9f5f-944aea3aa778.png)
+
+
+```
+bind-address            = 0.0.0.0  
+mysqlx-bind-address     = 0.0.0.0 
+```
+
+# Migrasi database 
