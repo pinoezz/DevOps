@@ -310,3 +310,67 @@ Kemudian untuk memastikan cek juga menggunakan web browser
 
 # Setup Gateway (Proxy & SSL)
 
+Beralih ke server gateway saya akan cek terlebih dahulu nginxnya
+
+![image](https://user-images.githubusercontent.com/106061407/173391618-18a3e9d0-2244-48a4-8689-57edefe67eab.png)
+
+Kali ini saya gunakan nginx version: nginx/1.18.0 (Ubuntu)
+
+Kemudian saya akan membuat reverse proxy FE dan BE , Saya akan membuat direktori baru bernama wayshub pada /etc/nginx
+
+Untuk domain saya mengggunakan domain dari [CloudFlare](cloudflare.com)
+
+![image](https://user-images.githubusercontent.com/106061407/173392704-ee6c1405-a600-4230-8af0-2bdbd093da7c.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173393350-892a6e13-08bc-42d3-8915-bf749209bc2d.png)
+
+
+KONFIGURASI REVERSE PROXY FE 
+
+```
+server {
+        server_name alfino.studentdumbways.my.id;
+ 
+        location /{
+        proxy_pass http://103.179.57.222:3030;
+        }
+}
+```
+
+KONFIGURASI REVERSE PROXY BE
+
+```
+server {
+        server_name api.alfino.studentdumbways.my.id;
+ 
+        location /{
+        proxy_pass http://103.179.57.222:5050;
+        }
+}
+```
+
+Kemudian kembali pada direktori/etc/nginx dan menambahkan konfigurasi reverse proxy yang ada pada direktori wayshub
+
+![image](https://user-images.githubusercontent.com/106061407/173393700-a161f42d-78bf-4ac2-ac43-e631605b81ad.png)
+
+```
+include /etc/nginc/wayshub/*;
+```
+
+Kemudian save dan exit
+
+![image](https://user-images.githubusercontent.com/106061407/173393811-73ec84aa-54c4-441b-8ad2-a25c7070fb4b.png)
+
+Cek konfigurasi menggunakan
+
+```
+sudo nginx -t
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173393920-9886895e-84e9-43d8-bd71-49eac39f85af.png)
+
+Kemudian restart nginx.service 
+
+```
+sudo systemctl restart nginx.service 
+```
