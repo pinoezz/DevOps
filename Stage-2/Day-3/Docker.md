@@ -359,7 +359,7 @@ include /etc/nginc/wayshub/*;
 
 Kemudian save dan exit
 
-![image](https://user-images.githubusercontent.com/106061407/173393811-73ec84aa-54c4-441b-8ad2-a25c7070fb4b.png)
+![image](https://user-images.githubusercontent.com/106061407/173395751-a1360266-1a31-49c0-8233-4ea9a0039bc0.png)
 
 Cek konfigurasi menggunakan
 
@@ -374,3 +374,10 @@ Kemudian restart nginx.service
 ```
 sudo systemctl restart nginx.service 
 ```
+
+Kemudian saya akan konfigurasi ssl menggunakan zerossl
+
+![image](https://user-images.githubusercontent.com/106061407/173399584-58d485c7-0190-425e-8226-19ecd9f2faaf.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173399954-a70ba32f-a6c9-4a33-a19a-ae13df9d0175.png)
+
