@@ -6,4 +6,4 @@ Docker adalah sistem operasi (atau waktu proses) untuk kontainer. Mesin Docker d
 
 ![image](https://user-images.githubusercontent.com/106061407/173286484-9059456f-56f8-4594-bc7a-e6f77d11e173.png)
 
-
+Hal pertama yang perlu dipersiapkan yaitu dengan membuat akun pada [Docker Hub](https://hub.docker.com/)
