@@ -61,6 +61,10 @@ Lakukan kepada 2 server
 
 # Create Docker Images
 
+# DOCKER IMAGES IN GATEWAY
+
+Pada gateway saya akan menginstall [Nginx](https://hub.docker.com/_/nginx) 
+
 ![image](https://user-images.githubusercontent.com/106061407/173324606-7592acd2-2743-464b-bf38-307d1f8cfe38.png)
 
 Lakukan login terlebih dahulu
@@ -75,5 +79,28 @@ Kemudian saya akan menginstall image [Nginx](https://hub.docker.com/_/nginx) unt
 
 ```
 docker pull nginx:latest
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173326278-f49b570e-bbae-42ff-9daf-85d7df29a7d0.png)
+
+Untuk mengetahui image apa saja yang sudah terinstall bisa gunakan perintah 
+
+```
+docker images
+```
+
+```
+docker image ls
+```
+# DOCKER IMAGES IN APP
+
+Pada App saya akan menginstall [Mysql](https://hub.docker.com/_/mysql) sebagai database
+
+![image](https://user-images.githubusercontent.com/106061407/173327020-806d5501-6cd1-4cfd-9047-713f358f8b3b.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173329145-062d6474-07df-4d25-bab1-6e323213d381.png)
+
+```
+docker pull mysql:latest
 ```
 
