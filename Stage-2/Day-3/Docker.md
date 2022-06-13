@@ -58,4 +58,22 @@ sudo usermod -aG docker pino
 ```
 Lakukan kepada 2 server
 
-![image](https://user-images.githubusercontent.com/106061407/173323059-4834ab12-2897-4db8-9176-3227f7f08b96.png)
+
+# Create Docker Images
+
+![image](https://user-images.githubusercontent.com/106061407/173324606-7592acd2-2743-464b-bf38-307d1f8cfe38.png)
+
+Lakukan login terlebih dahulu
+
+```
+docker login
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173325255-1ab16e2a-c35f-4fb9-b9ee-922e656c1ec1.png)
+
+Kemudian saya akan menginstall image [Nginx](https://hub.docker.com/_/nginx) untuk versinya saya akan install versi terbaru (latest)
+
+```
+docker pull nginx:latest
+```
+
