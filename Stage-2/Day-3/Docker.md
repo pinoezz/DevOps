@@ -214,4 +214,88 @@ NOTE : SAYA GUNAKAN node:dubnium-alpine3.11 (karena sizenya kecil)
 
 ![image](https://user-images.githubusercontent.com/106061407/173356581-124db5ef-e764-4c54-a725-9f84613e1e23.png)
 
+```
+nano dockerfile
+```
+
+Untuk membuat file dockerfile
+
+![image](https://user-images.githubusercontent.com/106061407/173359925-bc03474e-9e86-4155-be6f-4dd885a49394.png)
+
+build dockerfile 
+
+![image](https://user-images.githubusercontent.com/106061407/173362217-9021c7e6-a5b6-4ed9-a841-306f99dd03d9.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173362329-963f6af5-3a73-44d3-b424-62b2f1ee7b5a.png)
+
+
+```
+docker build -t pino/wayshub-be:1.0 .
+```
+
+Kemudian selanjutnya saya akan membuat docker-compose.yml 
+
+![image](https://user-images.githubusercontent.com/106061407/173364307-5936f9a2-c536-4578-b26f-10eed65fc74a.png)
+
+
+```
+version: '3.8'
+services:
+ backend:  
+   build: .    
+   container_name: be
+   image: pino/wayshub-be:stable
+   stdin_open: true
+   ports:
+    - 5050:5000
+```    
+
+![image](https://user-images.githubusercontent.com/106061407/173364381-99fcb952-d5ee-4500-93c2-9911d5dfa432.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173364431-92ca9249-aa52-46bb-b1a6-980e1808e487.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173364671-5f54ace7-c893-4ec8-a5f0-3d5064cff400.png)
+
+Untuk jalankan docker-compose gunakan perintah
+
+```
+docker-compose up -d
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173365201-1a4d2d5a-4c32-4627-9822-75eef0a6bcfa.png)
+
+Bisa di cek container app backend sudah berjalan dan selanjutnya saya akan cek menggunakan web browser
+
+![image](https://user-images.githubusercontent.com/106061407/173365329-53848ca2-ed4d-47ae-8f2f-c699a92d3777.png)
+
+Jika hasilnya seperti ini artinya berhasil 
+
+Kemudian saya akan cek juga migrasi datanya pada mysql
+
+![image](https://user-images.githubusercontent.com/106061407/173366333-b1b5be9c-9c08-4c30-84d8-1baf6b5e8aa1.png)
+
+Migrasi data berhasil :D
+
+Selanjutnya saya ingin push repo menuju docker hub
+
+Dikarenakan nama repository saya berbeda tidak sesuai username docker hub jadi saya akan membuat tag baru
+
+![image](https://user-images.githubusercontent.com/106061407/173370570-d49d2cb5-4e74-477f-9055-6d663e410f79.png)
+
+```
+docker tag 98afd9e2ba69 pinoezz/wayshub-be
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173371272-7a3e098e-50c4-493d-88cd-312c5c54fe79.png)
+
+```
+docker push pinoezz/wayshub-be
+```
+
+KETERANGAN : Apabila nama repository tidak sesuai dengan akun docker hub maka akan muncul pesan "denied: requested access to the resource is denied"
+
+Selanjutnya cek di web browser 
+
+![image](https://user-images.githubusercontent.com/106061407/173371987-869383c7-914c-4eeb-9525-76d33a2312aa.png)
+
 
