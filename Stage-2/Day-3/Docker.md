@@ -14,9 +14,48 @@ Hal pertama yang perlu dipersiapkan yaitu dengan membuat akun pada [Docker Hub](
 
 # Docker Installation
 
+[Tutorial install docker](https://docs.docker.com/engine/install/ubuntu/)
+
 Bagian pertama dalam pembuatan Docker saya akan mempersiapkan 2 buah server yang nantinya akan saya install Docker untuk gateway dan Docker untuk menjalankan (Frontend, Backend, dan Database)
 
 Saya akan gunakan VPS yang di sediakan oleh [IDCloudHost](https://idcloudhost.com/) 
 
 ![image](https://user-images.githubusercontent.com/106061407/173315738-66b4b918-4000-4411-b17d-5faf521100ba.png)
 
+Kemudian saya akan build 
+
+![image](https://user-images.githubusercontent.com/106061407/173319377-2421003b-5eca-4b34-a5eb-187479cc378a.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173319876-00e09adc-f248-4f7f-b7fc-67b31ff58961.png)
+
+Kemudian saya akan mengoneksikan VPS menggunakan terminal menggunakan perintah
+
+ssh "username"@"ip host"
+
+```
+ssh pino@103.174.115.37
+```
+![image](https://user-images.githubusercontent.com/106061407/173320411-c045e34e-f2ea-484b-a97d-749227c21895.png)
+
+Akan secara otomatis terinstall docker  
+
+
+![image](https://user-images.githubusercontent.com/106061407/173321455-aa3f93db-98b8-42e1-a08e-fa44e72f354e.png)
+
+Saya akan melakukan update dan upgrade terlebih dahulu
+
+```
+sudo apt update ; sudo apt upgrade
+```
+
+Kemudian saya akan memerikan hak akses root kepada docker supaya nantinya tidak perlu menggunakan sudo
+
+![image](https://user-images.githubusercontent.com/106061407/173321026-4dab550a-0f98-46d0-99b4-226eea776a08.png)
+
+
+```
+sudo usermod -aG docker pino
+```
+Lakukan kepada 2 server
+
+![image](https://user-images.githubusercontent.com/106061407/173323059-4834ab12-2897-4db8-9176-3227f7f08b96.png)
