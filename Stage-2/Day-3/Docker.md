@@ -92,6 +92,37 @@ docker images
 ```
 docker image ls
 ```
+
+Selanjutnya saya akan membuat container nginx 
+
+![image](https://user-images.githubusercontent.com/106061407/173334127-abffddf1-616e-49fc-829a-f3594624fe3a.png)
+
+```
+docker container create --name nginx1 -p 8080:80 nginx:latest
+```
+
+Untuk menjalankan container diatas gunakan perintah
+
+![image](https://user-images.githubusercontent.com/106061407/173334556-8b2348ae-8b18-45ae-a3cb-6f9ca837ca1c.png)
+
+```
+docker container start nginx1
+```
+Masuk ke container nginx menggunakan perintah
+
+![image](https://user-images.githubusercontent.com/106061407/173335034-8ad87605-882e-4720-9d90-ff580e0168bb.png)
+
+```
+docker exec -it nginx1 bash
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173335204-1d1cfdfa-4937-4d9a-b23f-621d0be1e40a.png)
+
+Selanjutnya saya akan cek menggunakan web browser dengan mencari ip dari host dan port nginx (8080)
+
+![image](https://user-images.githubusercontent.com/106061407/173335468-c2f4b002-53a8-4278-a119-b2035039c000.png)
+
+
 # DOCKER IMAGES IN APP
 
 Pada App saya akan menginstall [Mysql](https://hub.docker.com/_/mysql) sebagai database
@@ -103,4 +134,10 @@ Pada App saya akan menginstall [Mysql](https://hub.docker.com/_/mysql) sebagai d
 ```
 docker pull mysql:latest
 ```
+
+# Create docker image for front-end
+
+FORK FRONTEND : git clone https://github.com/dumbwaysdev/wayshub-frontend
+
+![image](https://user-images.githubusercontent.com/106061407/173332474-379b3d6c-e8bd-46f1-8cab-b82c02408341.png)
 
