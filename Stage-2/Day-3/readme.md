@@ -1,9 +1,9 @@
 # TASK
 
-# Docker Installation 
+Docker Installation 
 
-# Create Docker Images
+Create Docker Images
 
-# Deploy Application
+Deploy Application
 
-# Reverse Proxy
+Reverse Proxy
