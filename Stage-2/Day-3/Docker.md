@@ -50,8 +50,6 @@ sudo apt update ; sudo apt upgrade
 
 Kemudian saya akan memerikan hak akses root kepada docker supaya nantinya tidak perlu menggunakan sudo
 
-![image](https://user-images.githubusercontent.com/106061407/173321026-4dab550a-0f98-46d0-99b4-226eea776a08.png)
-
 
 ```
 sudo usermod -aG docker pino
@@ -135,9 +133,85 @@ Pada App saya akan menginstall [Mysql](https://hub.docker.com/_/mysql) sebagai d
 docker pull mysql:latest
 ```
 
-# Create docker image for front-end
+# Docker Setup Frontend , Backend and databases
 
-FORK FRONTEND : git clone https://github.com/dumbwaysdev/wayshub-frontend
+FORK FRONTEND :
+```
+git clone https://github.com/dumbwaysdev/wayshub-frontend
+```
 
-![image](https://user-images.githubusercontent.com/106061407/173332474-379b3d6c-e8bd-46f1-8cab-b82c02408341.png)
+FORK BACKEND  : 
+
+```
+git clone https://github.com/dumbwaysdev/wayshub-backend
+```
+
+Saya akan cloning kedua fork FE(frontend) dan BE(Backend)
+
+![image](https://user-images.githubusercontent.com/106061407/173351746-ea70f73b-f973-4bc3-8f67-393fad02c2af.png)
+
+Kemudian saya akan membuat volume dengan direktori mysql-database
+
+![image](https://user-images.githubusercontent.com/106061407/173354063-d81f27e6-73da-4b95-bff5-41840b0b17a3.png)
+
+```
+docker run -d --name database -p 3306:3306 -v ~/mysql-database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=P4ssw0rd -e MYSQL_DATABASE=wayshub mysql:latest
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173354451-c187999c-8cf4-44c4-b17f-5c4d13405e4e.png)
+
+Untuk memasuki container mysql gunakan perintah 
+
+```
+docker container exec -it database bash
+```
+
+Kemudian saya akan melihat daftar databases
+
+![image](https://user-images.githubusercontent.com/106061407/173354657-d659538a-cc58-4696-83f3-78dfafd7309e.png)
+
+Selanjutnya saya akan konfigurasi backend menggunakan docker compose
+
+Install terlebih dahulu docker compose
+
+![image](https://user-images.githubusercontent.com/106061407/173354994-dbdb371c-e7bb-4af3-8f6c-e468d558509a.png)
+
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Untuk cek versi docker compose gunakan perintah
+
+```
+docker compose --version
+```
+
+Selanjutnya saya akan masuk ke direktori backend dan melakukan konfigurasi mengoneksikan backend ke database dan melakukan migrasi sequelize 
+
+![image](https://user-images.githubusercontent.com/106061407/173355873-894acb96-c973-4951-a9fa-16b504bbf3fa.png)
+
+app@App-alfino:~/wayshub-backend/config$ 
+
+```
+nano config.json
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173356362-2d9f847a-3328-4afe-8e05-2adec95630fa.png)
+
+Setelah mengubah kemudian save 
+
+Kemudian kembali  ke direktori wayshub-backend dan saya akan membuat dockerfile
+
+NOTE : SAYA GUNAKAN node:dubnium-alpine3.11 (karena sizenya kecil)
+
+![image](https://user-images.githubusercontent.com/106061407/173359394-d07bbb21-47a9-4364-9cd5-9841523d18a7.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/173356581-124db5ef-e764-4c54-a725-9f84613e1e23.png)
+
 
