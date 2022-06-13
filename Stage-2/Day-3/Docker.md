@@ -16,7 +16,7 @@ Hal pertama yang perlu dipersiapkan yaitu dengan membuat akun pada [Docker Hub](
 
 [Tutorial install docker](https://docs.docker.com/engine/install/ubuntu/)
 
-Bagian pertama dalam pembuatan Docker saya akan mempersiapkan 2 buah server yang nantinya akan saya install Docker untuk gateway dan Docker untuk menjalankan (Frontend, Backend, dan Database)
+Bagian pertama dalam pembuatan Docker saya akan mempersiapkan 2 buah server yang nantinya akan saya install Nginx untuk gateway dan Docker untuk menjalankan (Frontend, Backend, dan Database)
 
 Saya akan gunakan VPS yang di sediakan oleh [IDCloudHost](https://idcloudhost.com/) 
 
@@ -54,72 +54,15 @@ Kemudian saya akan memerikan hak akses root kepada docker supaya nantinya tidak 
 ```
 sudo usermod -aG docker pino
 ```
-Lakukan kepada 2 server
+
+# Gateway installation
+
+![image](https://user-images.githubusercontent.com/106061407/173381927-bdba7835-d64c-437a-ba05-c5dfe9586485.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173382017-2bf3eae2-5118-493c-968e-3ddba96d95db.png)
 
 
 # Create Docker Images
-
-# DOCKER IMAGES IN GATEWAY
-
-Pada gateway saya akan menginstall [Nginx](https://hub.docker.com/_/nginx) 
-
-![image](https://user-images.githubusercontent.com/106061407/173324606-7592acd2-2743-464b-bf38-307d1f8cfe38.png)
-
-Lakukan login terlebih dahulu
-
-```
-docker login
-```
-
-![image](https://user-images.githubusercontent.com/106061407/173325255-1ab16e2a-c35f-4fb9-b9ee-922e656c1ec1.png)
-
-Kemudian saya akan menginstall image [Nginx](https://hub.docker.com/_/nginx) untuk versinya saya akan install versi terbaru (latest)
-
-```
-docker pull nginx:latest
-```
-
-![image](https://user-images.githubusercontent.com/106061407/173326278-f49b570e-bbae-42ff-9daf-85d7df29a7d0.png)
-
-Untuk mengetahui image apa saja yang sudah terinstall bisa gunakan perintah 
-
-```
-docker images
-```
-
-```
-docker image ls
-```
-
-Selanjutnya saya akan membuat container nginx 
-
-![image](https://user-images.githubusercontent.com/106061407/173334127-abffddf1-616e-49fc-829a-f3594624fe3a.png)
-
-```
-docker container create --name nginx1 -p 8080:80 nginx:latest
-```
-
-Untuk menjalankan container diatas gunakan perintah
-
-![image](https://user-images.githubusercontent.com/106061407/173334556-8b2348ae-8b18-45ae-a3cb-6f9ca837ca1c.png)
-
-```
-docker container start nginx1
-```
-Masuk ke container nginx menggunakan perintah
-
-![image](https://user-images.githubusercontent.com/106061407/173335034-8ad87605-882e-4720-9d90-ff580e0168bb.png)
-
-```
-docker exec -it nginx1 bash
-```
-
-![image](https://user-images.githubusercontent.com/106061407/173335204-1d1cfdfa-4937-4d9a-b23f-621d0be1e40a.png)
-
-Selanjutnya saya akan cek menggunakan web browser dengan mencari ip dari host dan port nginx (8080)
-
-![image](https://user-images.githubusercontent.com/106061407/173335468-c2f4b002-53a8-4278-a119-b2035039c000.png)
-
 
 # DOCKER IMAGES IN APP
 
@@ -298,4 +241,72 @@ Selanjutnya cek di web browser
 
 ![image](https://user-images.githubusercontent.com/106061407/173371987-869383c7-914c-4eeb-9525-76d33a2312aa.png)
 
+Apabila berhasil akan muncul repository baru
+
+Sebelum lanjut ke step selanjutnya tentang konfigurasi pada app frontend saya akan membuat DNS pada app backend menggunakan [CloudFlare](cloudflare.com)
+
+![image](https://user-images.githubusercontent.com/106061407/173374237-8c4c897d-8080-4db5-972b-d4d1a309523a.png)
+
+Selanjutnya saya akan konfigurasi api.js pada direktori /home/app/wayshub-frontend/src/config yang gunanya untuk menghubungkan FE & BE 
+
+![image](https://user-images.githubusercontent.com/106061407/173386895-eaca7623-9b91-4781-9c19-1e3b6a691fa0.png)
+
+Kemudian buat dockerfile pada frontend
+
+![image](https://user-images.githubusercontent.com/106061407/173387557-eae604fc-8ef8-468b-ae60-438cc5594cc2.png)
+
+
+```
+nano dockerfile
+```
+
+```
+FROM node:dubnium-alpine3.11
+WORKDIR /usr/app
+COPY . .
+RUN npm install
+EXPOSE 3000
+CMD [ "npm", "start" ]
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173387642-33a4f5dc-9212-4664-a7bd-871e081474a7.png)
+
+
+Selanjutnya saya langsung membuat docker-compose.yml pada frontend
+
+```
+nano docker-compose.yml
+```
+```
+version: '3.8'
+services: 
+ frontend:
+   build: .    
+   container_name: fe
+   image: pinoezz/wayshub-fe:stable
+   stdin_open: true
+   ports: 
+    - 3030:3000
+```
+
+Kemudian save lalu exit
+
+![image](https://user-images.githubusercontent.com/106061407/173389157-cafb02f6-c65b-462a-84d1-f6505a9e89f3.png)
+
+Untuk build serta jalankan docker compose secara daemon menggunakan 
+
+```
+docker-compose up -d
+```
+Kemudian cek image pada docker
+
+![image](https://user-images.githubusercontent.com/106061407/173390643-45f57c21-7c54-4924-b4e5-3827a21505c3.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173390725-0780a14b-6d6d-40f6-a212-0b0573375bc2.png)
+
+Kemudian untuk memastikan cek juga menggunakan web browser
+
+![image](https://user-images.githubusercontent.com/106061407/173390455-687de95b-5309-4d6f-be63-0ae129862ef2.png)
+
+# Setup Gateway (Proxy & SSL)
 
