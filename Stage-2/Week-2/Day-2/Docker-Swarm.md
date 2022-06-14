@@ -110,3 +110,4 @@ Untuk melihat status node menggunakan command berikut di dockermanager
 docker node ls
 ```
 
+Kemudian build 
