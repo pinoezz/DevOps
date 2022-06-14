@@ -52,6 +52,10 @@ Kemudian Relogin dan cek kembali menggunakan docker version
 
 Sekarang saya dapat menjalankan perintah docker tanpa harus mengetikan sudo
 
+KETERANGAN : Lakukan pada ke 3 server supaya masing-masing mendapatkan akses root pada docker
+
+
+
 
 
 
