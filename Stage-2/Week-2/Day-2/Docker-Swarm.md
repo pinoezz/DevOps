@@ -75,6 +75,16 @@ Saya akan mengubah tempat direktori dan image
 
 Kemudian save dan exit
 
+# Konfigurasi Manager untuk Inisialisasi Swarm Cluster
+
+Sekarang kita akan membuat swarm cluster untuk ketiga server. Untuk membuatnya, memerlukan inialisasi pada dockermanager 
+
+KETERANGAN : user pino 103.183.74.76 (manager) dan worker 103.186.1.150 (worker 1) dan worker 103.186.1.179 (worker 2)
+
+![image](https://user-images.githubusercontent.com/106061407/173579806-8ca2de48-f576-46cc-ad64-4ca92bd3c6d3.png)
 
 
+```
+docker swarm init –advertise-addr <manager node IP address>
+```
 
