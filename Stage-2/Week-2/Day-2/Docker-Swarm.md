@@ -56,6 +56,24 @@ KETERANGAN : Lakukan pada ke 3 server supaya masing-masing mendapatkan akses roo
 
 
 
+![image](https://user-images.githubusercontent.com/106061407/173575556-faf62a28-b290-4412-818a-a9ce7ae0ebee.png)
+
+
+Pertama tama saya akan mengcloning fork https://github.com/sgnd/dumbways-docker-microservices
+
+Kemudian masuk pada direktori /home/pino/dumbways-docker-microservices
+
+Lalu edit file docker-compose.yml
+
+![image](https://user-images.githubusercontent.com/106061407/173576768-1aed50c7-950e-4079-ba6a-60e045c84ca3.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173577030-c34524da-5096-4a1f-9ff9-8cf55f9bde2a.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173577070-e100793d-3e2c-47f4-b419-2ce947c810b2.png)
+
+Saya akan mengubah tempat direktori dan image
+
+Kemudian save dan exit
 
 
 
