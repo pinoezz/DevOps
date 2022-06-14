@@ -375,9 +375,79 @@ Kemudian restart nginx.service
 sudo systemctl restart nginx.service 
 ```
 
-Kemudian saya akan konfigurasi ssl menggunakan zerossl
+Cek pada web browser 
 
-![image](https://user-images.githubusercontent.com/106061407/173399584-58d485c7-0190-425e-8226-19ecd9f2faaf.png)
+![image](https://user-images.githubusercontent.com/106061407/173470046-66392044-b270-4acd-920d-60e059cdeecc.png)
 
-![image](https://user-images.githubusercontent.com/106061407/173399954-a70ba32f-a6c9-4a33-a19a-ae13df9d0175.png)
+
+Menggunakan SSL CertBot untuk memperaman website
+
+Apa itu SSL ?
+
+SSL adalah singkatan dari Secure Socket Layer, salah satu komponen penting yang harus dimiliki website. Dengan SSL, transfer data di dalam website menjadi lebih aman dan terenkripsi. Bahkan saking pentingnya, Google Chrome melabeli website tanpa sertifikat SSL sebagai Not Secure.
+
+Apabila sistem keamanan ini ditambahkan pada website Anda, maka URL website akan berubah menjadi HTTPS. Tujuan utama pemasangan SSL adalah sebagai pengaman pertukaran data yang terjadi melalui jaringan internet.
+
+![image](https://user-images.githubusercontent.com/106061407/173472294-15dd0af5-3e10-4bdd-b73d-bc1be6ab86a0.png)
+
+Langkah pertama instalasi certbot
+
+```
+sudo snap install core; sudo snap refresh core
+```
+
+```
+sudo snap install --classic certbot
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173472483-1e0df1db-6876-4c19-9d43-651c5bb91487.png)
+
+
+Jalankan certbot menggunakan perintah
+
+```
+sudo certbot
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173472571-df7c21af-c09d-4055-b705-d6c2db2da44e.png)
+
+
+Konfigurasi SSL Certbot otomatis akan ada pada proxy alfino.studentdumbways.my.id
+
+![image](https://user-images.githubusercontent.com/106061407/173472648-aad5b5a5-48c3-470b-a4e1-38e2776075b9.png)
+
+Kemudian saya akan melakukan ssl pada api.alfino.studentdumbways.my.id
+
+![image](https://user-images.githubusercontent.com/106061407/173472670-e591f98a-dda5-4bc9-a5b3-864a6df9b675.png)
+
+Konfigurasi SSL Certbot otomatis akan ada pada proxy api.alfino.studentdumbways.my.id
+
+Kemudian saya akan restart nginx.service
+
+![image](https://user-images.githubusercontent.com/106061407/173472871-dd63c366-1abb-4647-b9dd-a810599173f3.png)
+
+```
+sudo systemctl restart nginx.service 
+```
+
+Kemudian cek melalui web browser
+
+![image](https://user-images.githubusercontent.com/106061407/173473892-f38bda8b-b873-4744-b37d-59916b5258af.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/173474056-c7da82d6-b0ad-4ae1-a76e-646143106e44.png)
+
+Saya mencoba melakukan registrasi dan login
+
+![image](https://user-images.githubusercontent.com/106061407/173474069-f949cc7d-c08c-46d0-b538-d979b02dd39b.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173474091-07667882-04dc-45d5-8b84-3923500f39db.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173474121-6e63f37c-b5eb-4787-8d04-0e39ca750e3f.png)
+
+Saya akan mencoba mengganti Foto profil channel
+
+![image](https://user-images.githubusercontent.com/106061407/173474372-04c0183d-f243-49c7-8ceb-0e0ab4172fab.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173474520-0071bd1c-d1a2-4179-8627-69219116d89c.png)
 
