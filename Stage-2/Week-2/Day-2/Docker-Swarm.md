@@ -69,7 +69,7 @@ Lalu edit file docker-compose.yml
 
 ![image](https://user-images.githubusercontent.com/106061407/173577030-c34524da-5096-4a1f-9ff9-8cf55f9bde2a.png)
 
-![image](https://user-images.githubusercontent.com/106061407/173577070-e100793d-3e2c-47f4-b419-2ce947c810b2.png)
+![image](https://user-images.githubusercontent.com/106061407/173589895-a0577a8b-c372-47be-aaf2-84a0a897f905.png)
 
 Saya akan mengubah tempat direktori dan image
 
@@ -110,4 +110,58 @@ Untuk melihat status node menggunakan command berikut di dockermanager
 docker node ls
 ```
 
-Kemudian build 
+Kemudian saya akan build docker-compose 
+
+![image](https://user-images.githubusercontent.com/106061407/173589955-35954769-4eb0-4310-84e9-5b35a239cd55.png)
+
+```
+docker-compose build
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173592799-070f6556-da3a-4dc8-8657-041d9066e98e.png)
+
+Apabila proses build image sudah selesai bisa cek menggunakan perintah 
+
+```
+docker images
+```
+
+Selanjutnya saya akan mengcloning fork dan mengedit file docker-compose seperti sebelumnya pada kedua worker dan kemudian di build
+
+![image](https://user-images.githubusercontent.com/106061407/173599135-a66144e2-a227-49d7-ac35-f74e0856dd1f.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173599526-4a8720f0-53b8-4547-9f49-8c58241ef48a.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173600004-d56cd299-0fe5-4367-8bdb-d5fd6c21d0a4.png)
+
+
+
+Selanjutnya saya akan mendeploy stack todo dan nantinya akan saya scaling pada worker
+
+![image](https://user-images.githubusercontent.com/106061407/173596689-6ea579bc-3b90-44e9-8d11-1e88eb34de65.png)
+
+
+```
+docker stack deploy --compose-file docker-compose.yml stack-todo
+```
+![image](https://user-images.githubusercontent.com/106061407/173596753-a554d5d4-3ab5-43c0-a9a9-fc270e4a9ac8.png)
+
+Gunakan docker service ls untuk melihat service berjalan
+
+```
+docker service ls
+```
+
+Selanjutnya saya akan cek salah satu port contohnya port 4000 stack todo service di web browser
+
+![image](https://user-images.githubusercontent.com/106061407/173597101-d6105dd6-a2c1-4f35-b35d-d86c24364419.png)
+
+Berjalan dengan lancar kemudian saya akan scaling stack-todo_todo-skill kepada kedua worker 
+
+![image](https://user-images.githubusercontent.com/106061407/173604877-c7625c8f-5589-4b61-8bda-3cf822d2a3c2.png)
+
+```
+docker service scale stack-todo_todo-skill=5
+```
+
+Selanjutnya saya akan cek hasil nya di worker
