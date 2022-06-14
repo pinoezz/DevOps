@@ -79,12 +79,34 @@ Kemudian save dan exit
 
 Sekarang kita akan membuat swarm cluster untuk ketiga server. Untuk membuatnya, memerlukan inialisasi pada dockermanager 
 
-KETERANGAN : user pino 103.183.74.76 (manager) dan worker 103.186.1.150 (worker 1) dan worker 103.186.1.179 (worker 2)
+KETERANGAN : Saya membuat 3 server docker (pino), (worker), (worker)
+user pino 103.183.74.76 (manager) dan worker 103.186.1.150 (worker 1) dan worker 103.186.1.179 (worker 2)
 
 ![image](https://user-images.githubusercontent.com/106061407/173579806-8ca2de48-f576-46cc-ad64-4ca92bd3c6d3.png)
 
 
 ```
 docker swarm init –advertise-addr <manager node IP address>
+```
+
+Pada hasil diatas, join token sudah digenerate oleh dockermanager, ini nanti digunakan untuk join dockerworkers
+
+
+Konfigurasi Docker2 dan Docker3 Node untuk join Swarm Cluster
+
+![image](https://user-images.githubusercontent.com/106061407/173580512-4cdde54b-009e-4da8-9995-12359a64b170.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173580556-c235add2-8798-4a30-bb7a-a1586f3f8e62.png)
+
+
+
+Verifikasi Swarm Cluster
+
+![image](https://user-images.githubusercontent.com/106061407/173580993-783baecd-1221-4993-aa7b-68b9a90f0bb6.png)
+
+Untuk melihat status node menggunakan command berikut di dockermanager
+
+```
+docker node ls
 ```
 
