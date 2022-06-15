@@ -211,11 +211,11 @@ Langkah pertama saya akan membuat repository baru pada github
 ![image](https://user-images.githubusercontent.com/106061407/173874159-8d2c8064-758e-4ce0-8ed8-0ccfc6b03977.png)
 
 
-Cloning fork https://github.com/dumbwaysdev/wayshub-backend
+Cloning fork https://github.com/dumbwaysdev/wayshub-frontend
 
-Masuk ke direktori wayshub-backend 
+Masuk ke direktori wayshub-frontend
 
-![image](https://user-images.githubusercontent.com/106061407/173874375-36b8e0e4-051b-44ad-83fa-8596e9eb88b3.png)
+![image](https://user-images.githubusercontent.com/106061407/173891858-b1b0e448-5148-4d2c-a7cc-11a5d0a22118.png)
 
 Lalu ubah/tambahkan remote
 
@@ -231,7 +231,7 @@ git remote -v
 
 ![image](https://user-images.githubusercontent.com/106061407/173876637-589efdf2-05b8-4606-a182-3299f5823829.png)
 
-Kemudian masuk ke server jenkins direktori wayshub-backend lalu buat file jenkinsfile
+Kemudian masuk ke server jenkins direktori wayshub-frontend lalu buat file jenkinsfile
 
 ![image](https://user-images.githubusercontent.com/106061407/173875523-a60a7208-d2b7-4e6b-be4e-f48b0398c362.png)
 
@@ -319,5 +319,10 @@ Kemudian apply dan save
 Kemudia pilih build now
 
 ![image](https://user-images.githubusercontent.com/106061407/173885251-d3b95d35-90f9-4518-973b-c8ea182d4c87.png)
+
+
+Untuk melihat log pilih console output
+
+![image](https://user-images.githubusercontent.com/106061407/173885570-f96889cd-31f8-496c-91dc-b9fe1310cfae.png)
 
 
