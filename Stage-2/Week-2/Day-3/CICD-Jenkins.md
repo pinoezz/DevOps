@@ -164,11 +164,11 @@ Kemudian cek ssh di server keygen akan otomatis muncul
 
 Pilih create a job / new item 
 
-![image](https://user-images.githubusercontent.com/106061407/173871337-f720b6e0-019a-4065-b86f-e933cd0868d2.png)
+![image](https://user-images.githubusercontent.com/106061407/173883310-766dd297-4291-4f21-89ba-7d8b6a014772.png)
 
-Pilih freestyle project lalu ok
+Pilih pipeline project lalu ok
 
-![image](https://user-images.githubusercontent.com/106061407/173871536-c64c9f24-c973-4a84-8877-d10ee4c41665.png)
+![image](https://user-images.githubusercontent.com/106061407/173883429-14f7a781-b54d-44e5-818b-eb10cbdcc8a5.png)
 
 Isi description lalu apply
 
@@ -296,4 +296,28 @@ Selanjutnya add semua , commit dan push ke github
 Kemudian cek di github
 
 ![image](https://user-images.githubusercontent.com/106061407/173881487-8b26b6ca-ff35-4783-9e37-cb4615c0e299.png)
+
+# Configure Pipeline
+
+![image](https://user-images.githubusercontent.com/106061407/173881944-77e27220-6320-45c6-96a3-a728b5c46cf5.png)
+
+Masuk ke localhost:8080 (jenkins)
+
+![image](https://user-images.githubusercontent.com/106061407/173882080-3eaf3469-d5cb-4d9e-b136-d1f6ff1aa157.png)
+
+Pada dashboard pilih project (frontend)
+
+![image](https://user-images.githubusercontent.com/106061407/173883914-02568511-435b-476e-a239-8a7db067a596.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173883962-dda85ab9-0f5b-4cde-ae0b-e3b496d608e1.png)
+
+
+Kemudian apply dan save
+
+![image](https://user-images.githubusercontent.com/106061407/173884057-8e8ce7fe-341a-4d4c-a065-21856ef80ea8.png)
+
+Kemudia pilih build now
+
+![image](https://user-images.githubusercontent.com/106061407/173885251-d3b95d35-90f9-4518-973b-c8ea182d4c87.png)
+
 
