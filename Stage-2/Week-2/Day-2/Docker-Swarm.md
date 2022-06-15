@@ -140,28 +140,102 @@ Selanjutnya saya akan mendeploy stack todo dan nantinya akan saya scaling pada w
 
 ![image](https://user-images.githubusercontent.com/106061407/173596689-6ea579bc-3b90-44e9-8d11-1e88eb34de65.png)
 
+![image](https://user-images.githubusercontent.com/106061407/173724251-c6156477-8049-4eef-97a5-6a9c731db102.png)
+
 
 ```
 docker stack deploy --compose-file docker-compose.yml stack-todo
 ```
+
 ![image](https://user-images.githubusercontent.com/106061407/173596753-a554d5d4-3ab5-43c0-a9a9-fc270e4a9ac8.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173724386-afb98078-b170-4d5d-96c9-875763d08377.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173724408-1846b60c-6bb3-4a08-aa91-f30317ddb76e.png)
+
 
 Gunakan docker service ls untuk melihat service berjalan
 
 ```
 docker service ls
 ```
+![image](https://user-images.githubusercontent.com/106061407/173725204-dd2c87ee-44d8-4005-801f-c31b0158657e.png)
+
+
+Kemudian saya akan  melakukan deploy aplikasinya
+
+```
+docker stack deploy --compose-file docker-compose.yml stack-todo
+```
+
+![image](https://user-images.githubusercontent.com/106061407/173725504-c64600d1-3cc7-4ff7-9c17-b71087a7cfbf.png)
+
 
 Selanjutnya saya akan cek salah satu port contohnya port 4000 stack todo service di web browser
 
 ![image](https://user-images.githubusercontent.com/106061407/173597101-d6105dd6-a2c1-4f35-b35d-d86c24364419.png)
 
-Berjalan dengan lancar kemudian saya akan scaling stack-todo_todo-skill kepada kedua worker 
+![image](https://user-images.githubusercontent.com/106061407/173725635-4448cf82-5ad7-4595-9a1c-200a413c3042.png)
 
-![image](https://user-images.githubusercontent.com/106061407/173604877-c7625c8f-5589-4b61-8bda-3cf822d2a3c2.png)
+
+Berjalan dengan lancar kemudian saya akan scaling stack-todo_todo-profile kepada kedua worker 
+
+![image](https://user-images.githubusercontent.com/106061407/173731292-d81225f2-9392-4b4b-ae53-bf50e965b73a.png)
+
 
 ```
-docker service scale stack-todo_todo-skill=5
+docker service scale stack-todo_todo-profile=5
 ```
 
-Selanjutnya saya akan cek hasil nya di worker
+Selanjutnya akan terpecah beberapa compose menuju worker
+
+# Contoh 2 docker swarm create yang lebih ringan
+
+Baik cara ke 2 ini saya akan membuat file yang nantinya akan di scale
+
+![image](https://user-images.githubusercontent.com/106061407/173755241-4d1b81eb-fe0d-407e-bc39-8e65a6825f98.png)
+
+
+```
+docker service create --replicas 1 --name helloworld alpine ping google.com
+```
+
+Untuk melihat service berjalan gunakan 
+
+![image](https://user-images.githubusercontent.com/106061407/173755484-ab39d10d-d87e-494e-b61e-dff5e25d86e2.png)
+
+```
+docker service ls
+```
+
+Dan untuk melihat container yang sedang berjalan bisa gunakan 
+
+
+```
+docker ps
+```
+
+Kemudian saya akan melakukan scaling
+
+![image](https://user-images.githubusercontent.com/106061407/173755865-e4b813b8-4fe8-4bd1-bfe0-4bc227075dab.png)
+
+```
+docker service scale helloworld=5
+```
+
+Kemudian cek menggunakan docker ps
+
+![image](https://user-images.githubusercontent.com/106061407/173755972-b905d01e-dd10-42a4-9d16-377a853c841d.png)
+
+Pada manager terdapat 2 container
+
+![image](https://user-images.githubusercontent.com/106061407/173756145-206281ff-4aeb-44a1-b833-130de1d669b3.png)
+
+Pada worker 1 terdapat 1 container
+
+![image](https://user-images.githubusercontent.com/106061407/173756208-8722f533-28e6-4b17-ba70-98f6f5a6a6b9.png)
+
+Pada worker 2 terdapat 2 container 
+
+
+
