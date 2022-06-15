@@ -138,31 +138,6 @@ Selanjutnya saya akan mengcloning fork dan mengedit file docker-compose seperti 
 
 Selanjutnya saya akan mendeploy stack todo dan nantinya akan saya scaling pada worker
 
-![image](https://user-images.githubusercontent.com/106061407/173596689-6ea579bc-3b90-44e9-8d11-1e88eb34de65.png)
-
-![image](https://user-images.githubusercontent.com/106061407/173724251-c6156477-8049-4eef-97a5-6a9c731db102.png)
-
-
-```
-docker stack deploy --compose-file docker-compose.yml stack-todo
-```
-
-![image](https://user-images.githubusercontent.com/106061407/173596753-a554d5d4-3ab5-43c0-a9a9-fc270e4a9ac8.png)
-
-![image](https://user-images.githubusercontent.com/106061407/173724386-afb98078-b170-4d5d-96c9-875763d08377.png)
-
-![image](https://user-images.githubusercontent.com/106061407/173724408-1846b60c-6bb3-4a08-aa91-f30317ddb76e.png)
-
-
-Gunakan docker service ls untuk melihat service berjalan
-
-```
-docker service ls
-```
-![image](https://user-images.githubusercontent.com/106061407/173725204-dd2c87ee-44d8-4005-801f-c31b0158657e.png)
-
-
-Kemudian saya akan  melakukan deploy aplikasinya
 
 ```
 docker stack deploy --compose-file docker-compose.yml stack-todo
