@@ -227,5 +227,65 @@ git remote add origin git@github.com:pinoezz/Jenkins-Frontend.git
 git remote -v
 ```
 
+# Membuat [jenkinsfile](https://www.jenkins.io/doc/pipeline/tour/hello-world/)
 
+![image](https://user-images.githubusercontent.com/106061407/173876637-589efdf2-05b8-4606-a182-3299f5823829.png)
+
+Kemudian masuk ke server jenkins direktori wayshub-backend lalu buat file jenkinsfile
+
+![image](https://user-images.githubusercontent.com/106061407/173875523-a60a7208-d2b7-4e6b-be4e-f48b0398c362.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173878240-84ac27b8-9f7f-49f9-8854-3ae08029c02a.png)
+
+
+```
+def secret = 'server'
+def server = 'jenkins.103.171.85.155'
+def directory = 'wayshub-frontend'
+def branch = 'master'
+
+pipeline{
+    agent any
+    stages{
+        stage ('compose down &  pull'){
+            steps{
+                sshagent([secret]) {
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker-compose down
+                    docker system prune -f
+                    git pull origin ${branch}
+                    exit
+                    EOF"""
+                }
+            }
+        }
+        stage ('docker build'){
+            steps{
+                sshagent([secret]) {
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker-compose build
+                    exit
+                    EOF"""
+                }
+            }
+        }
+        stage ('docker up'){
+            steps{
+                sshagent([secret]) {
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker-compose up -d
+                    exit
+                    EOF"""
+                }
+            }
+        }
+    }
+}
+
+```
+
+Kemudian save dan exit
 
