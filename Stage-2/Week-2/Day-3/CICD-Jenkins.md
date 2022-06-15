@@ -158,6 +158,20 @@ Kemudian cek ssh di server keygen akan otomatis muncul
 
 ![image](https://user-images.githubusercontent.com/106061407/173859328-4d5de41d-6266-449d-82df-be2976951008.png)
 
+# Create a job
+
+![image](https://user-images.githubusercontent.com/106061407/173871182-66141bbd-736c-48e0-a0b8-313873577469.png)
+
+Pilih create a job / new item 
+
+![image](https://user-images.githubusercontent.com/106061407/173871337-f720b6e0-019a-4065-b86f-e933cd0868d2.png)
+
+Pilih freestyle project lalu ok
+
+![image](https://user-images.githubusercontent.com/106061407/173871536-c64c9f24-c973-4a84-8877-d10ee4c41665.png)
+
+Isi description lalu apply
+
 
 # Add Credential
 
@@ -179,8 +193,39 @@ lalu create
 
 ![image](https://user-images.githubusercontent.com/106061407/173870174-9039733f-adcb-42e0-8f5d-9daf33fbdc90.png)
 
+Kemudian saya ingin mencoba untuk me rename jenkins menjadi frontend
+
+![image](https://user-images.githubusercontent.com/106061407/173872683-c060787c-bfcf-4f2e-aad6-09fa07cd161d.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173872744-bdb56e4c-9750-4813-8fb7-9727554a2cb1.png)
+
+![image](https://user-images.githubusercontent.com/106061407/173872784-45985579-8c2f-4ac8-864b-f7d7f9416402.png)
+
+# Integrasi dengan git
+
+Langkah pertama saya akan membuat repository baru pada github
+
+![image](https://user-images.githubusercontent.com/106061407/173873473-e11b03f3-bf90-41ea-a0a2-2f331f8a1f1d.png)
 
 
+![image](https://user-images.githubusercontent.com/106061407/173874159-8d2c8064-758e-4ce0-8ed8-0ccfc6b03977.png)
+
+
+Cloning fork https://github.com/dumbwaysdev/wayshub-backend
+
+Masuk ke direktori wayshub-backend 
+
+![image](https://user-images.githubusercontent.com/106061407/173874375-36b8e0e4-051b-44ad-83fa-8596e9eb88b3.png)
+
+Lalu ubah/tambahkan remote
+
+```
+git remote add origin git@github.com:pinoezz/Jenkins-Frontend.git
+```
+
+```
+git remote -v
+```
 
 
 
