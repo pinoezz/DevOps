@@ -159,5 +159,28 @@ Kemudian cek ssh di server keygen akan otomatis muncul
 ![image](https://user-images.githubusercontent.com/106061407/173859328-4d5de41d-6266-449d-82df-be2976951008.png)
 
 
+# Add Credential
+
+Sekarang kita akan mencoba membuat credentials pada jenkins, sehingga nantinya jenkins dapat melakukan clone dan deployment otomatis ke Github. Silahkan pilih menu credentials pada menu jenkins yang berada di bawah enu My views, maka akan muncul menu system yang telah di expand, silahkan pilih menu system tersebut. Lalu pilih domain Global credentials (unrestricted), dan kemudian pilih menu Add Credentials. Untuk user jenkins silahkan isikan seperti berikut
+
+![image](https://user-images.githubusercontent.com/106061407/173869107-fe062ed6-58c5-41c2-9991-16709a64a7ec.png)
+
+Copy id_rsa 
+
+![image](https://user-images.githubusercontent.com/106061407/173869504-471077f0-ac4f-48fe-8eac-21a370b39863.png)
+
+Pilih ssh username with private key
+
+![image](https://user-images.githubusercontent.com/106061407/173870044-fb9efb2e-d83f-4a88-ac88-3c667ba3b8a0.png)
+
+Pastekan id_rsa pada keynya
+
+lalu create
+
+![image](https://user-images.githubusercontent.com/106061407/173870174-9039733f-adcb-42e0-8f5d-9daf33fbdc90.png)
+
+
+
+
 
 
