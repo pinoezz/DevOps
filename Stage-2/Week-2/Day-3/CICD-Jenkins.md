@@ -132,4 +132,32 @@ Save and finish
 Start using jenkins
 
 
+# Menghubungkan Github dengan mengirimkan ssh key 
+
+![image](https://user-images.githubusercontent.com/106061407/173855625-273385ab-59e6-4323-b5a8-a3a86f5f04b3.png)
+
+Sebelumnya saya sudah menghubungkan akun github saya dengan ssh local
+
+![image](https://user-images.githubusercontent.com/106061407/173857887-3698f0df-86d9-4d87-ba5f-2a0f10adf650.png)
+
+Buat file authorized_keys sebelum mengirimkan ssh
+
+kemudian saya akan memberikan ssh dari local menuju server jenkins saya
+
+![image](https://user-images.githubusercontent.com/106061407/173859044-5c086f20-b98e-4683-beb0-26a91b9ebee0.png)
+
+```
+scp -r id_rsa id_rsa.pub jenkins@103.171.85.155:/home/jenkins/.ssh
+```
+
+KET : apabila gagal kalian perlu membuat direktori .ssh pada server jenkins
+
+![image](https://user-images.githubusercontent.com/106061407/173859265-5d7b33df-8bd8-4698-9e84-87a061111606.png)
+
+Kemudian cek ssh di server keygen akan otomatis muncul
+
+![image](https://user-images.githubusercontent.com/106061407/173859328-4d5de41d-6266-449d-82df-be2976951008.png)
+
+
+
 
