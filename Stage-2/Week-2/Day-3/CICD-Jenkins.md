@@ -64,33 +64,72 @@ docker login
 
 # Install Jenkins on Docker
 
-![image](https://user-images.githubusercontent.com/106061407/173836861-f8d26a2f-ac84-4073-acfe-67d28598a4be.png)
+![image](https://user-images.githubusercontent.com/106061407/173849622-b11bd4e2-3073-4dc0-95f8-d9ccd7e5ba6d.png)
 
 
 Download images jenkins
 
 ```
-docker pull jenkins:2.60.3
+docker pull jenkins/jenkins
+```
+
+# Setup network jenkins
+
+Saya akan membuat network untuk jenkins
+
+![image](https://user-images.githubusercontent.com/106061407/173845076-f24e2fda-f70e-4ab0-bfda-cb1292e5a0c2.png)
+
+```
+docker network create jenkins
 ```
 
  # Setup work direktory dan run jenkins sebagai container
  
- ![image](https://user-images.githubusercontent.com/106061407/173838453-a8cc855b-c30d-4ba3-9941-d5cdcb9ada5c.png)
+ ![image](https://user-images.githubusercontent.com/106061407/173849794-96a44b9e-7d98-4df0-9fe8-a3fb00f26667.png)
 
-```
-docker run -d -it -p 8080:8080 -p 50000:50000 --name jenkins -u root:root -v /docker/jenkins:/var/jenkins_home jenkins:2.60.3
-```
+ 
+ ```
+ docker create --name jenkins --network jenkins --publish 8080:8080 jenkins
+ ```
 
-```
-docker ps
-```
+![image](https://user-images.githubusercontent.com/106061407/173850149-30033066-2547-46cc-8d64-547a5253f670.png)
 
-# Setup jenkins
+ 
+ Untuk menjalankan jenkins gunakan perintah 
+ 
+ ```
+ docker container start jenkins
+ ```
+ 
+ # Setup jenkins
+ 
+ ![image](https://user-images.githubusercontent.com/106061407/173845847-4be58ee8-3f20-433c-926f-671cf3c96fe4.png)
 
-![image](https://user-images.githubusercontent.com/106061407/173838792-a1992a58-5b20-4534-987d-5f1490402f9d.png)
+Setelah jenkins containter run, setup jenkins menggunakan browser. Akses jenkin di http://localhost:8080.
+
+![image](https://user-images.githubusercontent.com/106061407/173850427-63782e18-5f9c-4040-9939-21aa059904b7.png)
+
+Kemudian masuk ke /var/jenkins_home/secrets/initialAdminPassword pada container jenkins dan buka file initialAdminPassword kemudian copy
+
+![image](https://user-images.githubusercontent.com/106061407/173846762-f942af2b-d938-45e6-9afb-3f031211b7fe.png)
+
+Kemudian pilih install suggested plugins 
+
+![image](https://user-images.githubusercontent.com/106061407/173850825-f7023561-5451-42c7-94b5-22c920c4fa65.png)
+
+Dan tunggu proses hingga selesai
+
+![image](https://user-images.githubusercontent.com/106061407/173853659-9ae2e9d9-f7b4-4a81-b088-933cd8f4050b.png)
+
+Isi semua kolom lalu save and continue
+
+![image](https://user-images.githubusercontent.com/106061407/173854120-537f4c4b-bf22-4933-9f09-c80de3599890.png)
+
+Save and finish
+
+![image](https://user-images.githubusercontent.com/106061407/173854190-86378e5b-b0dd-461c-8dee-d1db2c124d1d.png)
+
+Start using jenkins
 
 
-Setelah jenkins containter run, setup jenkins menggunakan browser. Akses jenkin di http://localhost:8080 
-
-Pada saat pertama kali mengakses jenkins akan meminta password administrator untuk unlock jenkins. Passwordnya ada pada file /docker/jenkins/secrets/initialAdminPassword , kemudian masukan kodenya untuk unlock jenkins
 
