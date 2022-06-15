@@ -235,7 +235,7 @@ Kemudian masuk ke server jenkins direktori wayshub-backend lalu buat file jenkin
 
 ![image](https://user-images.githubusercontent.com/106061407/173875523-a60a7208-d2b7-4e6b-be4e-f48b0398c362.png)
 
-![image](https://user-images.githubusercontent.com/106061407/173878240-84ac27b8-9f7f-49f9-8854-3ae08029c02a.png)
+![image](https://user-images.githubusercontent.com/106061407/173880518-782e35e7-e171-4b43-81b9-a3153e6f614f.png)
 
 
 ```
@@ -288,4 +288,12 @@ pipeline{
 ```
 
 Kemudian save dan exit
+
+Selanjutnya add semua , commit dan push ke github
+
+![image](https://user-images.githubusercontent.com/106061407/173881428-d4bcf933-76d7-44b6-b9a4-15baa86ad59c.png)
+
+Kemudian cek di github
+
+![image](https://user-images.githubusercontent.com/106061407/173881487-8b26b6ca-ff35-4783-9e37-cb4615c0e299.png)
 
