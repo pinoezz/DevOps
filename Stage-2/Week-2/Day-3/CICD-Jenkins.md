@@ -64,14 +64,11 @@ docker login
 
 # Install Jenkins on Docker
 
-![image](https://user-images.githubusercontent.com/106061407/173849622-b11bd4e2-3073-4dc0-95f8-d9ccd7e5ba6d.png)
+![image](https://user-images.githubusercontent.com/106061407/174042621-cdeb7a39-2875-46d2-91c4-0aa1e99bd938.png)
 
-
-
-Download images jenkins
 
 ```
-docker pull jenkins/jenkins
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
 ```
 
 # Install Nginx
