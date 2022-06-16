@@ -421,4 +421,28 @@ Kemudian cek melalui web browser
 
 ![image](https://user-images.githubusercontent.com/106061407/174025513-836206f1-e3fc-4880-a947-6a10554c96db.png)
 
+
+# Webhook for Jenkins
+
+![image](https://user-images.githubusercontent.com/106061407/174067422-04e42bd6-6580-4c03-9fa4-4bcff7565054.png)
+
+Pilih repository lalu pilih setting kemudian pilih webhook
+
+![image](https://user-images.githubusercontent.com/106061407/174067525-9891c172-5920-4c13-b9dc-1686caca7ee2.png)
+
+Add webhook dan masukan password
+
+![image](https://user-images.githubusercontent.com/106061407/174070710-9f37092a-c632-4f4d-9296-e4c4209f963a.png)
+
+Masukan payload url kemudian save
+
+![image](https://user-images.githubusercontent.com/106061407/174070772-07707bad-8415-432b-9022-7e0f58c89366.png)
+
+
 # Build BE
+
+
+
+
+
+
