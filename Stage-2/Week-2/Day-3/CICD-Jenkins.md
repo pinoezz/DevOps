@@ -330,10 +330,7 @@ Untuk melihat log pilih console output
 
 Saya mendapatkan error bahwa docker-compose tidak support harus mengganti versi kemudian selanjutnya
 
-![image](https://user-images.githubusercontent.com/106061407/174004307-d2c5a911-bdc4-47fa-934f-08283b4537aa.png)
-
-
-Saya ubah versi dari 3.8 menjadi 3.3
+Saya upgrade docker compose 
 
 Kemudian
 
@@ -347,4 +344,15 @@ dan coba build ulang di jenkins
 
 ![image](https://user-images.githubusercontent.com/106061407/174006945-ba51c697-5401-4ee1-ae02-8cec1810dde7.png)
 
+Sudah berhasil di build dan deploy selanjutnya saya akan cek image yang barusan dibuat pada docker
+
+![image](https://user-images.githubusercontent.com/106061407/174007470-e4620de5-13bc-46b2-8310-1bec89ec6d0c.png)
+
+```
+docker images
+```
+
+Muncul image baru "pinoezz/wayshub-fe"
+
+![image](https://user-images.githubusercontent.com/106061407/174010003-6fff9c4c-2e09-4ffd-b520-74a5544e011a.png)
 
