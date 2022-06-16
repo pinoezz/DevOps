@@ -67,11 +67,73 @@ docker login
 ![image](https://user-images.githubusercontent.com/106061407/173849622-b11bd4e2-3073-4dc0-95f8-d9ccd7e5ba6d.png)
 
 
+
 Download images jenkins
 
 ```
 docker pull jenkins/jenkins
 ```
+
+# Install Nginx
+
+![image](https://user-images.githubusercontent.com/106061407/174030952-27e3fe6a-837d-458e-aab2-550e506f48b7.png)
+
+
+```
+sudo apt install nginx
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174032495-7cfb49aa-eb2d-4c34-b62b-385340f2d9eb.png)
+
+Kemudian cek pada web browser
+
+# Create a new server block 
+
+![image](https://user-images.githubusercontent.com/106061407/174031634-4e8536dd-420c-4681-8da4-d8a9cf3e912b.png)
+
+Sayaakan mempersiakan domai terlebih dahulu
+
+![image](https://user-images.githubusercontent.com/106061407/174032052-30b31120-1772-47f6-a21a-2f400aeab133.png)
+
+
+```
+sudo nano /etc/nginx/conf.d/jenkins.conf
+```
+
+```
+upstream jenkins{
+    server 103.171.85.155:8080;
+}
+ 
+server{
+    listen      80;
+    server_name jenkinsalfino.studentdumbways.my.id;
+ 
+    access_log  /var/log/nginx/jenkins.access.log;
+    error_log   /var/log/nginx/jenkins.error.log;
+ 
+    proxy_buffers 16 64k;
+    proxy_buffer_size 128k;
+ 
+    location / {
+        proxy_pass  http://jenkins;
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        proxy_redirect off;
+ 
+        proxy_set_header    Host            $host;
+        proxy_set_header    X-Real-IP       $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto https;
+    }
+ 
+}
+```
+Kemudian save dan exit
+
+Kemudian cek pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/174033086-3577e94b-b9a5-406f-b36c-8b1188243cd5.png)
+
 
 # Setup network jenkins
 
@@ -227,6 +289,8 @@ git remote add origin git@github.com:pinoezz/Jenkins-Frontend.git
 git remote -v
 ```
 
+# Build FE
+
 # Membuat [jenkinsfile](https://www.jenkins.io/doc/pipeline/tour/hello-world/)
 
 ![image](https://user-images.githubusercontent.com/106061407/173876637-589efdf2-05b8-4606-a182-3299f5823829.png)
@@ -356,3 +420,8 @@ Muncul image baru "pinoezz/wayshub-fe"
 
 ![image](https://user-images.githubusercontent.com/106061407/174010003-6fff9c4c-2e09-4ffd-b520-74a5544e011a.png)
 
+Kemudian cek melalui web browser
+
+![image](https://user-images.githubusercontent.com/106061407/174025513-836206f1-e3fc-4880-a947-6a10554c96db.png)
+
+# Build BE
