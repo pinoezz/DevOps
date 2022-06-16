@@ -334,3 +334,17 @@ Saya mendapatkan error bahwa docker-compose tidak support harus mengganti versi 
 
 
 Saya ubah versi dari 3.8 menjadi 3.3
+
+Kemudian
+
+![image](https://user-images.githubusercontent.com/106061407/174005417-74c18f7e-03b1-48c6-96f6-3ad9f43fcfe5.png)
+
+git add . commit dan push , apabila gagal git pull terlebih dahulu 
+
+![image](https://user-images.githubusercontent.com/106061407/174005689-b52d01b5-b6b2-44da-a876-4f18d6e98d76.png)
+
+dan coba build ulang di jenkins
+
+![image](https://user-images.githubusercontent.com/106061407/174006945-ba51c697-5401-4ee1-ae02-8cec1810dde7.png)
+
+
