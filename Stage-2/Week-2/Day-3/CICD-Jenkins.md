@@ -239,7 +239,7 @@ Kemudian masuk ke server jenkins direktori wayshub-frontend lalu buat file jenki
 
 
 ```
-def secret = 'server'
+def secret = 'pinoezz'
 def server = 'jenkins.103.171.85.155'
 def directory = 'wayshub-frontend'
 def branch = 'master'
@@ -326,3 +326,11 @@ Untuk melihat log pilih console output
 ![image](https://user-images.githubusercontent.com/106061407/173885570-f96889cd-31f8-496c-91dc-b9fe1310cfae.png)
 
 
+![image](https://user-images.githubusercontent.com/106061407/174004196-546f0f05-73b9-4e7c-b2c5-07f7fc642561.png)
+
+Saya mendapatkan error bahwa docker-compose tidak support harus mengganti versi kemudian selanjutnya
+
+![image](https://user-images.githubusercontent.com/106061407/174004307-d2c5a911-bdc4-47fa-934f-08283b4537aa.png)
+
+
+Saya ubah versi dari 3.8 menjadi 3.3
