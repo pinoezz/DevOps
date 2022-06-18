@@ -536,4 +536,14 @@ Saya akan melakukan registrasi terlebih dahulu
 
 ![image](https://user-images.githubusercontent.com/106061407/174414938-a621c5e0-02ba-41f1-a3fa-78e632480703.png)
 
-Apabila dapat melakukan registrasi dan dapat maasuk ke dashboard artinya semua konfigurasi berjalan lancar dan juga bisa dilihat web sudah menggunakan domain dengan reverse proxy yang sebelumnya saya konfigurasikan
+Apabila dapat melakukan registrasi dan dapat maasuk ke dashboard artinya semua konfigurasi berjalan lancar dan juga bisa dilihat web sudah menggunakan domain dengan reverse proxy yang sebelumnya saya konfigurasikan pada server gateway 
+
+![image](https://user-images.githubusercontent.com/106061407/174415048-626dc48e-6915-404a-a486-a23ced307e40.png)
+
+![image](https://user-images.githubusercontent.com/106061407/174415073-3131eb42-aca0-4efd-af3e-1b04b3d4ae54.png)
+
+Saya juga sudah melakukan SSL untuk memperaman website menggunakan certbot
+
+
+
+
