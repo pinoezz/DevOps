@@ -441,8 +441,99 @@ Masukan payload url kemudian save
 
 # Build BE
 
+![image](https://user-images.githubusercontent.com/106061407/174414882-635e65a2-2329-4c1e-82c8-e44f41c419a9.png)
+
+
+Sebelum build backend saya sarankan untuk membuat database mysql terlebih dahulu dan membuat database yang akan kita gunakan terlebih dahulu
+
+```
+docker run -d --name database -p 3306:3306 -v ~/mysql-database:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=P4ssw0rd -e MYSQL_DATABASE=wayshub mysql:latest
+```
 
 
 
+Setelah building FE dan DB selesai kalian perlu membuat repository dan Jenkinsfile untuk BE
 
 
+![image](https://user-images.githubusercontent.com/106061407/174414719-902a3c3a-63f8-44aa-a40d-0d6fc6c9e24e.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/174414725-e6f10795-a4d7-40f2-9bb0-d6127700c02f.png)
+
+Isi dari Jenkinsfile
+
+```
+def secret = 'pinoezz'
+def server = 'jenkins@103.171.85.155'
+def dir = 'wayshub-backend'
+def branch = 'master'
+
+pipeline{
+	agent any
+	stages{
+		stage ('Delete container and images & git pull'){
+			steps{
+				sshagent([secret]) {
+					sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+					cd ${dir}
+					docker-compose down
+					docker system prune -f
+					git pull origin ${branch}
+					exit
+					EOF"""
+				}
+			}
+		}
+	stage ('Build Images'){
+                        steps{
+                                sshagent([secret]) {
+                                        sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                                        cd ${dir}
+                                        docker-compose build
+                                        exit
+                                        EOF"""
+                                }
+                        }
+                }
+	stage ('Deploy Container'){
+                        steps{
+                                sshagent([secret]) {
+                                        sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                                        cd ${dir}
+                                        docker-compose up -d
+                                        exit
+                                        EOF"""
+                                }
+				
+                        }
+		
+               }
+
+	}
+	
+}
+```
+
+Kemudian save lalu lakukan buil pipeline pada jenkins 
+
+![image](https://user-images.githubusercontent.com/106061407/174414759-1d814059-6ba8-4f1a-ba99-fd0af2b8b297.png)
+
+
+Lalu lakukan build
+
+![image](https://user-images.githubusercontent.com/106061407/174414768-9b5c9b33-23d8-47bc-9699-53d6e5c49cb4.png)
+
+Apabila hasilnya berhasil akan seperti ini semuanya tidak ada error dan otomatis akan build di server Jenkins saya
+
+
+![image](https://user-images.githubusercontent.com/106061407/174414799-701dc2af-5189-4c49-9c43-47173ae0be14.png)
+
+Kemudian bisa di cek pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/174414930-e0091f28-aeae-49ca-9cbe-92b3e94b93b7.png)
+
+Saya akan melakukan registrasi terlebih dahulu
+
+![image](https://user-images.githubusercontent.com/106061407/174414938-a621c5e0-02ba-41f1-a3fa-78e632480703.png)
+
+Apabila dapat melakukan registrasi dan dapat maasuk ke dashboard artinya semua konfigurasi berjalan lancar dan juga bisa dilihat web sudah menggunakan domain dengan reverse proxy yang sebelumnya saya konfigurasikan
