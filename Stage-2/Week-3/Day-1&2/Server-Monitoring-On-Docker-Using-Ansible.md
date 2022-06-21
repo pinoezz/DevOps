@@ -20,3 +20,32 @@ Ansible adalah sebuah provisioning tool yang dikembangkan oleh RedHat. Dimana ka
 
 Berikut adalah skema yang akan di bangun, jadi saya akan membuat skema diatas menggunakan server dari [IDCloudHost](https://console.idcloudhost.com/) dan akan berjalan menggunakan docker
 
+--------------------------------
+
+# Membuat VPS (Virtual Private Server) [IDCloudHost](https://console.idcloudhost.com/)
+
+![image](https://user-images.githubusercontent.com/106061407/174722768-5789ae6d-a550-4795-b68a-6b8407d303c2.png)
+
+Pertama-tama saya akan membuat 2 buah server yaitu server mentoring dan app menggunakan os Ubuntu 20.04 LTS
+
+![image](https://user-images.githubusercontent.com/106061407/174723311-1398b777-7b79-448e-ace5-5134a08d4baa.png)
+
+# Membuat Konfigurasi Ansible untuk install docker 
+
+![image](https://user-images.githubusercontent.com/106061407/174724125-c2b44a9c-bb4b-4a89-8c79-a0a499f67591.png)
+
+Install Ansible 
+
+```
+sudo apt install ansible
+```
+
+---------------------------------
+
+![image](https://user-images.githubusercontent.com/106061407/174724230-224de96a-c147-4baf-a12f-fc5e6ab0402c.png)
+
+Cek versi ansible
+
+```
+ansible --version
+```
