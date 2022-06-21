@@ -335,6 +335,89 @@ ansible-playbook docker.yml
 
 Berhasil install docker di server app 
 
-# Membuat docker-compose Node exporter
+-----------------------------------------------------------------
+
+# Membuat docker-compose dan konfigurasi prometheus
+
+Referensi :
+
+https://grafana.com/docs/grafana-cloud/quickstart/docker-compose-linux/
+
+![image](https://user-images.githubusercontent.com/106061407/174800052-99e981d2-6780-4a81-b628-e65b5b6d73d2.png)
+
+Saya akan membuat docker-compose.yml terlebih dahulu 
+
+```
+version: '3.8'
+
+networks:
+  monitoring:
+    driver: bridge
+    
+volumes:
+  prometheus_data: {}
+
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: unless-stopped
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    expose:
+      - 9100
+    networks:
+      - monitoring
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    expose:
+      - 9090
+    networks:
+      - monitoring
+ ```
+     
+# Konfigurasi file Prometheus
+
+![image](https://user-images.githubusercontent.com/106061407/174804458-616c1d7e-500d-4a1d-ae87-b12feca0a340.png)
 
 
+```
+global:
+  scrape_interval: 1m
+
+scrape_configs:
+  - job_name: "prometheus"
+    scrape_interval: 1m
+    static_configs:
+    - targets: ["localhost:9090"]
+
+  - job_name: "node"
+    static_configs:
+    - targets: ["node-exporter:9100"]
+```
+
+----------------------------------
+
+# Membuat ansible-playbook node exporter dan prometheus
+
+
+#
