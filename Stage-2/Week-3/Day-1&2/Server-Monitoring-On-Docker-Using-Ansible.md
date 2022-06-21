@@ -87,9 +87,41 @@ Kemudian copy id_rsa dan buat file .pem pada local/ansibleku
 
 Lalu save dan exit
 
-![image](https://user-images.githubusercontent.com/106061407/174735628-c2c73719-fa12-4384-82dc-695704d4ab6d.png)
+![image](https://user-images.githubusercontent.com/106061407/174737222-a174934b-eae5-471c-975c-446a956d6025.png)
 
 Jangan lupa untuk mengubah hak akses file .pemnya menjadi read only kemudian test mengoneksikan ke server
 
 ----------------------------------
+
+# Membuat Inventory Ansible
+
+![image](https://user-images.githubusercontent.com/106061407/174740906-24b4235b-f4a9-42ac-a480-b3896c68bfbc.png)
+
+Buat file bernama Inventory kemudian isi dengan ip server kalian
+
+```
+[monitoring]
+103.55.37.187 ansible_user=monitor
+```
+
+-------------------------------------
+
+# Membuat Ansible.cfg
+
+![image](https://user-images.githubusercontent.com/106061407/174750267-ec377191-8cd7-4d06-8f5a-106ad9852c1e.png)
+ 
+Buat file baru bernama ansible.cfg kemudian isi seperti berikut kemudian save
+ 
+ ```
+ [defaults]
+inventory = Inventory
+private_key_file = pino.pem
+```
+Kemudian cek menggunakan 
+
+![image](https://user-images.githubusercontent.com/106061407/174750581-96ffd40d-a2c5-4d93-a478-b1106e82dc85.png)
+
+```
+ansible all-m ping
+```
 
