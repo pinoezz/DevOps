@@ -49,3 +49,17 @@ Cek versi ansible
 ```
 ansible --version
 ```
+
+------------------------------
+
+# Membuat direktori untuk menyimpan file/konfigurasi ansible
+
+![image](https://user-images.githubusercontent.com/106061407/174725451-0c60f2ad-5508-4934-8eee-dcf768c65d3c.png)
+
+Untuk nama direktori bebas , disini saya akan buat direktori bernama "ansibleku"
+
+```
+mkdir ansibleku
+```
+
+---------------------------------
