@@ -199,7 +199,7 @@ https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-li
 
          - name: 'add repository docker'
            apt_repository:
-             repo: deb https://download.docker.com/linux/ubuntu
+             repo: deb  https://download.docker.com/linux/ubuntu focal stable
 
          - name: 'install docker engine'
            apt: 
@@ -223,16 +223,22 @@ https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-li
          - name: 'docker without sudo'
            shell: sudo usermod -aG docker monitor
 
+
 ```
 
 Setelah beberapa kali kesalahan akhirnya saya dapat membuat playbook untuk docker dan apabila sukses akan seperti gambar diatas
 
 Kemudian saya akan install docker.yml nya
 
-![image](https://user-images.githubusercontent.com/106061407/174773809-a2fbb7f6-658d-4642-86c3-ff3fd4f80b26.png)
+![image](https://user-images.githubusercontent.com/106061407/174779151-f2ef05c4-e834-49ba-96d0-a3982126d76b.png)
 
 ```
 ansible-playbook --syntax-check docker.yml 
 ```
 
 Kemudian saya akan cek hasil install docker pada server
+
+![image](https://user-images.githubusercontent.com/106061407/174779567-63c99cee-ebef-47a5-8d78-31f97ff208fe.png)
+
+Apabila berhasil , dapat menjalankan docker , dan dapat menjalankan docker tanpa sudo
+
