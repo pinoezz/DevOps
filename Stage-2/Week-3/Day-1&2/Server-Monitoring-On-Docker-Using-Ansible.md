@@ -63,3 +63,33 @@ mkdir ansibleku
 ```
 
 ---------------------------------
+
+# Membuat SSH keygen 
+
+![image](https://user-images.githubusercontent.com/106061407/174732046-7eefb23c-0bb4-413f-aeb9-81513c276051.png)
+
+Membuat SSH keygen pada server supaya dapat dikenali oleh local
+
+```
+ssh-keygen
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174735580-e2effd76-7758-4c03-9bed-48f63dce298c.png)
+
+
+Copy isi dari id_rsa.pub dan pastekan di authorized_keys
+
+![image](https://user-images.githubusercontent.com/106061407/174732582-b89b5a2a-5510-4cd5-8d05-1ba67988b8c5.png)
+
+Kemudian copy id_rsa dan buat file .pem pada local/ansibleku
+
+![image](https://user-images.githubusercontent.com/106061407/174732841-ee3415cf-7788-4576-8718-d5b274a9a225.png)
+
+Lalu save dan exit
+
+![image](https://user-images.githubusercontent.com/106061407/174735628-c2c73719-fa12-4384-82dc-695704d4ab6d.png)
+
+Jangan lupa untuk mengubah hak akses file .pemnya menjadi read only kemudian test mengoneksikan ke server
+
+----------------------------------
+
