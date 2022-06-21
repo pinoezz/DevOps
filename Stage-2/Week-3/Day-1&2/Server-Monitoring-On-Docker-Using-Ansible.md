@@ -195,13 +195,11 @@ https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-li
 
          - name: 'add docker gpg key'
            apt_key:
-            name:
             url: https://download.docker.com/linux/ubuntu/gpg
 
          - name: 'add repository docker'
            apt_repository:
-            name:
-             repo: https://download.docker.com/linux/ubuntu
+             repo: deb https://download.docker.com/linux/ubuntu
 
          - name: 'install docker engine'
            apt: 
@@ -224,6 +222,17 @@ https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-li
         
          - name: 'docker without sudo'
            shell: sudo usermod -aG docker monitor
+
 ```
 
 Setelah beberapa kali kesalahan akhirnya saya dapat membuat playbook untuk docker dan apabila sukses akan seperti gambar diatas
+
+Kemudian saya akan install docker.yml nya
+
+![image](https://user-images.githubusercontent.com/106061407/174773809-a2fbb7f6-658d-4642-86c3-ff3fd4f80b26.png)
+
+```
+ansible-playbook --syntax-check docker.yml 
+```
+
+Kemudian saya akan cek hasil install docker pada server
