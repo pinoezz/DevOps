@@ -125,3 +125,24 @@ Kemudian cek menggunakan
 ansible all-m ping
 ```
 
+# Install nginx menggunakan ansible-playbook
+
+![image](https://user-images.githubusercontent.com/106061407/174755972-16113ce1-b30b-4faa-a794-edd868fad4b7.png)
+
+Buat file baru bernama nginx.yml
+
+```
+- hosts: monitoring
+  become: yes
+  gather_facts: yes
+  tasks:
+        - name: 'install nginx'
+          apt: 
+            name:
+             - nginx
+            state: latest
+ ```
+Kemudian saya akan install nginx.yml nya 
+
+
+
