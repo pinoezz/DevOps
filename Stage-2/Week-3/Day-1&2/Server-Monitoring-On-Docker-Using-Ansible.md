@@ -242,3 +242,99 @@ Kemudian saya akan cek hasil install docker pada server
 
 Apabila berhasil , dapat menjalankan docker , dan dapat menjalankan docker tanpa sudo
 
+# Install Monitoring server dengan Node Exporter , Prometheus dan Grafana
+
+![image](https://user-images.githubusercontent.com/106061407/174795189-45be4acf-cfdc-4581-abca-2405bf0a42e6.png)
+
+Pertama tama saya akan menginstall docker pada server app  menggunakan ansible-playbook
+
+![image](https://user-images.githubusercontent.com/106061407/174796273-d3c04fcc-8866-42ce-a3e8-1ee7298cf64e.png)
+
+Kirim ssh dari server monitor/local supaya dapat dikenali lokal
+
+![image](https://user-images.githubusercontent.com/106061407/174796432-d78f574e-72ae-42cd-b651-e0b4a4603c50.png)
+
+Kemudian kirim atau masukan id_rsa.pub ke autorized_keys
+
+![image](https://user-images.githubusercontent.com/106061407/174795348-b54caac6-c83b-42ae-b753-ce75b5119267.png)
+
+Kemudian tambahkan user pada inventory
+
+![image](https://user-images.githubusercontent.com/106061407/174796602-a700d697-aff2-4e3b-87c2-f7a64fdcb0fa.png)
+
+Cek koneksi ansible
+
+---------------------------------------------
+
+# Install Docker
+
+![image](https://user-images.githubusercontent.com/106061407/174796982-366fa96e-3c60-4d0b-befd-a0299b5bb1e8.png)
+
+Edit file docker.yml ganti host dan docker without sudo nya menjadi app lalu save
+
+![image](https://user-images.githubusercontent.com/106061407/174797040-e3d51183-186d-4d75-8d37-86a56401f26e.png)
+
+```
+- hosts: app
+  become: yes
+  gather_facts: yes
+  tasks:
+         - name: 'update'
+           apt:
+            update_cache: yes
+
+         - name: 'upgrade'
+           apt:
+            upgrade: dist
+
+
+         - name: 'install dependencies'
+           apt:
+             name:
+             - ca-certificates
+             - curl
+             - gnupg
+             - lsb-release
+
+         - name: 'add docker gpg key'
+           apt_key:
+            url: https://download.docker.com/linux/ubuntu/gpg
+
+         - name: 'add repository docker'
+           apt_repository:
+             repo: deb  https://download.docker.com/linux/ubuntu focal stable
+
+         - name: 'install docker engine'
+           apt: 
+            name:
+             - docker-ce
+             - docker-ce-cli
+             - containerd.io
+             - docker-compose-plugin
+
+         - name: 'update'
+           apt:
+            update_cache: yes
+
+         - name: 'install docker-compose'
+           shell: curl -SL https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+
+         - name: 'set permision for docker'
+           shell: sudo chmod +x /usr/local/bin/docker-compose
+        
+         - name: 'docker without sudo'
+           shell: sudo usermod -aG docker app
+```
+
+```
+ansible-playbook docker.yml
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174798811-fa96aa1a-72f4-4786-aae3-1368041f30b9.png)
+
+Berhasil install docker di server app 
+
+# Membuat docker-compose Node exporter
+
+
