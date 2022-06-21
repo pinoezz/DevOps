@@ -142,7 +142,88 @@ Buat file baru bernama nginx.yml
              - nginx
             state: latest
  ```
+ 
+  
 Kemudian saya akan install nginx.yml nya 
 
+![image](https://user-images.githubusercontent.com/106061407/174757260-c557f0bb-068b-4f3d-9b53-6fd416cf9fdc.png)
 
 
+```
+ansible-playbook nginx.yml
+```
+
+Kemudian cek pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/174757425-4834b203-9fff-4bd0-9fdf-789fc64bf7cb.png)
+
+Apabila muncul tampilan seperti diatas maka hasilnya berhasil !!!
+
+------------------------------------------------
+
+# Install Docker menggunakan ansible-playbook
+
+![image](https://user-images.githubusercontent.com/106061407/174772970-5c256505-613e-4781-b200-e34accb7b603.png)
+
+Referensi
+
+https://docs.docker.com/engine/install/ubuntu/
+
+https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-linux-systems
+
+```
+- hosts: monitoring
+  become: yes
+  gather_facts: yes
+  tasks:
+         - name: 'update'
+           apt:
+            update_cache: yes
+
+         - name: 'upgrade'
+           apt:
+            upgrade: dist
+
+
+         - name: 'install dependencies'
+           apt:
+             name:
+             - ca-certificates
+             - curl
+             - gnupg
+             - lsb-release
+
+         - name: 'add docker gpg key'
+           apt_key:
+            name:
+            url: https://download.docker.com/linux/ubuntu/gpg
+
+         - name: 'add repository docker'
+           apt_repository:
+            name:
+             repo: https://download.docker.com/linux/ubuntu
+
+         - name: 'install docker engine'
+           apt: 
+            name:
+             - docker-ce
+             - docker-ce-cli
+             - containerd.io
+             - docker-compose-plugin
+
+         - name: 'update'
+           apt:
+            update_cache: yes
+
+         - name: 'install docker-compose'
+           shell: curl -SL https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+
+         - name: 'set permision for docker'
+           shell: sudo chmod +x /usr/local/bin/docker-compose
+        
+         - name: 'docker without sudo'
+           shell: sudo usermod -aG docker monitor
+```
+
+Setelah beberapa kali kesalahan akhirnya saya dapat membuat playbook untuk docker dan apabila sukses akan seperti gambar diatas
