@@ -351,6 +351,29 @@ Sekarang setelah berhasil install docker menggunakan ansible-playbook kemudian s
  
  [Docker Create Container](https://docs.ansible.com/ansible/2.5/modules/docker_container_module.html)
  
- [yaml editor online](https://codebeautify.org/yaml-editor-online)
+ [Yaml editor online](https://codebeautify.org/yaml-editor-online)
  
+ Pertama-tama membuat file kongigurasi prometheus 
  
+ ![image](https://user-images.githubusercontent.com/106061407/174966094-2b86314e-4446-4331-9d13-a9e7da4225c2.png)
+
+File diatas saya simpan di folder ansibleku
+
+```
+
+global:
+ scrape_interval: 10s
+scrape_configs:
+ - job_name: 'prometheus_metrics'
+   scrape_interval: 5s
+   static_configs:
+     - targets: ['103.55.37.187:9090'] #Localhost:port
+ - job_name: 'node_exporter_metrics'
+   scrape_interval: 5s
+   static_configs:  
+     - targets: ['103.55.37.187:9100','103.55.37.185:9100'] #Localhost:port
+ 
+```
+
+Berikut adalah file konfigurasi prometheus.yml
+
