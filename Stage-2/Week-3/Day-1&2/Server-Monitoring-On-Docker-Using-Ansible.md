@@ -561,3 +561,82 @@ Kemudian load dan pilih prometheus
 
 Apabila tampilan seperti ini artinya berhasil di import :D
 
+# Membuat Reverse Proxy untuk Monitoring
+
+Dikarenakan pada step sebelumnya saya sudah install nginx jadi saya akan langsung melakukan konfigurasi reverse proxy
+
+Saya akan menggunakan domain dari [CloudFlare](https://dash.cloudflare.com/)
+
+![image](https://user-images.githubusercontent.com/106061407/174980604-ab353506-af67-4bfa-bc41-1c7f898b1335.png)
+
+Domain : monitoring.alfino.studentdumbways.my.id
+
+Kemudian masuk ke server monitoring
+
+![image](https://user-images.githubusercontent.com/106061407/174978358-3cf742a1-fc1a-4ce7-9af1-a4dcc61f8c1a.png)
+
+![image](https://user-images.githubusercontent.com/106061407/174978443-d35300fd-bbe4-455e-bcdb-98ac6ca92adc.png)
+
+Masuk ke direktori /etc/nginx dan buat direktori untuk meyimpan konfigurasi reverse proxy 
+
+```
+server {
+        server_name monitoring.alfino.studentdumbways.my.id;
+
+        location / {
+                proxy_pass http://103.55.37.187:3000;
+        }
+}
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174985105-bde84ae0-e9cd-4dc1-bac6-8f2f941acd55.png)
+
+![image](https://user-images.githubusercontent.com/106061407/174985353-5d7cae37-0c74-4738-83af-06ac8a368d18.png)
+
+Masukan direktori konfigurasi reverse proxy pada nginx.conf 
+
+![image](https://user-images.githubusercontent.com/106061407/174985414-9957e8ad-35d0-4392-8cf6-c0a6149d505a.png)
+
+Cek syntax
+
+```
+sudo nginx -t
+```
+![image](https://user-images.githubusercontent.com/106061407/174985959-327b4142-f656-47df-b95c-f724b51f455b.png)
+
+```
+sudo systemctl restart nginx.service 
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174986190-f94b272f-fe0f-4230-bdbe-92c3e67ddf5d.png)
+
+Langkah selanjutnya saya akan pasangkan SSL certbot pada web http://monitoring.alfino.studentdumbways.my.id/
+
+
+![image](https://user-images.githubusercontent.com/106061407/174987489-d94b7c8f-63ee-40a1-8f6b-3b377ac7e443.png)
+
+
+```
+sudo snap install core; sudo snap refresh core
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174987168-51280bb8-e335-4c5f-a1a5-0cb412dbbbd3.png)
+
+Instalasi certbot
+
+```
+sudo snap install --classic certbot
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174995141-82d468ce-125c-4069-8a0b-a2890d1ee735.png)
+
+
+Kemudian jalankan dan pilih domain  
+
+```
+sudo certbot
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174995324-a0eb0d06-b06f-42d8-be0b-fce70e925ec1.png)
+
+Berikut hasilnya
