@@ -353,6 +353,8 @@ Sekarang setelah berhasil install docker menggunakan ansible-playbook kemudian s
  
  [Yaml editor online](https://codebeautify.org/yaml-editor-online)
  
+ [Grafana Dashboard](https://grafana.com/grafana/dashboards/)
+ 
  Pertama-tama membuat file kongigurasi prometheus 
  
  ![image](https://user-images.githubusercontent.com/106061407/174966094-2b86314e-4446-4331-9d13-a9e7da4225c2.png)
@@ -541,7 +543,21 @@ Disini pilih metric apa yang mau kita monitoring kemudian run queries
 
 ![image](https://user-images.githubusercontent.com/106061407/174972897-0a6d0785-3988-4735-812d-57bf4ce7a6e3.png)
 
-Kemudian untuk mengganti tampilan dashboard kalian bisa mengambil template nya di
+Kemudian untuk mengganti tampilan dashboard kalian bisa mengambil template nya di [Grafana Dashboard](https://grafana.com/grafana/dashboards/)
 
+![image](https://user-images.githubusercontent.com/106061407/174974175-0cce7298-a415-4e54-9872-85ccacbfe628.png)
 
+Contoh saya akan gunakan dashboard ini , Klik bagian copy ID to Clipboard [1860]
+
+![image](https://user-images.githubusercontent.com/106061407/174974706-936dfd15-b6e5-42ee-86b8-1291b33ae9e4.png)
+
+Selanjutnya perlu import pada grafana dashboard
+
+![image](https://user-images.githubusercontent.com/106061407/174974785-655fd877-a163-4066-90f0-753a65dec41a.png)
+
+Kemudian load dan pilih prometheus
+
+![image](https://user-images.githubusercontent.com/106061407/174974837-e05623a3-ed72-47f4-9c31-efc21d0a3482.png)
+
+Apabila tampilan seperti ini artinya berhasil di import :D
 
