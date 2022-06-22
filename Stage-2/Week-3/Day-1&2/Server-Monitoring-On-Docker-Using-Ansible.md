@@ -487,7 +487,7 @@ Apabila proses sudah selesai akan seperti gambar diatas kemudian kita cek pada d
 
 ![image](https://user-images.githubusercontent.com/106061407/174969548-b9e64353-9d09-442a-851c-b4f69db37e55.png)
 
-![image](https://user-images.githubusercontent.com/106061407/174969570-09ea6113-e5c5-4c76-b62a-ec12c23ad30f.png)
+![image](https://user-images.githubusercontent.com/106061407/174975264-8821bf51-2317-4aa8-a723-5372d8b1bec8.png)
 
 Semua container sudah berjalan kemudian cek juga pada web browser
 
