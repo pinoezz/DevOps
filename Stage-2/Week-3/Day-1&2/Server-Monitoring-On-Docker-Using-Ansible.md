@@ -377,3 +377,171 @@ scrape_configs:
 
 Berikut adalah file konfigurasi prometheus.yml
 
+![image](https://user-images.githubusercontent.com/106061407/174966869-4c166089-ee6d-4af9-9045-65bcb137a121.png)
+
+
+Kemudian untuk file Inventory tambahkan [all] (menggabungkan semua user)
+
+```
+[all]
+103.55.37.187 ansible_user=monitor
+103.55.37.185 ansible_user=app
+
+[monitoring]
+103.55.37.187 ansible_user=monitor
+
+[app]
+103.55.37.185 ansible_user=app
+```
+NOTE : GANTI IP DIATAS DENGAN IP SERVER KALIAN 
+
+Kemudian saya akan membuat ansible-playbook untuk instalasi Node Exporter , Prometheus dan Grafana
+
+```
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+       - name: 'update'
+         apt:
+          update_cache: yes
+
+       - name: 'upgrade'
+         apt:
+          upgrade: dist
+
+       - name: 'Run Node Exporter'
+         shell: docker run -d --net="host" --pid="host" -v "/:/host:ro,rslave" --name node_exporter quay.io/prometheus/node-exporter --path.rootfs=/host
+
+- hosts: monitoring
+  tasks:
+        - name: 'Make volume folder'
+          file:
+           path: /home/monitor/prometheus
+           state: directory
+
+        - name: 'Copy Configuration Prometheus'
+          copy:
+           src: /home/pino/ansibleku/prometheus.yml
+           dest: /home/monitor/prometheus
+        
+        - name: 'install ptyhon docker'
+          shell: sudo apt install python3-docker -y
+
+
+        - name: 'Login DockerHub'
+          docker_login:
+           username: {username}
+           password: {password}
+
+        - name: 'Pull Prometheus'
+          docker_image:
+           name: bitnami/prometheus
+           source: pull
+           
+
+        - name: 'Container Prometheus'
+          docker_container:
+           name: prometheus
+           image: bitnami/prometheus
+           ports:
+             - 9090:9090
+           volumes: /home/monitor/prometheus:/etc/prometheus
+
+        - name: 'Pull Grafana'
+          docker_image:
+           name: grafana/grafana    
+           source: pull
+
+        - name: 'Container Grafana'
+          docker_container:
+           name: grafana
+           image: grafana/grafana
+           ports:
+             - 3000:3000
+```             
+
+Saya akan check file yml apakah sudah valid menggunakan [Yaml editor online](https://codebeautify.org/yaml-editor-online)
+
+![image](https://user-images.githubusercontent.com/106061407/174968381-d49e5588-150c-4eaa-a28a-4c367d29a48c.png)
+
+Apabila hasil seperti ini artinya sudah valid dan untuk mengecek nya jg bisa gunakan perintah 
+
+![image](https://user-images.githubusercontent.com/106061407/174968953-27e0fb69-13b1-498c-b5a5-b540033f5bef.png)
+
+```
+ansible-playbook --syntax-check monitoring.yml
+```
+
+![image](https://user-images.githubusercontent.com/106061407/174969018-a802b31b-46d6-461a-bdb4-e924f409f013.png)
+
+Selanjutnya running playbook
+
+```
+ansible-playbook monitoring.yml 
+```
+
+Apabila proses sudah selesai akan seperti gambar diatas kemudian kita cek pada docker di server monitor dan app
+
+![image](https://user-images.githubusercontent.com/106061407/174969548-b9e64353-9d09-442a-851c-b4f69db37e55.png)
+
+![image](https://user-images.githubusercontent.com/106061407/174969570-09ea6113-e5c5-4c76-b62a-ec12c23ad30f.png)
+
+Semua container sudah berjalan kemudian cek juga pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/174969712-936ac5d7-0026-42e9-ac42-b91abb3a747e.png)
+
+Node Exporter [OK]
+
+![image](https://user-images.githubusercontent.com/106061407/174969800-743c9563-bb17-4590-a0c6-9bed7c9b62bf.png)
+
+![image](https://user-images.githubusercontent.com/106061407/174969825-1913fe2e-7bcc-4712-8783-579195042237.png)
+
+Prometheus [OK]
+
+![image](https://user-images.githubusercontent.com/106061407/174970073-5018dac9-67d8-4dfc-afa2-5ba295f364f2.png)
+
+Grafana [OK]
+
+Selanjutnya saya akan konfigurasi pada grafana 
+
+![image](https://user-images.githubusercontent.com/106061407/174970313-b7a4a3ac-8e8d-4573-acec-ca233df72657.png)
+
+Masukan username dan password default (admin) / (admin)
+
+Kemudian buat password baru sesuai keinginan kalian lalu submit
+
+![image](https://user-images.githubusercontent.com/106061407/174970569-c6a0f93d-506e-4fdd-92fe-a7de41884dac.png)
+
+Pada tampilan ini kalan "DATA SOURCES"
+
+![image](https://user-images.githubusercontent.com/106061407/174970689-319b4df6-4fc1-41f4-89b6-00ff31a8619a.png)
+
+Kemudian pilih Prometheus
+
+![image](https://user-images.githubusercontent.com/106061407/174970898-06cf601a-62ee-490d-be83-8ce7fce6caf0.png)
+
+Kemudian pada URL kalian isikan IP dan port dari Prometheus
+
+![image](https://user-images.githubusercontent.com/106061407/174970991-ffa8cb43-cb64-443f-8314-0b32d3467215.png)
+
+Save & Test
+
+![image](https://user-images.githubusercontent.com/106061407/174971884-000fd73b-7a91-4745-9f51-20bc05639b14.png)
+
+Kemudian pilih Dashboard dan pilih New Dashboard
+
+![image](https://user-images.githubusercontent.com/106061407/174972071-77f31679-c22a-484e-8b2c-873ddf8a68f5.png)
+
+Pilih add new panel
+
+![image](https://user-images.githubusercontent.com/106061407/174972723-a720a849-ff2c-4c44-9919-3844e55244d0.png)
+
+Disini pilih metric apa yang mau kita monitoring kemudian run queries
+
+![image](https://user-images.githubusercontent.com/106061407/174972897-0a6d0785-3988-4735-812d-57bf4ce7a6e3.png)
+
+Kemudian untuk mengganti tampilan dashboard kalian bisa mengambil template nya di
+
+
+
