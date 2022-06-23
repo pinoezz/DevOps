@@ -53,6 +53,26 @@ Untuk masing-masing worker saya gunakan CPU 1 Core, RAM 1GB, SSD 20 GB
 
 Tunggu hingga proses building selesai ...
 
+![image](https://user-images.githubusercontent.com/106061407/175208197-ee22d02f-0447-475d-94ea-6941e2ac3dd5.png)
+
+Test login menggunakan terminal
+
 -----------------------------
+
+# Install Kubernetes
+
+Sebelum melakukan instalasi kubernetes diwajibkan terlebih dahulu untuk NON-Aktifkan firewall dan SWAP
+
+![image](https://user-images.githubusercontent.com/106061407/175208485-b5913de6-a2c9-4b69-9037-1c8fe02081ea.png)
+
+```
+ufw disable
+```
+
+```
+swapoff -a; sed -i '/swap/d' /etc/fstab
+```
+
+
 
 
