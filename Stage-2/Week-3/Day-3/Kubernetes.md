@@ -160,10 +160,14 @@ Selanjutnya Instalasi Kubernetes dan sekaligus install kubelet kubeadm kubectl
 ![image](https://user-images.githubusercontent.com/106061407/175219579-ed8d1629-df38-419a-bfa7-854f7ebfc70b.png)
 
 ```
-sudo apt -y install curl apt-transport-https
+sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt update -y; sudo apt -y install kubelet kubeadm kubectl
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
 
@@ -173,7 +177,7 @@ Konfigurasi kubeadm
 
 
 ```
-sudo kubeadm init --apiserver-advertise-address=103.186.1.43 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
+kubeadm init --apiserver-advertise-address=103.186.1.43 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
 ```
 
 
