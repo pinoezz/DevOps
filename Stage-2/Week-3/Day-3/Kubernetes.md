@@ -75,7 +75,7 @@ Test login menggunakan terminal
 
 -----------------------------
 
-# Install Kubernetes
+# Install Docker & Kubernetes
 
 Sebelum melakukan instalasi kubernetes diwajibkan terlebih dahulu untuk NON-Aktifkan firewall dan SWAP
 
@@ -108,6 +108,8 @@ Kemudian Restart system
 sysctl --system
 ```
 
+--------------------------------------------
+
 KETERANGAN : Dikarenakan saya sudah menambahkan catalog Docker pada saat pembuatan server jadi saya tidak perlu install docker lagi
 
 Untuk Instalasi docker kalian dapat ikuti tutorial di bawah ini :
@@ -120,8 +122,58 @@ Untuk Instalasi docker kalian dapat ikuti tutorial di bawah ini :
 
 Saat ini saya gunakan Docker Version:  20.10.7
 
+-------------------------------------------------------
+
+Selanjutnya saya akan konfigurasi docker daemon
+
+![image](https://user-images.githubusercontent.com/106061407/175217228-dcad2a7d-fd12-4570-b0fa-cd7f67d0c47a.png)
+
+```
+cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+"exec-opts": ["native.cgroupdriver=systemd"],
+"log-driver": "json-file",
+"log-opts": {
+"max-size": "100m"
+},
+"storage-driver": "overlay2"
+}
+EOF
+```
+
+Lalu restart docker
+
+![image](https://user-images.githubusercontent.com/106061407/175217538-a3efe1aa-c970-438e-8e59-eeef5199bf21.png)
+
+```
+sudo systemctl enable docker
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+![image](https://user-images.githubusercontent.com/106061407/175217606-e98f3092-4224-478c-984d-26c5cfe9f598.png)
+
+-----------------------------------------------
+
+Selanjutnya Instalasi Kubernetes dan sekaligus install kubelet kubeadm kubectl
+
+![image](https://user-images.githubusercontent.com/106061407/175219579-ed8d1629-df38-419a-bfa7-854f7ebfc70b.png)
+
+```
+sudo apt -y install curl apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt update -y; sudo apt -y install kubelet kubeadm kubectl
+```
 
 
-Kemudian saya akan konfigurasi docker daemon
+Konfigurasi kubeadm
+
+![image](https://user-images.githubusercontent.com/106061407/175220717-b529d884-2f96-44d7-86cc-f91aa0a13221.png)
+
+
+```
+sudo kubeadm init --apiserver-advertise-address=103.186.1.43 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
+```
 
 
