@@ -89,9 +89,9 @@ ufw disable
 swapoff -a; sed -i '/swap/d' /etc/fstab
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/175209233-edb3389e-6712-4568-9a7f-7be4353b190b.png)
-
 kemudian kita perlu juga update kernel
+
+![image](https://user-images.githubusercontent.com/106061407/175209233-edb3389e-6712-4568-9a7f-7be4353b190b.png)
 
 ```
 cat >>/etc/sysctl.d/kubernetes.conf<<EOF
@@ -100,15 +100,28 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/175210657-962d782a-211a-4381-98c3-6fec4fa20deb.png)
-
 Kemudian Restart system
+
+![image](https://user-images.githubusercontent.com/106061407/175210657-962d782a-211a-4381-98c3-6fec4fa20deb.png)
 
 ```
 sysctl --system
 ```
 
+KETERANGAN : Dikarenakan saya sudah menambahkan catalog Docker pada saat pembuatan server jadi saya tidak perlu install docker lagi
+
+Untuk Instalasi docker kalian dapat ikuti tutorial di bawah ini :
+
+[Install Docker](https://docs.docker.com/engine/install/)
+
+[Install Docker Compose](https://docs.docker.com/compose/install/)
+
+![image](https://user-images.githubusercontent.com/106061407/175212482-5ad79a98-7496-4e74-bf70-0b1413b515fa.png)
+
+Saat ini saya gunakan Docker Version:  20.10.7
 
 
+
+Kemudian saya akan konfigurasi docker daemon
 
 
