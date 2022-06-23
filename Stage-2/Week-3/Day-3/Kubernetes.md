@@ -235,10 +235,7 @@ kubeadm token create --print-join-command
 
 Kemudian copy semua hasil outputnya 
 
-contoh :
-
-
-
+NOTE : INSTALL DAHULU KUBERNATES DENGAN VERSI YANG SAMA !!!
 
 Copy pada kedua worker
 
@@ -258,5 +255,199 @@ Kemudian cek koneksi nodes menggunakan perintah
 kubectl get nodes
 ```
 
+# Deploy Simple App
 
+Kemudian saya akan mendeploy nginx 
+
+![image](https://user-images.githubusercontent.com/106061407/175273336-72329767-50b9-4bea-bf00-dc7be61d94de.png)
+
+```
+kubectl create deploy nginx --image nginx
+```
+
+dan untuk buildnya gunakan perintah
+
+```
+kubectl expose deploy nginx --port 80 --type NodePort
+```
+
+Cek service gunakan perintah 
+
+```
+kubectl get svc
+``` 
+
+Selanjutnya saya akan cloning aplikasi microservices
+
+![image](https://user-images.githubusercontent.com/106061407/175278462-e360398a-ab81-4866-83b6-1f9f7d0c6ee2.png)
+
+FORK : https://github.com/dumbwaysdev/dumbways-microservices.git
+
+```
+git clone https://github.com/dumbwaysdev/dumbways-microservices.git
+```
+
+Kemudian masuk ke directory aplikasi microservices dan edit docker-compose dan kubernetes.yml nya
+
+[file docker-compose]
+
+![image](https://user-images.githubusercontent.com/106061407/175279611-8945ae3e-1637-40ac-8a52-4ae74c37edfc.png)
+
+```
+version: '3'
+
+services:
+    mongo:
+        image : mongo
+        container_name: mongo
+        environment:
+        - PUID=1000
+        - PGID=1000
+        volumes:
+        - /home/pinoezz/mongo/database:/data/db
+        ports:
+        - 27017:27017
+        restart: unless-stopped
+
+    todo-profile:
+        build: ./profile
+        command: "ts-node /app/src/server"
+        image: pinoezz/todo-profile
+        restart: always
+        container_name: todo-profile
+        ports:
+        - 5001:5001
+    
+    todo-services:
+        build: ./services
+        command: "node /app/src/server.js"
+        image: pinoezz/todo-services
+        restart: always
+        container_name: todo-services
+        ports:
+        - 4000:4000
+    
+    todo-skill:
+        build: ./skill
+        command: "ts-node /app/src/server"
+        image: pinoezz/todo-skill
+        restart: always
+        container_name: todo-skill
+        ports:
+        - 5000:5000
+
+    todo-todo:
+        build: ./todo
+        command: "ts-node /app/src/server"
+        image: pinoezz/todo-todo
+        restart: always
+        container_name: todo-todo
+        ports:
+        - 5002:5002
+
+    todo-user:
+        build: ./user
+        command: "ts-node /app/src/server"
+        image: pinoezz/todo-user
+        restart: always
+        container_name: todo-user
+        ports:
+        - 7000:7000
+```
+
+[File kubernetes.yml]
+
+![image](https://user-images.githubusercontent.com/106061407/175280798-fb600461-5209-4af7-ba7b-1c4b1ccb078e.png)
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-profile
+spec:
+  selector:
+    matchLabels:
+      app: todo-profile
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-profile
+    spec:
+      containers:
+      - name: todo-profile
+        image: pinoezz/todo-profile
+        ports:
+        - containerPort: 5001
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-services
+spec:
+  selector:
+    matchLabels:
+      app: todo-services
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-services
+    spec:
+      containers:
+      - name: todo-services
+        image: pinoezz/todo-services
+        ports:
+        - containerPort: 4000
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: todo-skill
+spec:
+  selector:
+    matchLabels:
+      app: todo-skill
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: todo-skill
+    spec:
+      containers:
+      - name: todo-skill
+        image: pinoezz/todo-skill
+        ports:
+        - containerPort: 5000
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-todo
+spec:
+  selector:
+    matchLabels:
+      app: todo-todo
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+labels:
+        app: todo-todo
+    spec:
+      containers:
+      - name: todo-todo
+        image: pinoezz/todo-todo
+        ports:
+        - containerPort: 5002
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo hello; sleep 10;done"]
+---
+
+```
 
