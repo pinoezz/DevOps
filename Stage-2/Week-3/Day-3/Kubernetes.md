@@ -170,6 +170,10 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
+```
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+```
 
 Konfigurasi kubeadm
 
@@ -177,7 +181,7 @@ Konfigurasi kubeadm
 
 
 ```
-kubeadm init --apiserver-advertise-address=103.186.1.43 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
+kubeadm init --apiserver-advertise-address=27.112.78.42 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
 ```
 
 
