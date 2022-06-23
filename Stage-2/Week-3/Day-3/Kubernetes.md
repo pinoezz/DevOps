@@ -237,5 +237,26 @@ Kemudian copy semua hasil outputnya
 
 contoh :
 
-kubeadm join 10.71.15.129:6443 --token eyeb7f.ged6m8yca9wpsr25 --discovery-token-ca-cert-hash sha256:c4ee9d7479367520a5f40e323dff9552d25efd36bd9e21aa3beab609ed058c09
+
+
+
+Copy pada kedua worker
+
+![image](https://user-images.githubusercontent.com/106061407/175268798-2d003801-1972-44ba-9b52-dd890fa178c8.png)
+
+[WORKER 1]
+
+![image](https://user-images.githubusercontent.com/106061407/175269655-b86ee3f8-3d87-48b3-a5e4-754114829776.png)
+
+[WORKER 2]
+
+Kemudian cek koneksi nodes menggunakan perintah
+
+![image](https://user-images.githubusercontent.com/106061407/175270141-ef88106e-9eef-4eee-8871-d9ac20a3245a.png)
+
+```
+kubectl get nodes
+```
+
+
 
