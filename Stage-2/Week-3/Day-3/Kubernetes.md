@@ -38,7 +38,7 @@ Container-manager berjalan di setiap Node dan bertugas sebagai container manager
 
 Sebelumnya apa itu Microservices? Microservices adalah kebalikannya dari Monolith, dimana aplikasi dipecah menjadi kecil-kecil, dimana tiap aplikasi hanya mengurus satu tugas dengan baik, dan semua aplikasi saling berkomunikasi.
 
-Sekarang saya akan mempersiapakan 3 server (1 Manager) , (2 Worker) dari [IdCloudHost](idcloudhost.com)
+Sekarang saya akan mempersiapakan 3 server (1 Manager / sebagai controller) , (2 Worker) dari [IdCloudHost](idcloudhost.com)
 
 ![image](https://user-images.githubusercontent.com/106061407/175207641-ce3c5dec-9964-4e4a-96c1-ecbd2ea092d4.png)
 
@@ -72,6 +72,18 @@ ufw disable
 ```
 swapoff -a; sed -i '/swap/d' /etc/fstab
 ```
+
+![image](https://user-images.githubusercontent.com/106061407/175209233-edb3389e-6712-4568-9a7f-7be4353b190b.png)
+
+kemudian kita perlu juga update kernel
+
+```
+cat >>/etc/sysctl.d/kubernetes.conf<<EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+```
+
 
 
 
