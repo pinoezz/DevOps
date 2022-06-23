@@ -34,6 +34,22 @@ Container-manager berjalan di setiap Node dan bertugas sebagai container manager
 
 -----------------------------------
 
+Cluster: Beberapa server yang seolah-olah dijadikan 1 kesatuan sehingga tercipta lingkungan server yang dinamis.
+
+Node / Worker: Merupakan server-server yang dijadikan cluster, berguna untuk menjalankan container
+
+Pods: Satuan terkecil dalam kubernetes yang berguna sebagai pembungkus container. Biasanya dalam 1 pods terdapat 1 container atau lebih.
+
+Containers: Aplikasi yang berjalan di dalam pods seperti halnya docker container, dimana semua kebutuhan untuk aplikasi sudah berada di dalam container tersebut.
+
+CNI: Container Network Interface merupakan penghubung antara cluster, worker, container, volume dan sebagainya. Beberapa cni yang terkenal adalah calico, flannel, weavenet, canal
+
+Persistent Volume: Sama halnya seperti docker volume yang sifatnya untuk menyimpan data di local server.
+
+Ingress: Merupakan cara untuk supaya aplikasi dapat diakses menggunakan http / https, biasanya dalam bentuk domain seperti https://subdomain.example.co
+
+-----------------------------------
+
 # Setup Kubernetes And Deploy Microservices
 
 Sebelumnya apa itu Microservices? Microservices adalah kebalikannya dari Monolith, dimana aplikasi dipecah menjadi kecil-kecil, dimana tiap aplikasi hanya mengurus satu tugas dengan baik, dan semua aplikasi saling berkomunikasi.
@@ -82,6 +98,14 @@ cat >>/etc/sysctl.d/kubernetes.conf<<EOF
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
+```
+
+![image](https://user-images.githubusercontent.com/106061407/175210657-962d782a-211a-4381-98c3-6fec4fa20deb.png)
+
+Kemudian Restart system
+
+```
+sysctl --system
 ```
 
 
