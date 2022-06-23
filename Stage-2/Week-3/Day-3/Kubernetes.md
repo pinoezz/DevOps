@@ -166,8 +166,13 @@ cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
+```
+
+![image](https://user-images.githubusercontent.com/106061407/175256043-28749bec-0cbe-47a5-809c-daf933753b92.png)
+
+
+```
+sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 ```
 
 ```
@@ -177,11 +182,60 @@ sudo systemctl restart kubelet
 
 Konfigurasi kubeadm
 
-![image](https://user-images.githubusercontent.com/106061407/175220717-b529d884-2f96-44d7-86cc-f91aa0a13221.png)
+![image](https://user-images.githubusercontent.com/106061407/175256146-2129dad6-568d-48a6-a4fc-2ea3e2288ee5.png)
+
+![image](https://user-images.githubusercontent.com/106061407/175256791-3db628ef-4293-46fa-b918-5a0f839ff0fa.png)
 
 
 ```
-kubeadm init --apiserver-advertise-address=27.112.78.42 --pod-network-cidr=192.168.0.0/16  --ignore-preflight-errors=all
+kubeadm init
 ```
 
+Untuk versi Kubernates yang saya pakai yaitu versi: v1.24.2
+
+-----------------------------------------
+
+Konfigurasi kubernetes agar dapat menjalankan perintah
+
+![image](https://user-images.githubusercontent.com/106061407/175257010-a692cd28-29b8-4bdf-acc9-f8c7898a9e8f.png)
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+Selanjutnya kita harus deploy Container Network Interface (CNI) yang berbasis add-ons Pod network seperti calico, kube-router, dan weave-net. Add-ons Pod network tersebut berfungsi untuk membuat Pod berhubungan satu sama lain.
+
+Deploy Add-on Pod Network Calico :
+
+![image](https://user-images.githubusercontent.com/106061407/175257895-50a85393-00aa-4064-93b5-74a71419a71c.png)
+
+
+```
+kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+```
+
+Mengecek semua pods gunakan perintah
+
+![image](https://user-images.githubusercontent.com/106061407/175258120-ef1cc075-7c5d-4e38-ae6e-872bfd027f3d.png)
+
+
+```
+kubectl get pods --all-namespaces
+```
+
+Lalu lakukan join cluster dengan perintah berikut 
+
+![image](https://user-images.githubusercontent.com/106061407/175259583-a3861bea-b1ce-4573-b5a4-ece1ae8f5955.png)
+
+```
+kubeadm token create --print-join-command
+```
+
+Kemudian copy semua hasil outputnya 
+
+contoh :
+
+kubeadm join 10.71.15.129:6443 --token eyeb7f.ged6m8yca9wpsr25 --discovery-token-ca-cert-hash sha256:c4ee9d7479367520a5f40e323dff9552d25efd36bd9e21aa3beab609ed058c09
 
