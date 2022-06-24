@@ -283,3 +283,9 @@ Untuk melihat informasi lengkap pada pod gunakan
 ```
 kubectl describe pod nama pod
 ```
+
+Nginx berjalan pada worker 2  http://103.186.1.51:31324/ 
+
+Selanjutnya saya akan cek pada web browser
+
+![image](https://user-images.githubusercontent.com/106061407/175438362-525737d9-6bce-4dc0-93cb-940704629a6e.png)
