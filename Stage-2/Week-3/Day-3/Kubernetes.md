@@ -212,7 +212,7 @@ Deploy Add-on Pod Network Calico :
 ![image](https://user-images.githubusercontent.com/106061407/175257895-50a85393-00aa-4064-93b5-74a71419a71c.png)
 
 
-KETERANGAN : GUNAKAN CALICO VERSI TERBARU [PROJECTCALICO](https://projectcalico.docs.tigera.io/getting-started/kubernetes/self-managed-onprem/onpremises)
+KETERANGAN : GUNAKAN Container Network Interface (CNI) CALICO VERSI TERBARU [PROJECTCALICO](https://projectcalico.docs.tigera.io/getting-started/kubernetes/self-managed-onprem/onpremises)
 
 ```
 kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
