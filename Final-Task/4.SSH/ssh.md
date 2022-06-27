@@ -1,6 +1,6 @@
 # SSH
 
-Membuat SSH kostum dengan nama @dumbways 
+Membuat SSH kostum dengan nama pino@dumbways 
 
 ![image](https://user-images.githubusercontent.com/106061407/175960575-ba1514ea-9e17-42f3-a826-ef1dfcf75b4b.png)
 
