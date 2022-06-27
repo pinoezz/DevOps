@@ -2,7 +2,7 @@
 
 Requirements :
 
--Custom user for every server with password
+- Custom user for every server with password
 
 Instructions :
 
