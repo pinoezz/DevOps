@@ -8,5 +8,5 @@ Requirements :
 
 Instructions :
 
-- Create SSH Key with your initial name like this : alvin@dumbways
+- Create SSH Key with your initial name like this : pino@dumbways
 - Use the same SSH Key for CI/CD
