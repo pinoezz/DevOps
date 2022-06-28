@@ -44,6 +44,8 @@ Nginx berhasil di install dan sudah berjalan , kemudian saya akan cek juga pada 
 
 ## Konfigurasi WebServer
 
+Saya akan menggunakan domain dari [CloudFlare](https://dash.cloudflare.com/)
+
 - Reverse proxy the frontend -> https://alfino.studentdumbways.my.id
 - Reverse proxy the backend -> https://api.alfino.studentdumbways.my.id
 - Reverse proxy the nodeexporter -> https://exporter.alfino.studentdumbways.my.id
@@ -51,4 +53,5 @@ Nginx berhasil di install dan sudah berjalan , kemudian saya akan cek juga pada 
 - Reverse proxy the grafana -> https://monitoring.alfino.studentdumbways.my.id
 - Reverse proxy the Jenkins -> https://pipeline.alfino.studentdumbways.my.id
 
-Saya akan menggunakan domain dari [CloudFlare](https://dash.cloudflare.com/)
+Kemudian selanjutnya kofigurasi reverse proxy pada nginx, saya akan membuat folder bernama `housy` yang nantinya berisi konfigurasi reverse proxy semua server yang akan saya gunakan
+
