@@ -57,3 +57,15 @@ Kemudian selanjutnya kofigurasi reverse proxy pada nginx, saya akan membuat fold
 
 ![image](https://user-images.githubusercontent.com/106061407/176133314-3e003952-6f1f-4c32-9d23-6dcab726432d.png)
 
+Kemudian saya akan memasukan konfigurasi diatas pada `nginx.conf`
+
+![image](https://user-images.githubusercontent.com/106061407/176134065-932999c8-cced-4f0e-9a62-94c3b189b851.png)
+
+Kemudian cek syntax 
+
+```
+sudo nginx -t
+```
+![image](https://user-images.githubusercontent.com/106061407/176134219-0077dfa8-574a-49ac-97eb-640185458f0f.png)
+
+
