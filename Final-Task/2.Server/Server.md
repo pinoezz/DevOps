@@ -80,8 +80,38 @@ Kemudian saya membuat ansible-playbook untuk docker
            shell: sudo chmod +x /usr/local/bin/docker-compose
         
          - name: 'docker without sudo'
-           shell: sudo usermod -aG docker app
+           shell: sudo usermod -aG docker pino
 ```
+
+Saya akan ping terlebih dahulu ke semua server 
+
+```
+ansible all -m  ping
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176083574-8a68659c-7465-4543-a468-281e7080cf77.png)
+
+Kemudian saya cek juga syntax dari `docker.yml`
+
+```
+ansible-playbook --syntax-check docker.yml
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176083673-79479176-39ef-42e1-95cb-5aaf313a2d09.png)
+
+Kemudian jalankan ansible-playbook `docker.yml`
+
+```
+ansible-playbook docker.yml 
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176085324-81718a09-cafe-4182-9ae2-fe3a1d56109f.png)
+
+Kemudian cek docker pada masing masing server 
+
+![image](https://user-images.githubusercontent.com/106061407/176085583-5e6c6a0e-8ed7-4e81-a401-60663ccc5695.png)
+
+-----------------------------------------
 
 ansible-playbook untuk nginx
 
