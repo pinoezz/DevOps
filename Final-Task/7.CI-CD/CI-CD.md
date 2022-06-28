@@ -54,3 +54,4 @@ Masuk ke direktori `/home/jenkins/jenkins_home/secrets/` kemudian buka `initialA
 
 ![image](https://user-images.githubusercontent.com/106061407/176147415-05e4baef-7b0b-4e6c-a56d-13faefe354f5.png)
 
+![image](https://user-images.githubusercontent.com/106061407/176160793-df4983e4-9f6c-4b73-ab25-02bf58621881.png)
