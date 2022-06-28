@@ -15,6 +15,7 @@ scp -r .ssh pino@103.226.139.62:/home/pino
 
 Kemudian test menogneksikan ssh tanpa password 
 
-![image](https://user-images.githubusercontent.com/106061407/175961200-f4db8ee0-5550-431f-a003-0d93e10fded8.png)
+![image](https://user-images.githubusercontent.com/106061407/176076519-21c4f637-34f4-4fe2-8353-39f7c69f6da9.png)
+
 
 
