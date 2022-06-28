@@ -92,3 +92,22 @@ Saya akan check syntax terlebih dahulu untuk memastikan `adduser.yml` dapat di j
 ![image](https://user-images.githubusercontent.com/106061407/176080421-90cd74a9-dda6-41c8-b49e-071c1b157ae1.png)
 
 Kemudian jalankan `ansible-playbook`  nya
+
+```
+ansible-playbook adduser.yml
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176089152-35e1888c-31c9-40e3-9e9f-30532fe47c75.png)
+
+Kemudian saya akan melakukan login ke user nginx menggunakan password
+
+![image](https://user-images.githubusercontent.com/106061407/176089280-95b3d900-9d04-4560-a1cc-d870a3dfc268.png)
+
+Apabila berhasil akan seperti ini kemudian saya akan tes pada server lainnya
+
+![image](https://user-images.githubusercontent.com/106061407/176089522-2267357b-5a50-4ebb-b9c8-0c7592ba6af5.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176089559-92740a42-41b0-4312-ad36-6fc7a17d3dd8.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/176089481-f34d4968-a9da-402c-af81-b23c4e63a48c.png)
