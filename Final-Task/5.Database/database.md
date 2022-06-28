@@ -73,3 +73,18 @@ docker exec -it postgres psql -d housy -U pino
 ```
 
 ![image](https://user-images.githubusercontent.com/106061407/176107692-836dc78e-3e60-41f5-9a85-c3ae6e7971f6.png)
+
+Kemudian saya akan mengonfigurasi supaya dapat di koneksikan dengan server lain / maupun lokal
+
+```
+sudo apt install postgresql-client
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176110743-5d5992cc-4e4a-4d86-9b54-6f5277f251a2.png)
+
+
+```
+psql -h 103.226.139.62 -p 5432 -d housy -U pino
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176110837-0812b8a2-c948-4dfb-b4a9-9b3b83a3c63e.png)
