@@ -14,7 +14,13 @@ Kemudian gunakan perintah berikut `mkpasswd -m sha-512 password_kalian` dan masu
 mkpasswd -m sha-512
 ```
 
+![image](https://user-images.githubusercontent.com/106061407/176078103-3fec136d-122d-4a1c-b860-1774acd77162.png)
+
+ 
+
 Berikut adalah ansible-playbook untuk membuat user baru pada masing-masing server
+
+adduser.yml:
 
 ```
 - hosts: nginx
@@ -61,7 +67,7 @@ Berikut adalah ansible-playbook untuk membuat user baru pada masing-masing serve
      append: yes
      password: '$6$CGZ0zjUL.Xo/Wt$JbV2bbe7dLQWTJhxmFkrtp9Ng2RFwVcZ7VUEJ9a5A7I.X1G3egF.IhTs5GnWmV6Ap4ffHYkBNKUWZnV1rqo4v1'
 
-Config & Restart SSHD
+Disable sign in without password
 - hosts: all
   become: true
   tasks:
