@@ -1,6 +1,6 @@
 # Membuat User Baru Pada Masing-masing server
 
-Pada pembuatan user ini saya akan menggunakan ansible-playbook
+Pada pembuatan `user` ini saya akan menggunakan `ansible-playbook`
 
 Pertama-tama kalian haus menginstall `whois` terlebih dahulu untuk generate suatu password
 
@@ -18,7 +18,7 @@ mkpasswd -m sha-512
 
  
 
-Berikut adalah ansible-playbook untuk membuat user baru pada masing-masing server
+Berikut adalah `ansible-playbook` untuk membuat user baru pada masing-masing server
 
 adduser.yml:
 
@@ -84,3 +84,11 @@ adduser.yml:
           
 ```
 
+Saya akan check syntax terlebih dahulu untuk memastikan `adduser.yml` dapat di jalankan
+
+![image](https://user-images.githubusercontent.com/106061407/176080446-41278321-4217-4ee1-9473-e3be7f7e9058.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/176080421-90cd74a9-dda6-41c8-b49e-071c1b157ae1.png)
+
+Kemudian jalankan `ansible-playbook`  nya
