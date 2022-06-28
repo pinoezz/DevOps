@@ -28,7 +28,7 @@ berikut ansible-playbook postgre :
         ports:
           - "5432:5432"
         volumes:
-          - /home/hitch_postgres_data:/var/lib/postgresql/data
+          - /home/app/hitch_postgres_data:/var/lib/postgresql/data
         env:
           POSTGRES_USER: "admin"
           POSTGRES_PASSWORD: "P4ssw0rd"
