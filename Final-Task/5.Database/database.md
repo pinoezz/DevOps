@@ -63,6 +63,9 @@ Selanjutnya saya akan menambah user baru  dan berikan privileges atau izin user 
 
 ![image](https://user-images.githubusercontent.com/106061407/176105746-a8f64771-f7c9-4432-9da3-f623c7b015a7.png)
 
+![image](https://user-images.githubusercontent.com/106061407/176108135-a7f0a4a8-1128-485b-adf2-782eebe36e41.png)
+
+
 Kemudian masuk postgresql menggunakan user dan database baru 
 
 ```
