@@ -79,8 +79,50 @@ sudo systemctl restart nginx.service
 
 # SSL CLoudFlare
 
+Step 1 — Generating an Origin CA TLS Certificate
+
 ![image](https://user-images.githubusercontent.com/106061407/176168383-2019d4d8-e8c8-4c76-b683-ec252816a5e7.png)
 
 ![image](https://user-images.githubusercontent.com/106061407/176168433-59f7fd54-f9c8-4da0-88ea-38e981d0fff6.png)
 
+saya akan menggunakan direktori /etc/ssl/certs di server untuk menyimpan sertifikat asal. Direktori /etc/ssl/private akan menyimpan file kunci privat. Kedua folder tersebut sudah ada di server.
 
+Pertama, salin isi Sertifikat Asal yang ditampilkan di kotak dialog di browser Anda.
+
+Kemudian, di server Anda, buka /etc/ssl/certs/cert.pem untuk mengedit:
+
+```
+sudo nano /etc/ssl/certs/cert.pem
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176179383-a9e8f503-c8a7-44fe-90a0-3d325bb31e28.png)
+
+Kemudian kembali ke browser Anda dan salin konten kunci Pribadi. Buka file /etc/ssl/private/key.pem untuk mengedit:
+
+```
+sudo nano /etc/ssl/private/key.pem
+```
+![image](https://user-images.githubusercontent.com/106061407/176179620-f5b61f2a-e8d1-4b32-bb17-ea2a9c844726.png)
+
+
+Step 2 — Installing the Origin CA certificate in Nginx
+
+Di bagian sebelumnya, saya sudah membuat sertifikat asal dan kunci pribadi menggunakan dasbor Cloudlfare dan menyimpan file ke server saya. Sekarang saya akan memperbarui konfigurasi Nginx untuk situs saya untuk menggunakan sertifikat asal dan kunci pribadi untuk mengamankan koneksi antara server Cloudflare dan server saya.
+
+Nginx membuat blok server default selama instalasi. Hapus jika ada, karena saya telah mengonfigurasi blok server khusus untuk domain :
+
+```
+sudo rm /etc/nginx/sites-enabled/default
+```
+
+Selanjutnya, buka file konfigurasi Nginx untuk domain Anda:
+
+```
+sudo nano /etc/nginx/sites-available/pipeline.alfino.studentdumbways.my.id
+```
+
+Selanjutnya  saya membuat config host agar dapat login hanya menggunakan nama host seperti gambar berikut :
+
+
+
+![image](https://user-images.githubusercontent.com/106061407/176204705-cdd93ca1-d092-4cfa-92a0-7a95c0944565.png)
