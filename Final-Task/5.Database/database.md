@@ -50,3 +50,16 @@ Selanjutnya cek di docker server app
 
 ![image](https://user-images.githubusercontent.com/106061407/176101418-73a5c09b-64f3-4e4f-aaf0-0c5a5ce5594e.png)
 
+
+Selanjutnya saya akan membuat database baru bernama `housy`
+
+```
+CREATE DATABASE housy;
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176104976-a9e48639-0acf-4970-90c1-4de1945505d8.png)
+
+Selanjutnya saya akan menambah user baru  dan berikan privileges atau izin user ke database
+
+![image](https://user-images.githubusercontent.com/106061407/176105746-a8f64771-f7c9-4432-9da3-f623c7b015a7.png)
+
