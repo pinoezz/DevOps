@@ -1,6 +1,5 @@
 # DevOps Stage 1
 
-## Stage 1
 
 1. Introduction to DevOps
 
