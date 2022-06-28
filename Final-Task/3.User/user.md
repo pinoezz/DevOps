@@ -67,7 +67,7 @@ adduser.yml:
      append: yes
      password: '$6$CGZ0zjUL.Xo/Wt$JbV2bbe7dLQWTJhxmFkrtp9Ng2RFwVcZ7VUEJ9a5A7I.X1G3egF.IhTs5GnWmV6Ap4ffHYkBNKUWZnV1rqo4v1'
 
-Disable sign in without password
+#Disable sign in without password
 - hosts: all
   become: true
   tasks:
