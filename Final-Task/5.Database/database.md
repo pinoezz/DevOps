@@ -63,3 +63,10 @@ Selanjutnya saya akan menambah user baru  dan berikan privileges atau izin user 
 
 ![image](https://user-images.githubusercontent.com/106061407/176105746-a8f64771-f7c9-4432-9da3-f623c7b015a7.png)
 
+Kemudian masuk postgresql menggunakan user dan database baru 
+
+```
+docker exec -it postgres psql -d housy -U pino
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176107692-836dc78e-3e60-41f5-9a85-c3ae6e7971f6.png)
