@@ -88,3 +88,8 @@ psql -h 103.226.139.62 -p 5432 -d housy -U pino
 ```
 
 ![image](https://user-images.githubusercontent.com/106061407/176110837-0812b8a2-c948-4dfb-b4a9-9b3b83a3c63e.png)
+
+Saya coba mengoneksikan di lokal menggunakan DBeaver
+
+![image](https://user-images.githubusercontent.com/106061407/176111288-86415d8e-c502-48a5-b834-fd16f6e90bb1.png)
+
