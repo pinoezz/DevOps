@@ -1,4 +1,4 @@
-#Devops Stage 2
+# DevOps Stage 2
 
 1. Cloud Computing
 
