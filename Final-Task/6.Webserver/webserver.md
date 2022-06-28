@@ -75,3 +75,12 @@ sudo systemctl restart nginx.service
 ```
 
 ![image](https://user-images.githubusercontent.com/106061407/176140728-410d184e-c027-4ad5-8be4-11c17e5bb678.png)
+
+
+# SSL CLoudFlare
+
+![image](https://user-images.githubusercontent.com/106061407/176168383-2019d4d8-e8c8-4c76-b683-ec252816a5e7.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176168433-59f7fd54-f9c8-4da0-88ea-38e981d0fff6.png)
+
+
