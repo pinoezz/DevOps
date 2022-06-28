@@ -68,4 +68,10 @@ sudo nginx -t
 ```
 ![image](https://user-images.githubusercontent.com/106061407/176134219-0077dfa8-574a-49ac-97eb-640185458f0f.png)
 
+Kemudian restart services menggunakan
 
+```
+sudo systemctl restart nginx.service
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176140728-410d184e-c027-4ad5-8be4-11c17e5bb678.png)
