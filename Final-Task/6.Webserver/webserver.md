@@ -44,11 +44,11 @@ Nginx berhasil di install dan sudah berjalan , kemudian saya akan cek juga pada 
 
 ## Konfigurasi WebServer
 
-Reverse proxy the frontend -> https://alfino.studentdumbways.my.id
-Reverse proxy the backend -> https://api.alfino.studentdumbways.my.id
-Reverse proxy the nodeexporter -> https://exporter.alfino.studentdumbways.my.id
-Reverse proxy the prometheus -> https://prometheus.alfino.studentdumbways.my.id
-Reverse proxy the grafana -> https://monitoring.alfino.studentdumbways.my.id
-Reverse proxy the Jenkins -> https://pipeline.alfino.studentdumbways.my.id
+- Reverse proxy the frontend -> https://alfino.studentdumbways.my.id
+- Reverse proxy the backend -> https://api.alfino.studentdumbways.my.id
+- Reverse proxy the nodeexporter -> https://exporter.alfino.studentdumbways.my.id
+- Reverse proxy the prometheus -> https://prometheus.alfino.studentdumbways.my.id
+- Reverse proxy the grafana -> https://monitoring.alfino.studentdumbways.my.id
+- Reverse proxy the Jenkins -> https://pipeline.alfino.studentdumbways.my.id
 
 Saya akan menggunakan domain dari [CloudFlare](https://dash.cloudflare.com/)
