@@ -2,7 +2,7 @@
 
 Membuat SSH kostum dengan nama pino@dumbways 
 
-![image](https://user-images.githubusercontent.com/106061407/175960575-ba1514ea-9e17-42f3-a826-ef1dfcf75b4b.png)
+![image](https://user-images.githubusercontent.com/106061407/176076379-4731e1fa-a900-4638-8348-96d1ed36c7a4.png)
 
 
 Kemudian copy ssh ke semua server menggunakan `scp -r user@ip host`
