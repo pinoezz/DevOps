@@ -13,8 +13,6 @@ example :
 scp -r .ssh pino@103.226.139.62:/home/pino
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/175961078-c3ac8a4d-7940-42c2-aeca-1cf429e31e6b.png)
-
 Kemudian test menogneksikan ssh tanpa password 
 
 ![image](https://user-images.githubusercontent.com/106061407/175961200-f4db8ee0-5550-431f-a003-0d93e10fded8.png)
