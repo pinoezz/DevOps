@@ -55,3 +55,5 @@ Saya akan menggunakan domain dari [CloudFlare](https://dash.cloudflare.com/)
 
 Kemudian selanjutnya kofigurasi reverse proxy pada nginx, saya akan membuat folder bernama `housy` yang nantinya berisi konfigurasi reverse proxy semua server yang akan saya gunakan
 
+![image](https://user-images.githubusercontent.com/106061407/176133314-3e003952-6f1f-4c32-9d23-6dcab726432d.png)
+
