@@ -113,19 +113,6 @@ Kemudian cek docker pada masing masing server
 
 -----------------------------------------
 
-ansible-playbook untuk nginx
-
-```
-- hosts: nginx
-  become: yes
-  gather_facts: yes
-  tasks:
-        - name: 'install nginx'
-          apt: 
-            name:
-             - nginx
-            state: latest
-```
 
 ansible-playbook untuk monitoring
 
@@ -209,32 +196,4 @@ monitoring.yml :
              - 3000:3000
  ```
  
- docker container:
-
-jenkins.yml :
-
-```
-- hosts: jenkins
-  become: true
-  tasks:
-  - name: jenkins volume dir
-    file:
-     path: /home/jenkins/jenkins_home
-     state: directory
-     owner: 1000
-     group: 1000
-
-  - name: Pull jenkins
-    docker_image:
-     name: jenkins/jenkins:lts
-     source: pull
-
-  - name: Container jenkins
-    docker_container:
-     name: jenkins
-     image: jenkins/jenkins
-     ports:
-      - 8080:8080
-      - 50000:50000
-     volumes: /home/jenkins/jenkins_home:/var/jenkins_home
-```
+ 
