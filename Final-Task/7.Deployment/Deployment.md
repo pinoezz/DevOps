@@ -21,11 +21,12 @@ RUN npm install
 RUN npm install sequelize-cli -g
 RUN npx sequelize db:migrate
 EXPOSE 5000
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/176352146-0d83eaac-b852-436f-b23f-5e21ef4385ee.png)
+![image](https://user-images.githubusercontent.com/106061407/176438058-11e68ad8-6d96-4de8-a433-f79129179d20.png)
+
 
 Selanjutnya membuat docker-compose backend
 
@@ -65,6 +66,43 @@ Kemudian cek juga pada database apakah sudah berhasil di migrate (Saya akan cek 
 
 Berhasil migrasi data 
 
-Kemudian saya akan membuat Dockerfile frontend
+Kemudian saya akan membuat `Dockerfile` frontend
 
+```
+FROM node:dubnium-alpine3.11
+WORKDIR /usr/app
+COPY . .
+RUN npm install
+RUN npm run build
+RUN npm install serve -g
+EXPOSE 3000
+CMD [ "serve", "-p", "build" ]
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176432529-7273cc93-2f75-4bee-849f-e6dd49d3f8b1.png)
+
+docker-compose :
+
+```
+version: '3.8'
+services:
+ frontend:
+   build: .
+   container_name: fe
+   image: pinoezz/housy-fe:stable
+   stdin_open: true
+   ports:
+    - 3030:3000
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176432830-17a65beb-8ee0-416c-96f1-c44cb024f472.png)
+
+```
+docker-compose up -d
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176434052-7ef01309-fc48-4e09-8cd5-40281da83848.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/176436964-384d5b24-4075-4627-aae3-50d662e138fe.png)
 
