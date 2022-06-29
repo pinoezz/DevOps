@@ -256,3 +256,17 @@ sudo snap install core; sudo snap refresh core
 ```
 sudo snap install --classic certbot
 ```
+
+![image](https://user-images.githubusercontent.com/106061407/176415654-c5ef00b8-6213-4c89-aa9f-ebad8431da7d.png)
+
+Jalankan certbot menggunakan perintah
+
+```
+sudo certbot
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176415915-03d92723-657c-4a52-9402-36b3ed9338dc.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176416944-7ccd721d-1561-4eca-9068-f94f9d07a72e.png)
+
+
