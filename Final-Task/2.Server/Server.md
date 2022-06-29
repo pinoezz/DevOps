@@ -111,6 +111,42 @@ Kemudian cek docker pada masing masing server
 
 ![image](https://user-images.githubusercontent.com/106061407/176085583-5e6c6a0e-8ed7-4e81-a401-60663ccc5695.png)
 
+
+# Konfigurasi LoadBalancing
+
+```
+upstream housy-frontend{
+       least_conn;
+       server 103.226.139.62:3030;
+       server 103.214.113.81:3030;
+}
+ 
+server {
+        server_name alfino.studentdumbways.my.id;
+
+        location / {
+                proxy_pass http://103.226.139.62:3030;
+        }
+```
+
+```
+upstream housy-backend{
+       least_conn;
+       server 103.226.139.62:5050;
+       server 103.214.113.81:5050;
+}
+ 
+server {
+        server_name api.alfino.studentdumbways.my.id;
+
+        location / {
+                proxy_pass http://103.226.139.62:5050;
+        }
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176476178-5cd89ecd-c3a2-4dc1-b2fb-ad9cacdaa041.png)
+
+
 -----------------------------------------
 
 
