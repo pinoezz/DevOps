@@ -90,16 +90,12 @@ Save dan apply
 
 Sekarang saya akan buat job baru, klik new item dan masukkan nama project kita, disini saya menggunakan freestyle project untuk menggunakan publish over ssh dan pipeline
 
-![image](https://user-images.githubusercontent.com/106061407/176454046-e027ad4d-f8e3-4eed-87f4-40c05a453f32.png)
-
-centang github project dan masukan URL
-
-![image](https://user-images.githubusercontent.com/106061407/176455740-b71f5df6-dd73-404f-af28-ba0c20456f6d.png)
+![image](https://user-images.githubusercontent.com/106061407/176459050-b6faedec-51d8-41ae-8d68-f576f004b26b.png)
 
 
 Pilih Git
 
-![image](https://user-images.githubusercontent.com/106061407/176455628-2b2c85e9-adc6-4797-93a4-b92cf73dd650.png)
+![image](https://user-images.githubusercontent.com/106061407/176459759-acf7d33c-9acb-443b-bd37-c19174d65153.png)
 
 
 Centang GitHub hook trigger for GITScm polling agar dapat di trigger di perubahan github
@@ -108,15 +104,30 @@ Centang GitHub hook trigger for GITScm polling agar dapat di trigger di perubaha
 
 Kemudian masuk ke github , pada repository pilih `setting`. Kemudian pilih `webook`
 
-![image](https://user-images.githubusercontent.com/106061407/176456164-2b97b09f-5f65-4a6b-b784-0c314d668ca6.png)
+![image](https://user-images.githubusercontent.com/106061407/176459992-80fcc033-11b7-4882-8e13-74ea9abebaf2.png)
 
-![image](https://user-images.githubusercontent.com/106061407/176456500-7f8a5f91-4096-4fdf-bc6a-7c18a3cc4270.png)
+![image](https://user-images.githubusercontent.com/106061407/176460065-d48b9764-d069-4ba9-837e-72d9f276ffc7.png)
 
 Add webhook
 
-![image](https://user-images.githubusercontent.com/106061407/176456667-d52668c1-a900-4bd0-aca7-c427e23dee4d.png)
+![image](https://user-images.githubusercontent.com/106061407/176460116-f226df3b-9766-4b5f-98aa-b6472b82dd47.png)
 
 
+![image](https://user-images.githubusercontent.com/106061407/176460903-5eb42891-bfef-4ae9-9433-b9450dba3f08.png)
 
 
+Save dan apply
+
+----------------------------
+
+Kemudian saya akan membuat pipeline untuk housy-frontend
+
+![image](https://user-images.githubusercontent.com/106061407/176462150-3fb3c4d1-b53b-4c06-818e-c4195a3635d0.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/176463520-0eaf1dc7-7475-4c4a-a7cd-d9089e1e6e29.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176463720-9933b507-c30b-4799-b0e4-cdfb48af8aec.png)
+
+Selanjutnya kita perlu membuat jenkinsfile
 
