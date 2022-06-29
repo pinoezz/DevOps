@@ -11,5 +11,60 @@ Edit file `config.json` pada /housy-backend/config untuk menghubungkan backend d
 ![image](https://user-images.githubusercontent.com/106061407/176350773-85b0fab3-51af-4994-bb11-5b6352ebc133.png)
 
 
-Kemudian deploy aplikasi menggunakan docker
+Selanjutnya membuat dockerfile backend
+
+```
+FROM node:dubnium-alpine3.11
+WORKDIR /usr/app
+COPY . .
+RUN npm install
+RUN npm install sequelize-cli -g
+RUN npx sequelize db:migrate
+EXPOSE 5000
+CMD [ "npm", "start" ]
+
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176352146-0d83eaac-b852-436f-b23f-5e21ef4385ee.png)
+
+Selanjutnya membuat docker-compose backend
+
+```
+version: '3.7'
+services:
+ backend:
+   build: .
+   container_name: be
+   image: pinoezz/housy-be:stable
+   stdin_open: true
+   ports:
+    - 5050:5000
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176355566-b9904f5d-6f84-4e09-b03b-71eac12bdb50.png)
+
+Jalankan `docker-compose.yml` 
+
+```
+docker-compose up -d
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176361665-0bcd410a-6a0f-439a-afaa-15c1096b2b4d.png)
+
+Kemudian cek pada `docker` 
+
+```
+docker ps
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176365877-e06494b4-ac2c-4b1a-8762-6a7a4a68190b.png)
+
+Kemudian cek juga pada database apakah sudah berhasil di migrate (Saya akan cek melalui local)
+
+![image](https://user-images.githubusercontent.com/106061407/176366075-b7cf78d7-eb58-42ab-8100-24a7d93f5095.png)
+
+Berhasil migrasi data 
+
+Kemudian saya akan membuat Dockerfile frontend
+
 
