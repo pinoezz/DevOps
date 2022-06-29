@@ -164,11 +164,11 @@ server {
 
 ![image](https://user-images.githubusercontent.com/106061407/176396354-d9602ac2-530e-40d4-9bfd-f17262e54bce.png)
 
-
-
-
+Apabila gagal gunaka cara 2
 
 -----------------------------------------------
+
+Cara 2
 
 Saya akan menggunakan SSL Mkcert 
 
@@ -240,3 +240,19 @@ chown -R nginx:nginx /var/www/html/
 ![image](https://user-images.githubusercontent.com/106061407/176405634-511f5f47-d97b-4bef-a8ab-dd302529389f.png)
 
 
+
+kemudian restart sytemctl nginx
+
+Apabila gagal gunakan cara 3
+
+-----------------------------------
+
+Cara terkhir apabila mengalami kesulitan dalam install SSL yaitu dengan menggunakan certbbot
+
+```
+sudo snap install core; sudo snap refresh core
+```
+
+```
+sudo snap install --classic certbot
+```
