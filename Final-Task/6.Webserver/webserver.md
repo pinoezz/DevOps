@@ -122,5 +122,121 @@ sudo nano /etc/nginx/sites-available/pipeline.alfino.studentdumbways.my.id
 ```
 
 
+```
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/pipeline.alfino.studentdumbways.my.id/html;
+        index index.html index.htm index.nginx-debian.html;
+ 
+        server_name pipeline.alfino.studentdumbways.my.id;
+ 
+        location / {
+                proxy_pass http://103.214.113.81:8080;
+        }
+}
+
+```
+
+```
+server {
+
+    # SSL configuration
+
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    ssl        on;
+    ssl_certificate         /etc/ssl/certs/cert.pem;
+    ssl_certificate_key     /etc/ssl/private/key.pem;
+
+    server_name pipeline.alfino.studentdumbways.my.id;
+
+    root /var/www/example.com/html;
+    index index.html index.htm index.nginx-debian.html;
+
+
+    location / {
+            proxy_pass http://103.214.113.81:8080;
+    }
+}
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176396354-d9602ac2-530e-40d4-9bfd-f17262e54bce.png)
+
+
+
+
+
+-----------------------------------------------
+
+Saya akan menggunakan SSL Mkcert 
+
+Pertama-tama saya perlu menginstallnya dengan perintah berikut:
+
+```
+sudo apt-get install wget libnss3-tools
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176401169-35a20eb0-1340-4b47-8960-e85ec1e94371.png)
+
+Selanjutnya download mkcert versi terbaru dari Github.
+
+```
+wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176401373-af7175f7-106b-4d32-98e9-3d912d4c99ff.png)
+
+Setelah mendownload Mkcert, pindahkan biner yang didownload ke sistem:
+
+```
+sudo mv mkcert-v1.4.3-linux-amd64 /usr/bin/mkcert
+```
+
+Selanjutnya, tetapkan izin eksekusi ke mkcert:
+
+```
+chmod +x /usr/bin/mkcert
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176401653-671be097-4908-445a-852f-70c1b9227a0b.png)
+
+
+Sekarang, jalankan perintah berikut untuk menghasilkan sertifikat CA lokal:
+
+```
+mkcert -install
+```
+
+Untuk melihat letak sertifikat CA menggunakan perintah berikut:
+
+```
+mkcert -CAROOT
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176401945-f5f78123-ec83-49de-8623-3b5739a77376.png)
+
+Selanjutnya, kita dapat membuat sertifikat dan key file situs web yang dihosting secara lokal menggunakan perintah berikut:
+
+```
+mkcert pipeline.alfino.studentdumbways.my.id jenkins 103.214.113.81 ::1
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176404146-fb052853-07ac-417e-9cf5-f8ee1ae88288.png)
+
+Selanjutnya, kita perlu mengkonfigurasi Nginx untuk menggunakan sertifikat yang dihasilkan. Pertama, salin file sertifikat yang dihasilkan ke direktori /etc/ssl/:
+
+![image](https://user-images.githubusercontent.com/106061407/176404624-7fe5385e-42ad-4ff3-946a-7881f8d19dc6.png)
+
+Selanjutnya, atur kepemilikan yang tepat ke direktori root web Nginx:
+
+```
+chown -R nginx:nginx /var/www/html/
+```
+
+
+
+![image](https://user-images.githubusercontent.com/106061407/176405634-511f5f47-d97b-4bef-a8ab-dd302529389f.png)
 
 
