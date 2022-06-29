@@ -107,3 +107,7 @@ docker-compose up -d
 
 ![image](https://user-images.githubusercontent.com/106061407/176436964-384d5b24-4075-4627-aae3-50d662e138fe.png)
 
+Saya akan test buat akun
+
+![image](https://user-images.githubusercontent.com/106061407/176441900-af6f0d00-a0fc-4586-8e2b-45e5eb373e6d.png)
+
