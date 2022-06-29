@@ -121,8 +121,6 @@ Selanjutnya, buka file konfigurasi Nginx untuk domain Anda:
 sudo nano /etc/nginx/sites-available/pipeline.alfino.studentdumbways.my.id
 ```
 
-Selanjutnya  saya membuat config host agar dapat login hanya menggunakan nama host seperti gambar berikut :
 
 
 
-![image](https://user-images.githubusercontent.com/106061407/176204705-cdd93ca1-d092-4cfa-92a0-7a95c0944565.png)
