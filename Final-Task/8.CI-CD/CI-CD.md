@@ -129,5 +129,74 @@ Kemudian saya akan membuat pipeline untuk housy-frontend
 
 ![image](https://user-images.githubusercontent.com/106061407/176463720-9933b507-c30b-4799-b0e4-cdfb48af8aec.png)
 
-Selanjutnya kita perlu membuat jenkinsfile
+Selanjutnya kita perlu membuat `Jenkinsfile`
 
+![image](https://user-images.githubusercontent.com/106061407/176466255-cd499dfa-4e20-4778-a9bb-8d72e7f6d97d.png)
+
+
+```
+def secret = 'pinoezz'
+def server = 'app@103.226.139.62'
+def directory = 'housy-frontend'
+def branch = 'production'
+
+pipeline{
+    agent any
+    stages{
+        stage ('compose down &  pull'){
+            steps{
+                sshagent([secret]) {
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker-compose down
+                    docker system prune -f
+                    git pull origin ${branch}
+                    exit
+                    EOF"""
+                }
+            }
+        }
+        stage ('docker build'){
+            steps{
+                sshagent([secret]) {
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker-compose build
+                    exit
+                    EOF"""
+                }
+            }
+        }
+        stage ('docker up'){
+            steps{
+                sshagent([secret]) {
+                    sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                    cd ${directory}
+                    docker-compose up -d
+                    exit
+                    EOF"""
+                }
+            }
+        }
+    }
+}
+
+```
+
+Kemudian pull dan push ke origin production pada github
+
+![image](https://user-images.githubusercontent.com/106061407/176465501-06707ebe-4384-4088-b645-275a26339888.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176465576-0df29366-89b1-4d58-a59d-4a6806d95a98.png)
+
+lakukan build
+
+![image](https://user-images.githubusercontent.com/106061407/176469969-754b407c-06fb-492b-b8d7-10b13a745057.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176470061-bcf4e6eb-fc0e-409e-8bf1-ffac7453a338.png)
+
+Apabila berhasil akan seperti ini
+
+![image](https://user-images.githubusercontent.com/106061407/176470371-7fa7c9d9-bc18-4019-af70-b361d08164bc.png)
+
+Cek pada docker juga
