@@ -1,0 +1,83 @@
+Ansible-playbook untuk monitoring
+
+KET : `prometheus.yml` adalah konfigurasi untuk prometheus
+
+prometheus.yml :
+
+```
+global:
+ scrape_interval: 10s
+scrape_configs:
+ - job_name: 'prometheus_metrics'
+   scrape_interval: 5s
+   static_configs:
+     - targets: ['103.55.37.187:9090']
+ - job_name: 'node_exporter_metrics'
+   scrape_interval: 5s
+   static_configs:  
+     - targets: ['103.55.37.187:9100','103.55.37.185:9100']
+```
+
+monitoring.yml :
+
+```
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+       - name: 'update'
+         apt:
+          update_cache: yes
+
+       - name: 'upgrade'
+         apt:
+          upgrade: dist
+
+       - name: 'Run Node Exporter'
+         shell: docker run -d --net="host" --pid="host" -v "/:/host:ro,rslave" --name node_exporter quay.io/prometheus/node-exporter --path.rootfs=/host
+
+- hosts: monitoring
+  tasks:
+        - name: 'Make volume folder'
+          file:
+           path: /home/monitor/prometheus
+           state: directory
+
+        - name: 'Copy Configuration Prometheus'
+          copy:
+           src: /home/pino/ansibleku/prometheus.yml
+           dest: /home/monitor/prometheus
+
+        - name: 'Login DockerHub'
+          docker_login:
+           username: pinoezz
+           password: zaq1XSW@212Andra
+
+        - name: 'Pull Prometheus'
+          docker_image:
+           name: bitnami/prometheus
+           source: pull
+           
+
+        - name: 'Container Prometheus'
+          docker_container:
+           name: prometheus
+           image: bitnami/prometheus
+           ports:
+             - 9090:9090
+           volumes: /home/monitor/prometheus:/etc/prometheus
+
+        - name: 'Pull Grafana'
+          docker_image:
+           name: grafana/grafana    
+           source: pull
+
+        - name: 'Container Grafana'
+          docker_container:
+           name: grafana
+           image: grafana/grafana
+           ports:
+             - 3000:3000
+ ```
+ 
+ 
