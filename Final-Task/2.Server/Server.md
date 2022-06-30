@@ -161,14 +161,10 @@ sudo ufw status
 
 Kemudian bisa dilanjutkan membuka port akses default ke VPS nya
 
-```
- sudo ufw allow ssh
- sudo ufw allow www
- sudo ufw allow https
- sudo ufw allow ftp
-```
 
-Mengaktifkan port  3031
+Mengaktifkan port 3031 (PORT APLIKASI)
+
+Contoh
 
 ```
 sudo ufw allow 3031/tcp
@@ -180,5 +176,6 @@ Setelah berhasil membuka port akses masuk default ke VPS dengan command diatas, 
 sudo ufw enable
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/176688196-bf82866b-452c-4c4a-be28-6273f39d2dab.png)
+![image](https://user-images.githubusercontent.com/106061407/176698192-e5a33a45-b54d-4277-a765-6c148bbef181.png)
+
 
