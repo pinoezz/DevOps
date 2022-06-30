@@ -136,7 +136,7 @@ Selanjutnya kita perlu membuat `Jenkinsfile`
 
 ```
 def secret = 'pinoezz'
-def server = 'app@103.226.139.62'
+def server = 'jenkins@103.214.113.81'
 def directory = 'housy-frontend'
 def branch = 'production'
 
@@ -199,4 +199,89 @@ Apabila berhasil akan seperti ini
 
 ![image](https://user-images.githubusercontent.com/106061407/176470371-7fa7c9d9-bc18-4019-af70-b361d08164bc.png)
 
-Cek pada docker juga
+------------------------------------
+
+Kemudian saya akan coba juga untuk mendeploy aplikasi backend menggunakan pipeline jenkins
+
+
+![image](https://user-images.githubusercontent.com/106061407/176576499-f4c07c4c-af9c-4de6-b5a1-07c510d733cc.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176576558-20a866d0-4133-43b0-a58b-e4f8b9cc47a5.png)
+
+
+![image](https://user-images.githubusercontent.com/106061407/176576620-b0b16df3-573a-475a-8e57-9840cbb05d40.png)
+
+Save and  apply
+
+Kemudian build noq
+
+![image](https://user-images.githubusercontent.com/106061407/176576711-6ec330a9-b7ee-4b05-9ad4-dd245eadbd3a.png)
+
+
+PIPELINE :
+
+```
+def server = 'jenkins@103.214.113.81'
+def dir = 'housy-backend'
+def branch = 'production'
+
+pipeline{
+        agent any
+        stages{
+                stage ('Delete container and images & git pull'){
+                        steps{
+                                sshagent([secret]) {
+                                        sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                                        cd ${dir}
+                                        docker-compose down
+                                        docker system prune -f
+                                        git pull origin ${branch}
+                                        exit
+                                        EOF"""
+                                }
+                        }
+                }
+        stage ('Build Images'){
+                        steps{
+                                sshagent([secret]) {
+                                        sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                                        cd ${dir}
+                                        docker-compose build
+                                        exit
+                                        EOF"""
+                                }
+                        }
+                }
+        stage ('Deploy Container'){
+                        steps{
+                                sshagent([secret]) {
+                                        sh """ssh -o StrictHostKeyChecking=no ${server} << EOF
+                                        cd ${dir}
+                                        docker-compose up -d
+                                        exit
+                                        EOF"""
+                                }
+
+                        }
+
+               }
+
+        }
+
+}
+
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176577067-87a71346-6ed2-4ead-9440-64328dab25f0.png)
+
+Apabila hasilnya seperti ini artinya berhasil ya !
+
+Kemudian cek pada Docker di server jenkins
+
+![image](https://user-images.githubusercontent.com/106061407/176577536-c4be709b-41ef-46f5-b346-2b3baf0987f2.png)
+
+
+b2a2d680eb06   pinoezz/housy-be:stable   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   0.0.0.0:5050->5000/tcp, :::5050->5000/tcp          be
+affb70d08896   pinoezz/housy-fe:stable   "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   0.0.0.0:3031->3000/tcp,
+
+
