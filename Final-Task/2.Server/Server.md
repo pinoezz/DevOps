@@ -150,3 +150,35 @@ server {
 -----------------------------------------
 
 
+# Setting Firewall
+
+
+Untuk memeriksa status firewall pada Ubuntu yang digunakan aktif atau tidak dapat menggunakan cara berikut :
+
+```
+sudo ufw status
+```
+
+Kemudian bisa dilanjutkan membuka port akses default ke VPS nya
+
+```
+ sudo ufw allow ssh
+ sudo ufw allow www
+ sudo ufw allow https
+ sudo ufw allow ftp
+```
+
+Mengaktifkan port Jenkins 3031
+
+```
+sudo ufw allow 3031/tcp
+```
+
+Setelah berhasil membuka port akses masuk default ke VPS dengan command diatas, lakukan enable UFW nya dengan command berikut :
+
+```
+sudo ufw enable
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176688196-bf82866b-452c-4c4a-be28-6273f39d2dab.png)
+
