@@ -17,16 +17,16 @@ Selanjutnya membuat dockerfile backend
 FROM node:dubnium-alpine3.11
 WORKDIR /usr/app
 COPY . .
-RUN npm install
-RUN npm run build
-RUN npm install sequelize-cli -g
+RUN yarn install
+RUN yarn build
+RUN yarn install sequelize-cli -g
 RUN npx sequelize db:migrate
 EXPOSE 5000
-CMD [ "node", "server.js" ]
+CMD [ "yarn", "start" ]
 
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/176438058-11e68ad8-6d96-4de8-a433-f79129179d20.png)
+![image](https://user-images.githubusercontent.com/106061407/176650992-f93d3bdf-69c7-4791-9996-12e5c1a193f3.png)
 
 
 Selanjutnya membuat docker-compose backend
@@ -73,14 +73,14 @@ Kemudian saya akan membuat `Dockerfile` frontend
 FROM node:dubnium-alpine3.11
 WORKDIR /usr/app
 COPY . .
-RUN npm install
-RUN npm run build
-RUN npm install serve -g
+RUN yarn install
 EXPOSE 3000
-CMD [ "serve", "-p", "build" ]
+CMD [ "yarn", "start" ]
+
+
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/176432529-7273cc93-2f75-4bee-849f-e6dd49d3f8b1.png)
+![image](https://user-images.githubusercontent.com/106061407/176650592-a04398b7-6be9-4a3f-8f2f-9bdcf5291631.png)
 
 docker-compose :
 
@@ -102,10 +102,9 @@ services:
 docker-compose up -d
 ```
 
-![image](https://user-images.githubusercontent.com/106061407/176434052-7ef01309-fc48-4e09-8cd5-40281da83848.png)
+![image](https://user-images.githubusercontent.com/106061407/176650684-688c001f-37aa-44e1-ad17-7705fbdb05ba.png)
 
 
-![image](https://user-images.githubusercontent.com/106061407/176436964-384d5b24-4075-4627-aae3-50d662e138fe.png)
 
 Saya akan test buat akun
 
