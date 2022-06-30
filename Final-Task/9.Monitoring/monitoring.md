@@ -11,11 +11,12 @@ scrape_configs:
  - job_name: 'prometheus_metrics'
    scrape_interval: 5s
    static_configs:
-     - targets: ['103.55.37.187:9090']
+     - targets: ['103.171.85.159:9090']
  - job_name: 'node_exporter_metrics'
    scrape_interval: 5s
    static_configs:  
-     - targets: ['103.55.37.187:9100','103.55.37.185:9100']
+     - targets: ['103.179.56.190:9100','103.226.139.62:9100','103.214.113.81:9100','103.171.85.159:9100']
+
 ```
 
 monitoring.yml :
@@ -114,4 +115,26 @@ Kemudian cek juga pada server monitor
 
 ![image](https://user-images.githubusercontent.com/106061407/176585230-20ad3038-e5ef-42ec-9df3-86a32024afb1.png)
 
+KET BERIKUT PORT PADA MONITORING: 
+- node exporter [9100]
+- prometheus [9090]
+- grafana [3000]
+
+Kemudian saya akan cek pada browser
+
+![image](https://user-images.githubusercontent.com/106061407/176586687-a78af39b-b2c1-47cd-86da-71eb604b3355.png)
+
+[NODE EXPORTER OK]
+
+![image](https://user-images.githubusercontent.com/106061407/176587595-b4c6a30d-f5e4-44dc-b799-a530bfeaa2ca.png)
+
+[PROMETHEUS OK]
+
+![image](https://user-images.githubusercontent.com/106061407/176587717-a3ce32bb-1063-4bd6-82b7-49be97337952.png)
+
+[GRAFANA OK]
+
+----------------------------------------------
+
+Kemudian saya akan konfigurasi pada grafana
 
