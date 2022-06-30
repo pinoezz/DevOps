@@ -136,5 +136,9 @@ Kemudian saya akan cek pada browser
 
 ----------------------------------------------
 
-Kemudian saya akan konfigurasi pada grafana
+Kemudian saya akan konfigurasi pada grafana dan berikut adalah hasilnya
+
+![image](https://user-images.githubusercontent.com/106061407/176588847-db36ba80-06d7-444d-95c7-3dd273928226.png)
+
+
 
