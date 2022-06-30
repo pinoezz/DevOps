@@ -40,7 +40,7 @@ monitoring.yml :
   tasks:
         - name: 'Make volume folder'
           file:
-           path: /home/monitor/prometheus
+           path: /home/monitoring/prometheus
            state: directory
 
         - name: 'Copy Configuration Prometheus'
@@ -51,7 +51,7 @@ monitoring.yml :
         - name: 'Login DockerHub'
           docker_login:
            username: pinoezz
-           password: zaq1XSW@212Andra
+           password: <PW KALIAN>
 
         - name: 'Pull Prometheus'
           docker_image:
@@ -65,7 +65,7 @@ monitoring.yml :
            image: bitnami/prometheus
            ports:
              - 9090:9090
-           volumes: /home/monitor/prometheus:/etc/prometheus
+           volumes: /home/monitoring/prometheus:/etc/prometheus
 
         - name: 'Pull Grafana'
           docker_image:
@@ -80,4 +80,38 @@ monitoring.yml :
              - 3000:3000
  ```
  
+ Pertama-tama saya akan tes ping ke semua server dan cek syntax
  
+ ```
+ ansible all -m  ping
+ ```
+
+```
+ansible-playbook --syntax-check monitoring.yml
+```
+
+ ![image](https://user-images.githubusercontent.com/106061407/176582943-ef9d72ff-f712-415f-b94a-1db6581cabb6.png)
+
+
+Jalankan ansible-playbook menggunakan perintah :
+
+```
+ansible-playbook monitoring.yml 
+```
+
+Saya mendapatkan error karena salah membuat direktori , kemudian saya akan perbaiki dan jalankan ulang ansible-playbook
+
+![image](https://user-images.githubusercontent.com/106061407/176584195-15d57f96-f88b-4bd5-9192-b602fc634c4f.png)
+
+Apabila sudah berhasil di tiap server akan otomatis terinstall node exporter
+
+![image](https://user-images.githubusercontent.com/106061407/176585129-f819e9b9-7f5c-4f51-8fdd-9447053186de.png)
+
+![image](https://user-images.githubusercontent.com/106061407/176585167-9dc59de8-6d88-4c17-a9cc-693afa7ab9f3.png)
+
+
+Kemudian cek juga pada server monitor
+
+![image](https://user-images.githubusercontent.com/106061407/176585230-20ad3038-e5ef-42ec-9df3-86a32024afb1.png)
+
+
