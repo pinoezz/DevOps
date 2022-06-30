@@ -35,3 +35,21 @@ location / {
 ![image](https://user-images.githubusercontent.com/106061407/176593749-e6f76dd1-8428-401b-a336-c51c485038ce.png)
 
 
+save dan exit 
+
+Kemudian cek syntax dengan menggunakan `sudo nginx -t`
+
+![image](https://user-images.githubusercontent.com/106061407/176594502-7747ac24-b5fd-43bf-acc0-d60c2a4f3a35.png)
+
+
+Kemudian restart systemctl nginx
+
+```
+sudo systemctl restart nginx.service 
+```
+
+![image](https://user-images.githubusercontent.com/106061407/176594598-1147da26-e3d0-4446-b9de-ecb4e32a1cbb.png)
+
+Dan berikut hasilnya
+
+![image](https://user-images.githubusercontent.com/106061407/176594618-fd1e9c17-a274-470e-bb13-a714d89d5320.png)
