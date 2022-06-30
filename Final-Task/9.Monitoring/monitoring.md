@@ -138,7 +138,13 @@ Kemudian saya akan cek pada browser
 
 Kemudian saya akan konfigurasi pada grafana dan berikut adalah hasilnya
 
-![image](https://user-images.githubusercontent.com/106061407/176588847-db36ba80-06d7-444d-95c7-3dd273928226.png)
+KET : Apabila error origin saat login coba cara berikut :
+
+https://devops.stackexchange.com/questions/15427/grafana-nginx-reverse-proxy-not-functioning-correctly
+
+https://futurestud.io/tutorials/nginx-how-to-fix-unknown-connection_upgrade-variable
+
+![image](https://user-images.githubusercontent.com/106061407/176711418-d828df01-2aed-496c-9fde-5f9da3445f70.png)
 
 
 
