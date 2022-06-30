@@ -168,7 +168,7 @@ Kemudian bisa dilanjutkan membuka port akses default ke VPS nya
  sudo ufw allow ftp
 ```
 
-Mengaktifkan port Jenkins 3031
+Mengaktifkan port  3031
 
 ```
 sudo ufw allow 3031/tcp
