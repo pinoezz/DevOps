@@ -17,11 +17,4 @@ Buat sebuah file bash sederhana yang bertugas untuk update dan upgrade sistem
 
 Buat sebuah file bash serderhana yang bertugas untuk membuat firewall port 22, 80 dan 443
 
--------------------------------------
 
-## Ketentuan
-
-```
-contoh
-```
-![image](https://user-images.githubusercontent.com/106061407/182862653-0ab507cb-cb34-4cef-b851-ce86d3c399f1.png)
