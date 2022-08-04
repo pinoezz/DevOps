@@ -16,3 +16,11 @@ Konfigurasi environment dan instalasi linux server, dimana server tersebut dapat
 Buat sebuah file bash sederhana yang bertugas untuk update dan upgrade sistem
 
 Buat sebuah file bash serderhana yang bertugas untuk membuat firewall port 22, 80 dan 443
+
+-------------------------------------
+
+## Ketentuan
+
+```
+contoh
+```
